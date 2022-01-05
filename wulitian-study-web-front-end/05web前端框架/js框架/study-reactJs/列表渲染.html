@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="./js/babel.min.js"></script>
+<script type="text/babel">
+    // 数组渲染
+    let arr = ['a','b','c'];
+    let myDom1 = arr.map((e,i)=>{
+        // key独一无二
+        return <div key={i}>{e}</div>
+    })
+    let index = 0;
+    function vDom(){
+        let arr2 = [];
+        arr.forEach((e,i)=>{
+            arr2.push(<div style={{background:index===i?'#ff0000':''}} key={i} onClick={()=>{index = i;console.log(i+'---'+index);render()}}>{e}</div>)
+        })
+        return arr2
+    }
+
+    function render(){
+        ReactDOM.render(vDom(), document.getElementById('root'));
+    }
+    render()
+</script>
+</body>
+</html>

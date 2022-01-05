@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <style>
+        .bg{
+            background: #dddddd;
+            padding: 10px;
+            /*方法1*/
+            /*overflow: hidden;*/
+            /*方法2*/
+            /*float: left;*/
+            /*width: 100%;*/
+            /*方法3*/
+            /*display: inline-block;*/
+        }
+        .bg1{
+            background: red;
+        }
+        .bg2{
+            background: blue;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            float: left;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+        }
+        /*方法4（常用）*/
+        /*.bg:after{*/
+            /*content: "";*/
+            /*display: block;*/
+            /*height: 0;*/
+            /*visibility: hidden;*/
+            /*clear: both;*/
+            /*zoom: 1;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<!--方法5-->
+<!--<div class="bg" style="height: 100px">-->
+<div class="bg">
+    <div class="box bg1"></div>
+    <div class="box bg2 clear"></div>
+    <!--方法6-->
+    <!--<br style="clear: both"/>-->
+    <!--方法7-->
+    <!--<div style="clear: both"><div/>-->
+</div>
+<div class="box2 bg1"></div>
+</body>
+</html>

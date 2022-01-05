@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // 定义状态常量
+    const PENDING = 'PENDING'
+    const FULFILLED = 'FULFILLED'
+    const REJECTED = 'REJECTED'
+    class Promise {
+        constructor(executor){
+            this.status = PENDING;
+            this.value = undefined;
+            this.reason = undefined;
+            this.onResolvedCallbacks = []
+            this.onRejectedCallbacks = []
+            const resolve = value =>{
+                this.status = FULFILLED
+                this.value = value
+                this.onResolvedCallbacks.map(fn=>fn(this.value))
+            }
+            const reject = reason => {
+                this.status = REJECTED
+                this.reason = reason
+                this.onRejectedCallbacks.map(fn=>fn())
+            }
+            // 当executor执行报错时，需要调用reject函数
+            try{
+                executor(resolve, reject)
+            }catch(e){
+                reject(e)
+            }
+        }
+        then(onFulfilled, onRejected){
+            // 判断当前promise的状态
+            if(this.status == FULFILLED){
+                onFulfilled(this.value)
+            }else if(this.status == REJECTED){
+                onRejected(this.reason)
+            }else{
+                // 状态为pending，将onFulfilled和onRejected分别加入onResolvedCallbacks和onRejectedCallbacks数组中，
+                // 等待resolve或reject函数执行时调用
+                this.onResolvedCallbacks.push(()=>{
+                    // do something
+                    onFulfilled(this.value)
+                })
+                this.onRejectedCallbacks.push(()=>{
+                    // do something
+                    onRejected(this.reason)
+                })
+            }
+        }
+    }
+
+    let promise = new Promise((resolve,reject)=>{
+        console.log(1)
+        setTimeout(()=>{
+                resolve('ok')
+        },2000)
+    }).then((data)=>{
+        console.log(data)
+        console.log(2)
+    });
+</script>
+</body>
+</html>

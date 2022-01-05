@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div name="A">1111</div>
+<div name="B">2222</div>
+<div name="A">3333</div>
+<script>
+    // js找出name='A'
+    let ele = document.getElementsByTagName("div");
+    let result = '';
+    for (let i = 0; i <ele.length ; i++) {
+        let eleIndex = ele.item(i)
+        let attr= eleIndex.getAttribute('name')
+        if(eleIndex&&(attr==='A')){
+            result+=(!result?'':',')+ele.item(i).innerText;
+        }
+    }
+    console.log(result)
+
+</script>
+</body>
+</html>

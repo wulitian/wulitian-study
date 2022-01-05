@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		.text-decoration li{margin-top:10px;}
+		.text-decoration .none{text-decoration:none;}
+		.text-decoration .underline{text-decoration:underline;}
+		.text-decoration .overline{text-decoration:overline;}
+		.text-decoration .line-through{text-decoration:line-through;}
+		.text-decoration .blink{text-decoration:blink;}
+		.text-decoration .text-decoration-css3{
+			-webkit-text-decoration:#f00 wavy underline;
+			-moz-text-decoration:#f00 solid underline;
+			text-decoration:#f00 solid underline;
+		}
+	</style>
+</head>
+<body>
+<!--text-decoration-line： 指定文本装饰的种类。
+相当于CSS2.1的text-decoration属性，可取值：none | underline | overline | line-through | blink text-decoration-style： 指定文本装饰的样式。 text-decoration-color： 指定文本装饰的颜色。-->
+
+<ul class="text-decoration">
+	<li class="none">无装饰文字</li>
+	<li class="underline">带下划线文字</li>
+	<li class="overline">带上划线文字</li>
+	<li class="line-through">带贯穿线文字</li>
+	<li class="blink">带闪烁文字</li>
+	<li class="text-decoration-css3">如果你的浏览器支持text-decoration在CSS3下的改变，将会看到本行文字有一条红色的下划实线</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+
+<script>
+    // window.addEventListener('storage',function(e){
+    //     console.log(123131)
+    // })
+    // function getCookieValue(name) {
+    //     let result = document.cookie.match("(^|[^;]+)\\s*" + name + "\\s*=\\s*([^;]+)")
+    //     return result ? result.pop() : ""
+    // }
+    // setInterval(function(){
+    //     console.log(getCookieValue('name'))
+    // },1000)
+    try {
+        var worker = new SharedWorker("worker.js");
+        var getBtn = document.getElementById("get");
+        var setBtn = document.getElementById("set");
+        var txt = document.getElementById("txt");
+        var log = document.getElementById("log");
+
+        worker.port.addEventListener("message", function (e) {
+            log.innerHTML = e.data;
+            console.log(" --- 获取到数据 e.data --- ", e.data);
+        });
+
+        worker.port.start();
+
+        setBtn.addEventListener(
+            "click",
+            function (e) {
+                worker.port.postMessage(txt.value);
+            },
+            false
+        );
+
+        getBtn.addEventListener(
+            "click",
+            function (e) {
+                worker.port.postMessage("get");
+            },
+            false
+        );
+    } catch (error) {
+        console.log(" --- error --- ", error);
+    }
+</script>
+</body>
+</html>

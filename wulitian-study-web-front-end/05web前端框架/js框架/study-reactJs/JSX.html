@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="./js/babel.min.js"></script>
+<script type="text/babel"> //必须声明babel
+// JSX是js的语法扩展
+// 创建虚拟DOM元素JSX 可以很好地描述 UI 应该呈现出它应有交互的本质形式JSX 可能会使人联想到模板语言，但它具有 JavaScript 的全部功能。
+// 1.在JSX中嵌入表达式用“{}”
+// function formatName(user){
+//     return user.firstName + user.lastName
+// }
+// const user = {
+//     firstName:"雾里",
+//     lastName:"天",
+//     url:'./img/wulitian.png'
+// }
+// const element = (<h1>Hello, {formatName(user)}</h1>)
+//
+// ReactDOM.render(
+//     element,
+//     document.getElementById('root')
+// );
+// 2.JSX 也是一个表达式
+// function getGreeting(user) {
+//     if (user) {
+//         return (<h1>Hello, {formatName(user)}!</h1>);
+//     }
+//     return (<h1>Hello, Stranger.</h1>);
+// }
+//
+// ReactDOM.render(
+//     getGreeting(user),
+//     document.getElementById('root')
+// );
+// 3.JSX 特定属性 你可以通过使用引号，来将属性值指定为字符串字面量：也可以使用大括号，来在属性值中插入一个 JavaScript 表达式：
+// const element2 = <div tabIndex="0"></div>;
+
+//const element3 = <img src={user.url} width="100px"></img>;
+//ReactDOM.render(
+//    element3,
+//    document.getElementById('root')
+//);
+//4.JSX 防止注入攻击 React Dom 在输入内容之前会转义 防止了xss攻击
+
+//5.JSX 表示对象 Babel 会把 JSX 转译成一个名为 React.createElement() 函数调用。
+// const element = (
+//     <h1 className="greeting">
+//         Hello, world!
+//     </h1>
+// );
+// const element = React.createElement(
+//     'h1',
+//     {className: 'greeting'},
+//     'Hello, world!'
+// );
+// React.createElement() 会预先执行一些检查，以帮助你编写无错代码，但实际上它创建了一个这样的对象：
+// 注意：这是简化过的结构
+// const element = {
+//     type: 'h1',
+//     props: {
+//         className: 'greeting',
+//         children: 'Hello, world!'
+//     }
+// };
+
+
+</script>
+</body>
+</html>

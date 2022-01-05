@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+	<body ondragstart="window.event.returnValue=false;return false;" oncontextmenu="window.event.returnValue=false;return false;" onselectstart="event.returnValue=false;return false;">
+		<div class="topcontent">
+			<span class="contentleft" id="toDay"></span>
+			<div class="contentright">
+				<span> 您好，管理员:张三</span>
+				<span>
+                    <a href="javascript:void(0);"><i class="iconxxxg"></i>信息修改</a>
+                </span>
+				<span>
+                    <a href="javascript:void(0);"><i class="iconzx"></i>注销</a>
+                </span>
+			</div>
+		</div>
+		<div class="topimg">
+			<img src="img/topimg.png"/>
+		</div>
+		<div class="topbt">
+			<img src="img/bt.png" width="800px"/>
+		</div>
+		<div class="box-center">
+			<div class="boxgroup anime1" onclick="boxActive(this,'jcgk')">
+				<img src="img/box1.png" class="box"/>
+				<div class="img-parent">
+					<img src="img/boximg1.png" class="icon"/>
+					<div class="boxshade"></div>
+				</div>
+				<div class="text-parent">
+					<div style="text-align: center;">基础管控</div>
+				</div>
+			</div>
+			<div class="boxgroup anime2" onclick="boxActive(this,'ryyj')">
+				<img src="img/box2.png" class="box" />
+				<div class="img-parent">
+					<img src="img/boximg2.png" class="icon"/>
+					<div class="boxshade"></div>
+				</div>
+				<div class="text-parent">
+					<div style="text-align: center;">人员预警</div>
+				</div>
+			</div>
+			<div class="boxgroup anime3" onclick="boxActive(this,'qbxs')">
+				<img src="img/box3.png" class="box"/>
+				<div class="img-parent">
+					<img src="img/boximg3.png" class="icon"/>
+					<div class="boxshade"></div>
+				</div>
+				<div class="text-parent">
+					<div style="text-align: center;">情报线索</div>
+				</div>
+			</div>
+			<div class="boxgroup anime4" onclick="boxActive(this,'qbyp')">
+				<img src="img/box4.png" class="box"/>
+				<div class="img-parent">
+					<img src="img/boximg4.png" class="icon"/>
+					<div class="boxshade"></div>
+				</div>
+				<div class="text-parent">
+					<div style="text-align: center;">情报研判</div>
+				</div>
+			</div>
+			<div class="boxgroup anime5" onclick="boxActive(this,'khtj')">
+				<img src="img/box5.png" class="box"/>
+				<div class="img-parent">
+					<img src="img/boximg5.png" class="icon"/>
+					<div class="boxshade"></div>
+				</div>
+				<div class="text-parent">
+					<div style="text-align: center;">考核统计</div>
+				</div>
+			</div>
+			<div class="boxgroup anime6" onclick="boxActive(this,'gkzx')">
+				<img src="img/box6.png" class="box"/>
+				<div class="img-parent">
+					<img src="img/boximg6.png" class="icon"/>
+					<div class="boxshade"></div>
+				</div>
+				<div class="text-parent">
+					<div style="text-align: center;">管控中心</div>
+				</div>
+			</div>
+		</div>
+		<div class="btngroup"></div>
+		<img class="bottomjz" src="img/bottomjz.png"/>
+		<img class="bottomimg" src="img/bottomimg.png"/>
+		<script type="text/javascript" src="js/anime.min.js" ></script>
+		<script>
+			//获取时间
+			var datelocalweek=new Array("星期日", "星期一", "星期二","星期三","星期四", "星期五","星期六");
+		    var datelocalnow=new Date();
+		    var datelocalyear=datelocalnow.getFullYear();
+		    var datelocalmonth=(datelocalmonth="0"+(datelocalnow.getMonth()+1)).substr(datelocalmonth.length-2,2);
+		    var datelocalday=(datelocalday="0"+datelocalnow.getDate()).substr(datelocalday.length-2,2);
+		    var datelocalweekday=datelocalweek[datelocalnow.getDay()];
+		    $("#toDay").text("今天是"+datelocalyear+"年"+datelocalmonth+"月"+datelocalday+"日　"+datelocalweekday);
+			//点击动画
+			var myAnimation1 = anime({
+			  targets: ['.anime1'],
+//			  translateX: '0px',
+//			  translateY: '300px',
+			  rotate: 0,
+			  duration: 1000,
+			  opacity:1,
+			  loop: false,
+
+			});
+			var myAnimation2 = anime({
+			  targets: ['.anime2'],
+//			  translateX: '0px',
+//			  translateY: '300px',
+			  rotate: 0,
+			  duration: 4000,
+			  opacity:1,
+			  loop: false
+			});
+			var myAnimation3 = anime({
+			  targets: ['.anime3'],
+//			  translateX: '0px',
+//			  translateY: '300px',
+			  rotate: 0,
+			  duration: 7000,
+			  opacity:1,
+			  loop: false
+			});
+			var myAnimation4 = anime({
+			  targets: ['.anime4'],
+//			  translateX: '0px',
+//			  translateY: '300px',
+			  rotate: 0,
+			  duration: 10000,
+			  opacity:1,
+			  loop: false
+			});
+			var myAnimation5 = anime({
+			  targets: ['.anime5'],
+//			  translateX: '0px',
+//			  translateY: '300px',
+			  rotate: 0,
+			  duration: 13000,
+			  opacity:1,
+			  loop: false
+			});
+			var myAnimation6 = anime({
+			  targets: ['.anime6'],
+//			  translateX: '0px',
+//			  translateY: '300px',
+			  rotate: 0,
+			  duration: 16000,
+			  opacity:1,
+			  loop: false
+			});
+			//按钮json
+			var data={
+				jcgk:[
+					{
+						icon:'img/swry.png',
+						title:'涉稳人员'
+					},
+					{
+						icon:'img/gzry.png',
+						title:'关注人员'
+					},
+					{
+						icon:'img/swqt.png',
+						title:'涉稳群体'
+					},
+					{
+						icon:'img/swcl.png',
+						title:'涉稳车辆'
+					},
+					{
+						icon:'img/swhm.png',
+						title:'涉稳号码'
+					},
+					{
+						icon:'img/zdwp.png',
+						title:'重点物品'
+					},
+					{
+						icon:'img/zdcs.png',
+						title:'重点场所'
+					},
+					{
+						icon:'img/skry.png',
+						title:'涉恐人员'
+					},
+					{
+						icon:'img/swiry.png',
+						title:'涉外人员'
+					}
+				],
+				ryyj:[
+					{
+						icon:'img/swry.png',
+						title:'基础管控'
+					}
+				],
+				qbxs:[
+					{
+						icon:'img/swry.png',
+						title:'基础管控'
+					}
+				],
+				qbyp:[
+					{
+						icon:'img/swry.png',
+						title:'基础管控'
+					}
+				],
+				khtj:[
+					{
+						icon:'img/swry.png',
+						title:'基础管控'
+					}
+				],
+				gkzx:[
+					{
+						icon:'img/swry.png',
+						title:'基础管控'
+					}
+				],
+			}
+			//模板
+			function boxActive(e,temp){
+				$(e).animate({
+					width:'250px'
+				});
+				$(e).siblings().animate({
+					width:'145px'
+				});
+				$(".btngroup").empty();
+				if(temp=='jcgk'){
+					data.jcgk.forEach(function(e,i){
+						$(".btngroup").append('<span class="buttonkuang">'+
+												'<i class="btnicon" style="background: url('+e.icon+')center center no-repeat;"></i>'+
+												'<div>'+e.title+'</div></span>')
+						console.log(e)
+					})
+
+				}else if(temp=='ryyj'){
+					data.ryyj.forEach(function(e,i){
+						$(".btngroup").append('<span class="buttonkuang">'+
+												'<i class="btnicon" style="background: url('+e.icon+')center center no-repeat;"></i>'+
+												'<div>'+e.title+'</div></span>')
+						console.log(e)
+					})
+				}else if(temp=='qbxs'){
+					data.qbxs.forEach(function(e,i){
+						$(".btngroup").append('<span class="buttonkuang">'+
+												'<i class="btnicon" style="background: url('+e.icon+')center center no-repeat;"></i>'+
+												'<div>'+e.title+'</div></span>')
+						console.log(e)
+					})
+				}else if(temp=='qbyp'){
+					data.qbyp.forEach(function(e,i){
+						$(".btngroup").append('<span class="buttonkuang">'+
+												'<i class="btnicon" style="background: url('+e.icon+')center center no-repeat;"></i>'+
+												'<div>'+e.title+'</div></span>')
+						console.log(e)
+					})
+				}else if(temp=='khtj'){
+					data.khtj.forEach(function(e,i){
+						$(".btngroup").append('<span class="buttonkuang">'+
+												'<i class="btnicon" style="background: url('+e.icon+')center center no-repeat;"></i>'+
+												'<div>'+e.title+'</div></span>')
+						console.log(e)
+					})
+				}else if(temp=='gkzx'){
+					data.gkzx.forEach(function(e,i){
+						$(".btngroup").append('<span class="buttonkuang">'+
+												'<i class="btnicon" style="background: url('+e.icon+')center center no-repeat;"></i>'+
+												'<div>'+e.title+'</div></span>')
+						console.log(e)
+					})
+				}
+				 $(".buttonkuang").animate({opacity:1},500);
+
+			}
+
+		</script>
+	</body>
+</html>

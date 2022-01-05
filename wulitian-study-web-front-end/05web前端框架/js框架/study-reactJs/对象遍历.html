@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="./js/babel.min.js"></script>
+<script type="text/babel">
+    // 对象遍历
+    let obj = {
+        name:'wulitian',
+        sex:'男'
+    };
+    let arr = <div>{
+                Object.keys(obj).map((e,i)=>{
+                    return <div key={i}>{e}</div>
+                    })
+                 }
+            </div>
+    function render(){
+        ReactDOM.render(arr, document.getElementById('root'));
+    }
+    render()
+</script>
+</body>
+</html>

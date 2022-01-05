@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // js写一个正则表达式判断字符串是否是对称数
+    // 这个\1  \2......  都要和正则表达式集合()一起使用
+    // \1表示重复正则第一个圆括号内匹配到的内容
+    // \2表示重复正则第二个圆括号内匹配到的内容
+    let str = 'Woow';
+    let reg = /^([a-z])([a-z])\2\1$/i;
+    if(reg.test(str)){
+        console.log("对称")
+    }else{
+        console.log("非对称")
+    }
+</script>
+</body>
+</html>

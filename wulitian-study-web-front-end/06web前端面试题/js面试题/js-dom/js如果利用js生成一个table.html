@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<table id="table"></table>
+<script>
+    // js如果利用js生成一个table
+    function createTable(row,column,id){
+        for(let i = 0;i<row;i++){
+            let tr = document.createElement("tr");
+            for(let j = 0;j<column;j++){
+                let td = document.createElement("td");
+                td.innerText = "内容"
+                tr.appendChild(td);
+            }
+            document.getElementById(id).appendChild(tr);
+        }
+    }
+    createTable(10,10,'table');
+</script>
+</body>
+</html>

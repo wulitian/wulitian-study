@@ -1,0 +1,52 @@
+html,body{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+#app{
+    position: relative;
+    margin: 0;
+    padding-right: 300px;
+    height: 100%;
+}
+.layout-left{
+    width: 100%;
+    height: 100%;
+    background: #f3ffb0;
+    position: relative;
+}
+.layout-right{
+    margin: 0;
+    width: 300px;
+    height: 100%;
+    overflow: auto;
+    right: 0;
+    top: 0;
+    position: absolute;
+    background: #f2f280;
+    box-shadow: 1px 0px 3px #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.layout-right ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.layout-right ul li{
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.group-title{
+    font-size: 16px;
+    font-weight: bolder;
+}
+.xy-center{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

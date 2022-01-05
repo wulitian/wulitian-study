@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // js写一个字符串转成驼峰的方法
+    let str = 'border-bottom';
+    let newStr = str.replace(/\-[a-z]/g,function(params){
+        return params.charAt(1).toUpperCase()
+    })
+    console.log(newStr)
+
+    let str = 'border-bottom';
+    let aNew = [];
+    aNew = str.split('-');
+    for (let index = 0; index < aNew.length; index++) {
+        if (index != 0) {
+            aNew[index] = aNew[index].substr(0, 1).toUpperCase() + aNew[index].substr(1);
+        }
+    }
+    str = aNew.join('');
+    console.log(str);
+</script>
+</body>
+</html>

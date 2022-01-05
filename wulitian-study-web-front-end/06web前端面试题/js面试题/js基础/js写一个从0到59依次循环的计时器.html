@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    let time = 0
+    let a = setInterval(function(){
+        if(time>10){
+            time = 0
+            return false
+        }
+        time++;
+        console.log(time)
+    },1000)
+</script>
+</body>
+</html>

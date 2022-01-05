@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <style>
+        #table{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+<table id="table"></table>
+<script>
+    // 1.js中获取style值
+    function getStyleValue() {
+        if(window.getComputedStyle){
+            return window.getComputedStyle(document.getElementById('table'),null);//标准浏览器
+        }else{
+            return document.getElementById('table').currentStyle;//currentStyle是IE的属性
+        }
+    }
+    console.log(getStyleValue())
+</script>
+</body>
+</html>

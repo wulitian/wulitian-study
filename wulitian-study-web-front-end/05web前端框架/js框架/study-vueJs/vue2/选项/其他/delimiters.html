@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delimiters</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div>
+        <div id="app">
+            <div>{{msg}}</div>
+            <div>${msg}</div>
+        </div>
+    </div>
+<script>
+    //类型：Array<string>
+    // 默认值：["{{", "}}"]
+    // 限制：这个选项只在完整构建版本中的浏览器内编译时可用。
+    // 改变纯文本插入分隔符。
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg:'hello vue',
+        },
+        delimiters: ['${', '}']
+    })
+
+
+</script>
+</body>
+</html>

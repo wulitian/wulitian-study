@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="./js/babel.min.js"></script>
+<script type="text/babel">
+    //类态组件创建方式
+    class MyCom extends React.Component{
+        render(){
+            return (
+                <div>wulitian</div>
+            )
+        }
+    }
+    let com = <MyCom/>
+    ReactDOM.render(com, document.getElementById('root'))
+</script>
+</body>
+</html>

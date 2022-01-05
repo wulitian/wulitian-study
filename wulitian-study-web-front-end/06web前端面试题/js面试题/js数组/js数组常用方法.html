@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian</title>
+</head>
+<body>
+<script>
+    let arr = [30,4,50];
+    let arr2= [66,7,80];
+    // 1.Array.push()，向数组的末尾添加一个或多个元素，并返回新的数组长度。原数组改变。
+    let pushIdnex = arr.push("1");
+    console.log(pushIdnex+'->'+arr);
+    // 2.Array.pop()，删除并返回数组的最后一个元素，若该数组为空，则返回undefined。原数组改变。
+    let popIndex = arr.pop();
+    console.log(popIndex+'->'+arr);
+    // 3.Array.unshift()，向数组的开头添加一个或多个元素，并返回新的数组长度。原数组改变。
+    let unshiftIndex = arr.unshift("2");
+    console.log(unshiftIndex+'->'+arr);
+    // 4.　Array.shift()，删除数组的第一项，并返回第一个元素的值。若该数组为空，则返回undefined。原数组改变。
+    let shiftIndex = arr.shift();
+    console.log(shiftIndex+'->'+arr);
+    // 5.　Array.concat(arr1,arr2...)，合并两个或多个数组，生成一个新的数组。原数组不变。
+    let newArr = arr.concat(arr2);
+    console.log(newArr);
+    // 6.　Array.join()，将数组的每一项用指定字符连接形成一个字符串。默认连接字符为 “,” 逗号。
+    let s = arr.join("/");
+    console.log(s)
+    // 7.　Array.reverse()，将数组倒序。原数组改变。
+    let reverseArr = arr.reverse();
+    console.log(reverseArr)
+    console.log(arr)
+    // 8.　Array.sort()，对数组元素进行排序。按照字符串UniCode码排序，原数组改变。
+    let sortArr = arr.sort((a,b)=>{
+        return a-b;
+    })
+    console.log(sortArr)
+    console.log(arr)
+    // 9.  Array.slice(start,end)，从start开始，end之前结束，不到end；如果不给end值，从start开始到数组结束。start可以给负值，-1表示数组最后位置，-2表示倒数第二个，以此类推，顾前不顾后。
+    let sliceArr = arr.slice(-2,-1);
+    console.log('9')
+    console.log(sliceArr)
+    console.log(arr)
+    // 10.Array.splice(index,howmany,arr1,arr2...) ，删除元素并添加元素，从index位置开始删除howmany个元素，并将arr1、arr2...数据从index位置依次插入。howmany为0时，则不删除元素。原数组改变。
+    let spliceArr = arr.splice(2,3,...arr2)
+    console.log(spliceArr)
+    console.log(arr)
+    let spliceArr2 = arr.splice(2,3,'1','2','3')
+    console.log(spliceArr2)
+    console.log(arr)
+</script>
+</body>
+</html>

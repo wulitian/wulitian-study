@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--遍历数组Array-->
+        <div v-for="(value,index) in array">值：{{value}}--索引：{{index}}</div>
+        <!--遍历对象Object-->
+        <div v-for="(value,key,index) in obj">值：{{value}}--键：{{key}}--索引：{{index}}</div>
+        <!--遍历数字Number-->
+        <div v-for="(value,index) in num">值：{{value}}--索引：{{index}}</div>
+        <!--遍历字符串String-->
+        <div v-for="(value,index) in str">值：{{value}}--索引：{{index}}</div>
+    </div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            array:['张三','李四','王五','朱六'],
+            obj:{
+                name:'张三',
+                sex:'李四'
+            },
+            num:10,
+            str:'张三',
+
+        },
+    })
+</script>
+</body>
+</html>

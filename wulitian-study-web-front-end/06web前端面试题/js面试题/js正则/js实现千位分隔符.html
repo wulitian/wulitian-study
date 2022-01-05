@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // js实现千位分隔符
+    // 将第一个逗号前面的数字作为第一组，后面所有数字为第二组，第二组是由多个三位的数字组合而成的，整体需要匹配捕获，但是每个三位数不需要匹配捕获所以加？：。
+    // RegExp.$1获取第一个分组，RegExp.$2获取第二个分组。
+    // match返回匹配到的数据，是数组类型。
+    var str = '123456789';
+    var reg = /^([1-9]\d{0,2})((?:\d{3})+)$/;
+    if (reg.test(str)) {
+        var s = str.replace(reg, function () {
+            return RegExp.$1 + ',' + RegExp.$2.match(/\d{3}/g);
+        })
+    }
+    console.log(s);//123,456,789
+
+
+    var count = 0;
+    var strNew = '';
+    var str1 = '60123761';
+    for (let i = str1.length; i >= 0; i--) {
+        if (count % 3 === 0 && count != 0) {
+            strNew += ',';
+        }
+        strNew += str1.substr(i, 1);
+        count++;
+    }
+    strNew = strNew.split('').reverse().join('');
+    console.log(strNew);
+</script>
+</body>
+</html>

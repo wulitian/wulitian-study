@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        // 高阶函数- 函数可以作为参数传递
+        function fn(a, b, callback) {
+            console.log(a + b);
+            callback && callback();
+        }
+        fn(1, 2, function() {
+            console.log('我是最后调用的');
+
+        });
+        $("div").animate({
+            left: 500
+        }, function() {
+            $("div").css("backgroundColor", "purple");
+        })
+    </script>
+</body>
+
+</html>

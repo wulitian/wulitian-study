@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+// 1.将类数组形式转换为数组
+    let arr = [].slice.call({ 0: "A", 1: "B", length: 2 });
+    console.log({ 0: "A", 1: "B", length: 2 })
+    console.log(arr)
+
+    var nList = [].slice.call(document.getElementsByTagName('li'));
+    console.log(document.getElementsByTagName('li'))
+    console.log(nList)
+// 2.方法借用
+    let foo = {
+        name: 'joker',
+        showName: function() {
+            console.log(this.name);
+        }
+    };
+    let bar = {
+        name: 'rose'
+    };
+    foo.showName.call(bar); // rose
+
+//  3.在继承中应用
+
+//  4.判断数据的类型
+let arrayType = Object.prototype.toString.apply([])
+let objType = Object.prototype.toString.apply({})
+let stringType = Object.prototype.toString.apply("wwwww")
+let numberType = Object.prototype.toString.apply(1111)
+let nullType = Object.prototype.toString.apply(null)
+let undefinedType = Object.prototype.toString.apply(c)
+console.log(arrayType,objType,stringType,numberType,nullType,undefinedType)
+
+</script>
+</body>
+</html>

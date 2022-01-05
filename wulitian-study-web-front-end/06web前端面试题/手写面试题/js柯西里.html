@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    function add(){
+        // 第一次定义时，定义一个数组专门用来存储所有参数
+        const args = [...arguments];
+        // 内部声明一个函数，利用闭包特性手机所有参数
+        const fn = function(){
+            args.push(...arguments)
+            return fn
+        }
+        // 利用tostring隐式特性，当最后执行时隐式转换，并计算返回值
+        fn.toString = ()=>{
+            args.reduce((a,b)=>{
+                a+b
+            })
+        }
+        return fn
+    }
+    console.log(add(1)(2))
+    console.log(add(11,22))
+</script>
+</body>
+</html>

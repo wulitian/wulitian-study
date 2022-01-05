@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		/*E F	包含选择符(Descendant combinator)	CSS1	选择所有被E元素包含的F元素。*/
+		/*E>F	子选择符(Child combinator)	CSS2	选择所有作为E元素的子元素F。*/
+		/*E+F	相邻选择符(Adjacent sibling combinator)	CSS2	选择紧贴在E元素之后F元素。*/
+		/*E~F	兄弟选择符(General sibling combinator)	CSS3	选择E元素所有兄弟元素F。*/
+		.group .one{
+			color: red;
+		}
+		.group>.one{
+			font-size: 20px;
+		}
+		.two+.one{
+			font-weight: bold;
+		}
+		.two~.one{
+			background: #00a4ff;
+		}
+	</style>
+</head>
+<body>
+
+<div class="group">
+	<div class="one">1.选择器</div>
+	<div class="one">2.选择器</div>
+	<div class="two">3.选择器</div>
+	<div class="one">4.选择器</div>
+	<div class="one">5.选择器</div>
+</div>
+
+</body>
+</html>

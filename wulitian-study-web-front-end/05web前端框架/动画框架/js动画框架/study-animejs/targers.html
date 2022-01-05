@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./node_modules/_animejs@3.2.1@animejs/lib/anime.min.js"></script>
+    <style>
+        .box1,.box2,.box3,.box4,.box5,.box6{width: 40px;height: 40px;position: relative}
+        .box1{background: red;}
+        .box2{background: blue;}
+        .box3{background: green;}
+        .box4{background: yellow;}
+        .box5{background: pink;}
+        .box6{background: wheat;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </div>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods:{
+        }
+    })
+    //方式1：css选择器
+    anime({
+        targets: '.box1',
+        translateX: 250
+    });
+    //方式2：dom节点/dom节点列表
+    var elements = document.querySelectorAll(' .box2');
+    anime({
+        targets: elements,
+        translateX: 250
+    });
+    //方式3：js对象方式
+    var logEl = document.querySelector('.box3');
+    var battery = {
+        charged: '0%',
+        cycles: 120
+    }
+    anime({
+        targets: battery,
+        charged: '100%',
+        cycles: 130,
+        round: 1,
+        easing: 'linear',
+        update: function() {
+            logEl.innerHTML = JSON.stringify(battery);
+        }
+    });
+    //方式4：array方式
+    var el = document.querySelector('.box4');
+    anime({
+        targets: [el, '.box5', '.box6'],
+        translateX: 250
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="./js/prop-types.js"></script>
+<script type="text/javascript" src="./js/babel.min.js"></script>
+<script type="text/babel">
+    //refs 不能在无状态组件中使用，表示当前组建真正实例的引用返回绑定当前属性的元素，标识组件内元素方便查找
+    // 有三种使用方式
+    // 1.字符串的方式
+    // 2.回调函数方式（推荐）
+    // 3.  React.creatRef()16.3以后
+    //不过度使用ref优先使用state
+    class MyCom extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {
+                name:'雾里天'
+            }
+            this.myRef = React.createRef();
+        };
+        fun=()=>{
+            // console.log(this.refs.domInput.value);
+            // console.log(this.inputDom.value);
+            console.log(this.myRef.current.value);
+        }
+        render(){
+            return (
+                <div>
+                    {/*<input ref="domInput" type="text"/>*/}
+                    {/* <input ref={(input)=>{this.inputDom = input}} type="text"/>*/}
+                    <input ref={this.myRef} type="text"/>
+                    <button onClick={this.fun}>获取</button>
+                </div>
+            )
+        }
+    }
+    let com = <MyCom/>
+    ReactDOM.render(com, document.getElementById('root'))
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="http://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <style>
+        .box1,.box2,.box3,.box4,.box5,.box6{width: 40px;height: 40px;position: relative}
+        .box1{background: red;}
+        .box2{background: blue;}
+        .box3{background: green;}
+        .box4{background: yellow;}
+        .box5{background: pink;}
+        .box6{background: wheat;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="el" id="js-el"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+    </div>
+<script>
+
+    let rect = new mojs.Shape({
+        shape: 'rect', // 定义形状为矩形
+        isShowStart: true // 定义初始化之后就显示
+    })
+
+    var vue = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods:{
+        }
+    })
+
+
+
+</script>
+</body>
+</html>

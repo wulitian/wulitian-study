@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js中type和instanceof</title>
+</head>
+
+<body>
+
+
+<script>
+
+    // 1.typeof 是一个一元运算，放在一个运算数之前，运算数可以是任意类型。返回值是一个字符串，该字符串说明运算数的类型。
+    //number,string undefined object boolean function
+    console.log(typeof 1)
+    console.log(typeof "1")
+    console.log(typeof undefined)
+    console.log(typeof null)
+    console.log(typeof {})
+    console.log(typeof true)
+    console.log(typeof function(){console.log(123)})
+    // 2.instanceof 可以判断一个对象是否是某个构造函数的实例
+    console.log(1 instanceof Number)
+    console.log("asd" instanceof String)
+    console.log([] instanceof Array)
+    console.log({} instanceof Object)
+
+    // typeof 能判断哪些数据类型
+    // 值类型:undefined string number boolean symbol
+    // 引用类型:object null判断后也是object
+    // function
+</script>
+</body>
+
+</html>

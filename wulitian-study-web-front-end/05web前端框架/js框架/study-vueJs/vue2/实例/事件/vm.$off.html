@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$off</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="$emit('test','123456')">按钮</button>
+        <button @click="remove1">移除全部监听器</button>
+        <button @click="remove2">移除事件1的全部监听器</button>
+
+    </div>
+
+<script>
+    // 移除自定义事件监听器。
+    // 如果没有提供参数，则移除所有的事件监听器；
+    // 如果只提供了事件，则移除该事件所有的监听器；
+    // 如果同时提供了事件与回调，则只移除这个回调的监听器。
+    var vm = new Vue({
+        el:"#app",
+        data:{
+        },
+        mounted() {
+
+        },
+        methods:{
+            remove1() {
+                this.$off();
+            },
+            remove2() {
+                this.$off('test');
+            },
+
+        }
+    });
+    vm.$on('test', function (msg) {
+        alert(msg)
+    })
+    vm.$emit('test', 'hi')
+
+</script>
+</body>
+</html>

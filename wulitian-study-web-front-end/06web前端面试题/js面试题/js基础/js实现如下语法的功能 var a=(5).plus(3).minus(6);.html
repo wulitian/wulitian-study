@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    Number.prototype.plus = function (number){
+        return this + number;
+    }
+
+    Number.prototype.minus = function (number){
+        return this - number;
+    }
+
+    console.log((5).plus(3).minus(6))
+</script>
+</body>
+</html>

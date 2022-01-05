@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		.border-box{border:1px solid #dddddd;width:100px;height: 100px;}
+		.border-box2{border-style: dashed;border-width: thin; border-color:red;width:100px;height: 100px;}
+		.border-box-shadow{border-style: dashed;border-width: thin; border-color:red;width:100px;height: 100px;box-shadow: 10px 13px 25px -17px #ff0047;}
+		.border-image-box{width:100px;height: 100px;border:10px solid transparent;border-image:url(border.png) 30 30 round;}
+		.background-box{width:200px;height: 200px;
+			background:
+				url(1.png) no-repeat scroll 10px 10px/60px 60px padding-box,
+				url(1.png) no-repeat scroll 108px 21px/70px 90px padding-box,
+				url(2.png) no-repeat scroll 10px 80px/66px 76px padding-box #aaa
+		}
+		.background-clip-box{
+			font-weight: bold;
+			font-size: 26px;
+			height: 200px;
+			margin: 0;
+			padding: 20px;
+			border: 10px dashed #666;
+			background: #9f9f9f url(3.jpg) repeat scroll 11px 23px/83px 44px padding-box;
+			background-origin: border-box;
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+	</style>
+</head>
+<body>
+<!--border：<line-width> || <line-style> || <color>-->
+<!--拆分写法border-width border-style border-color-->
+
+<!--border-width-->
+<!--属性如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边；只提供一个，将用于全部的四边；提供两个，第一个用于上、下，第二个用于左、右；提供三个，第一个用于上，第二个用于左、右，第三个用于下。-->
+<!--如果border-style设置为none | hidden，border-width及其分拆独立属性的计算值将为0。-->
+<!--对应的脚本特性分别为：borderWidth, borderTopWidth, borderRightWidth, borderBottomWidth, borderLeftWidth。-->
+
+<!--border-style-->
+<!--none： 无轮廓。当定义了该值时， border-color将被忽略， border-width计算值为0，除非边框轮廓应用了 border-image。-->
+<!--hidden： 隐藏边框。-->
+<!--dotted： 点状轮廓。-->
+<!--dashed： 虚线轮廓。-->
+<!--solid： 实线轮廓-->
+<!--double： 双线轮廓。两条单线与其间隔的和等于指定的border-width值 groove： 3D凹槽轮廓。-->
+<!--ridge： 3D凸槽轮廓。-->
+<!--inset： 3D凹边轮廓。-->
+<!--outset： 3D凸边轮廓。-->
+<!--border-style如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边；只提供一个，将用于全部的四边；提供两个，第一个用于上、下，第二个用于左、右；提供三个，第一个用于上，第二个用于左、右，第三个用于下。-->
+<!--如果border-width等于0，border-style及其分拆独立属性将失效。-->
+<!--对应的脚本特性分别为：borderStyle, borderTopStyle, borderRightStyle, borderBottomStyle, borderLeftStyle。-->
+
+<!--border-color-->
+<!--如果提供全部四个参数值，将按上、右、下、左的顺序作用于四边；只提供一个，将用于全部的四边；提供两个，第一个用于上、下，第二个用于左、右；提供三个，第一个用于上，第二个用于左、右，第三个用于下。-->
+<!--如果border-width等于0或border-style设置为none | hidden，border-color及其分拆独立属性将失效。-->
+<!--如果 border-color 未被定义，边框颜色将默认取当前最近的文本颜色，即 currentColor。-->
+
+<!--box-shadow-->
+<!--none： 无阴影-->
+<!--①： 第 1 个长度值定义元素的阴影水平偏移值。正值，阴影出现在元素右侧；负值，则阴影出现在元素左侧-->
+<!--②： 第 2 个长度值定义元素的阴影垂直偏移值。正值，阴影出现在元素底部；负值，则阴影出现在元素顶部-->
+<!--③： 第 3 个长度值定义元素的阴影模糊值半径（如果提供了）。该值越大阴影边缘越模糊，若该值为0，阴影边缘不出现模糊。不允许负值-->
+<!--④： 第 4 个长度值定义元素的阴影外延值（如果提供了）。正值，阴影将向四面扩展；负值，则阴影向里收缩 <color>： 定义元素阴影的颜色。如果该值未定义，阴影颜色将默认取当前最近的文本颜色 inset： 定义元素的阴影类型为内阴影。该值为空时，则元素的阴影类型为外阴影-->
+
+<!--border-radius-->
+<!--水平半径或半轴：如果提供全部四个参数值，将按上左 top-left、上右 top-right、下右 bottom-right、下左 bottom-left的顺序作用于四个角；提供三个，第一个用于top-left，第二个用于top-right和bottom-left，第三个用于bottom-right；提供两个，第一个用于top-left和bottom-right，第二个用于top-right和bottom-left；只提供一个，将用于全部的四个角。-->
+
+<!--border-image-->
+<!--border-image-source： 定义元素边框背景图像，可以是图片路径或使用渐变创建的“背景图像”。-->
+<!--border-image-slice： 定义元素边框背景图像从什么位置开始分割。该属性是用来指定如何切割边框图片，它主要控制四条切割线对图片进行切割，切割成 9 块。如下图所示，共有上右下左四条线。-->
+<!--border-image-width： 定义元素边框背景图像厚度。-->
+<!--border-image-outset： 定义元素边框背景图像的外延尺寸。-->
+<!--border-image-width 指定边框图片宽度，支持百分比、无单位的值、auto。最多也可以接受 4 个值，值的复用逻辑与上面的类似。其中无符号单位是乘以border-width作为最终的宽度。-->
+<!--border-image-repeat： 定义元素边框背景图像的平铺方式。该属性可以指定border-image除了四个切角外，每一边上图片的重复情况。-->
+<!--1. `stretch`：拉伸充满-->
+<!--2. `repeat`：重复，会切割瓦片，有不完整的瓦片-->
+<!--3. `round`：避免切割瓦片，除非正好，才会重复-->
+<!--4. `space`：重复瓦片，如果不能充满则留有间距-->
+
+<!--background-->
+<!--background-image： 指定元素使用的背景图像。可以是图片路径或使用渐变创建的“背景图像”-->
+<!--background-position： 指定背景图像在元素中出现的位置。-->
+	<!--<percentage>： 用百分比指定背景图像在元素中出现的位置。可以为负值。参考容器尺寸减去背景图尺寸进行换算。-->
+	<!--<length>： 用长度值指定背景图像在元素中出现的位置。可以为负值。 center： 背景图像横向或纵向居中。-->
+	<!--left： 背景图像从元素左边开始出现。-->
+	<!--right： 背景图像从元素右边开始出现。-->
+	<!--top： 背景图像从元素顶部开始出现。-->
+	<!--bottom： 背景图像从元素底部开始出现。-->
+<!--background-clip： 指定背景图像向外裁剪的区域。-->
+	<!--border-box： 从border区域（含border）开始显示背景图像。 -->
+	<!--padding-box： 从padding区域（含padding）开始显示背景图像。 -->
+	<!--content-box： 从content区域开始显示背景图像。-->
+	<!--text:   从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果。-->
+<!--background-size： 指定背景图像尺寸。-->
+	<!--<length>： 用长度值指定背景图像大小。不允许负值。-->
+	<!--<percentage>： 用百分比指定背景图像大小。不允许负值。-->
+	<!--auto： 背景图像的真实大小。-->
+	<!--cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。-->
+	<!--contain： 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。-->
+<!--background-repeat： 指定背景图像如何填充。-->
+	<!--repeat-x： 背景图像在横向上平铺-->
+	<!--repeat-y： 背景图像在纵向上平铺-->
+	<!--repeat： 背景图像在横向和纵向平铺-->
+	<!--no-repeat： 背景图像不平铺 当背景图像不能以整数次平铺时，会根据情况缩放图像。（CSS3）-->
+	<!--round   当背景图像不能以整数次平铺时，会根据情况缩放图像。（CSS3）-->
+	<!--space： 当背景图像不能以整数次平铺时，会用空白间隙填充在图像周围。（CSS3）-->
+<!--background-attachment： 定义滚动时背景图像相对于谁固定。-->
+	<!--fixed： 背景图像相对于视口（viewport）固定。 -->
+	<!--scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。 -->
+	<!--local： 背景图像相对于元素内容固定，也就是说当元素随元素滚动时背景图像也会跟着滚动，因为背景图像总是要跟着内容。（CSS3）-->
+<!--background-origin： 指定背景图像从元素的哪个区域作为显示的原点。 -->
+	<!--border-box： 从border区域（含border）开始显示背景图像。 -->
+	<!--padding-box： 从padding区域（含padding）开始显示背景图像。 -->
+	<!--content-box： 从content区域开始显示背景图像。-->
+<!--background-color： 指定背景颜色。-->
+	<div class="border-box"></div>
+	<div class="border-box2"></div>
+	<div class="border-box-shadow"></div>
+	<div class="border-image-box"></div>
+	<div class="background-box"></div>
+	<p class="background-clip-box">
+		从前景内容的形状作为裁剪区域向外裁剪背景
+	</p>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+    <link href="./node_modules/hover.css/css/hover.css" rel="stylesheet">
+    <link href="./node_modules/hover.css/css/demo-page.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <div v-for="item in list" :key="item.hoverEnTitle">
+
+            <div class="group-title">{{item.hoverChTitle}}</div>
+            <span v-for="child in item.hoverComponentList" :key="child.hoverName" @click="hoverHandler(child.hoverName)"
+                  :class="child.hoverClassName">{{child.hoverName}}（{{child.hoverMean}}）</span>
+        </div>
+    </div>
+<script>
+    var list=[
+    {
+        hoverEnTitle:'2D Transitions',
+        hoverChTitle:'2D过渡',
+        hoverComponentList:[
+            {
+                hoverClassName:'hvr-grow',
+                hoverName:'Grow',
+                hoverMean:'放大'
+            },
+            {
+                hoverClassName:'hvr-shrink',
+                hoverName:'Shrink',
+                hoverMean:'缩小'
+            },
+            {
+                hoverClassName:'hvr-pulse',
+                hoverName:'Pulse',
+                hoverMean:'跳动'
+            },
+            {
+                hoverClassName:'hvr-pulse-grow',
+                hoverName:'Pulse Grow',
+                hoverMean:'放大跳动'
+            },
+            {
+                hoverClassName:'hvr-pulse-shrink',
+                hoverName:'Pulse Shrink',
+                hoverMean:'缩小跳动'
+            },
+            {
+                hoverClassName:'hvr-push',
+                hoverName:'Push',
+                hoverMean:'按下'
+            },
+            {
+                hoverClassName:'hvr-pop',
+                hoverName:'Pop',
+                hoverMean:'上浮'
+            },
+            {
+                hoverClassName:'hvr-bounce-in',
+                hoverName:'Bounce In',
+                hoverMean:'弹跳近'
+            },
+            {
+                hoverClassName:'hvr-bounce-out',
+                hoverName:'Bounce Out',
+                hoverMean:'弹跳出'
+            },
+            {
+                hoverClassName:'hvr-rotate',
+                hoverName:'Rotate',
+                hoverMean:'旋转'
+            },
+            {
+                hoverClassName:'hvr-grow-rotate',
+                hoverName:'Grow Rotate',
+                hoverMean:'放大旋转'
+            },
+            {
+                hoverClassName:'hvr-float',
+                hoverName:'Float',
+                hoverMean:'上浮'
+            },
+            {
+                hoverClassName:'hvr-sink',
+                hoverName:'Sink',
+                hoverMean:'下沉'
+            },
+            {
+                hoverClassName:'hvr-bob',
+                hoverName:'Bob',
+                hoverMean:'上下摆动'
+            },
+            {
+                hoverClassName:'hvr-hang',
+                hoverName:'Hang',
+                hoverMean:'下上摆动'
+            },
+            {
+                hoverClassName:'hvr-skew',
+                hoverName:'Skew',
+                hoverMean:'偏斜'
+            },
+            {
+                hoverClassName:'hvr-skew-forward',
+                hoverName:'Skew Forward',
+                hoverMean:'向前倾斜'
+            },
+            {
+                hoverClassName:'hvr-skew-backward',
+                hoverName:'Skew Backward',
+                hoverMean:'向后倾斜'
+            },
+            {
+                hoverClassName:'hvr-wobble-horizontal',
+                hoverName:'Wobble Horizontal',
+                hoverMean:'水平摇摆'
+            },
+            {
+                hoverClassName:'hvr-wobble-vertical',
+                hoverName:'Wobble Vertical',
+                hoverMean:'垂直摇摆'
+            },
+            {
+                hoverClassName:'hvr-wobble-to-bottom-right',
+                hoverName:'Wobble To Bottom Right',
+                hoverMean:'下右摇摆'
+            },
+            {
+                hoverClassName:'hvr-wobble-to-top-right',
+                hoverName:'Wobble To Top Right',
+                hoverMean:'上右摇摆'
+            },
+            {
+                hoverClassName:'hvr-wobble-top',
+                hoverName:'Wobble Top',
+                hoverMean:'上固定下摇摆'
+            },
+            {
+                hoverClassName:'hvr-wobble-bottom',
+                hoverName:'Wobble Bottom',
+                hoverMean:'下固定上摇摆'
+            },
+            {
+                hoverClassName:'hvr-wobble-skew',
+                hoverName:'Wobble Skew',
+                hoverMean:'水平轴固定左右摇摆'
+            },
+            {
+                hoverClassName:'hvr-buzz',
+                hoverName:'Buzz',
+                hoverMean:'一直嗡嗡移动'
+            },
+            {
+                hoverClassName:'hvr-buzz-out',
+                hoverName:'Buzz Out',
+                hoverMean:'嗡嗡移动'
+            },
+            {
+                hoverClassName:'hvr-forward',
+                hoverName:'Forward',
+                hoverMean:'向前'
+            },
+            {
+                hoverClassName:'hvr-backward',
+                hoverName:'Backward',
+                hoverMean:'向后'
+            },
+        ],
+    },
+    {
+        hoverEnTitle:'Background Transitions',
+        hoverChTitle:'背景过渡',
+        hoverComponentList:[
+            {
+                hoverClassName:'hvr-fade',
+                hoverName:'Fade',
+                hoverMean:'褪色'
+            },
+            {
+                hoverClassName:'hvr-back-pulse',
+                hoverName:'反脉冲',
+                hoverMean:'缩小'
+            },
+            {
+                hoverClassName:'hvr-sweep-to-right',
+                hoverName:'Sweep To Right',
+                hoverMean:'从左到右扫描'
+            },
+            {
+                hoverClassName:'hvr-sweep-to-left',
+                hoverName:'Sweep To Left',
+                hoverMean:'从右到左扫描'
+            },
+            {
+                hoverClassName:'hvr-sweep-to-bottom',
+                hoverName:'Sweep To Bottom',
+                hoverMean:'从上到下扫描'
+            },
+            {
+                hoverClassName:'hvr-sweep-to-top',
+                hoverName:'Sweep To Top',
+                hoverMean:'从下到上扫描'
+            },
+            {
+                hoverClassName:'hvr-bounce-to-right',
+                hoverName:'Bounce To Right',
+                hoverMean:'从左到右弹跳'
+            },
+            {
+                hoverClassName:'hvr-bounce-to-left',
+                hoverName:'Bounce To Left',
+                hoverMean:'从右到左弹跳'
+            },
+            {
+                hoverClassName:'hvr-bounce-to-bottom',
+                hoverName:'Bounce To Bottom',
+                hoverMean:'从上到下弹跳'
+            },
+            {
+                hoverClassName:'hvr-bounce-to-top',
+                hoverName:'Bounce To Top',
+                hoverMean:'从下到上弹跳'
+            },
+            {
+                hoverClassName:'hvr-radial-out',
+                hoverName:'Radial Out',
+                hoverMean:'径向的向外扩展'
+            },
+            {
+                hoverClassName:'hvr-radial-in',
+                hoverName:'Radial In',
+                hoverMean:'径向的向内扩展'
+            },
+            {
+                hoverClassName:'hvr-rectangle-in',
+                hoverName:'Rectangle In',
+                hoverMean:'矩形向内'
+            },
+            {
+                hoverClassName:'hvr-rectangle-out',
+                hoverName:'Rectangle Out',
+                hoverMean:'矩形向外'
+            },
+            {
+                hoverClassName:'hvr-shutter-in-horizontal',
+                hoverName:'Shutter In Horizontal',
+                hoverMean:'横向关门'
+            },
+            {
+                hoverClassName:'hvr-shutter-out-horizontal',
+                hoverName:'Shutter Out Horizontal',
+                hoverMean:'横向开门'
+            },
+            {
+                hoverClassName:'hvr-shutter-in-vertical',
+                hoverName:'Shutter In Vertical',
+                hoverMean:'纵向关门'
+            },
+            {
+                hoverClassName:'hvr-shutter-out-vertical',
+                hoverName:'Shutter Out Vertical',
+                hoverMean:'纵向开门'
+            },
+        ],
+},
+]
+    var vue = new Vue({
+        el: '#app',
+        data: {
+            list,
+            hoverClass: 'active',
+        },
+        methods:{
+            hoverHandler(className){
+                this.hoverClass = 'hover__'+className
+            }
+        }
+    })
+</script>
+</body>
+</html>

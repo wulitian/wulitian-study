@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wulitian</title>
+	<script type="text/javascript" src="../js/jquery-2.0.0.min.js"></script>
+	<!--[if lt IE 9]>
+	<script src="http://www.jq22.com/jquery/jquery-1.9.1.js"></script>
+	<![endif]-->
+    <script type="text/javascript" src="../js/echarts.min.js"></script>
+  <style>
+    body,html{
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body style="height: 100%;width: 100%">
+<div id="main" style="width: 100%;height: 100%;"></div>
+<script>
+  var myChart = echarts.init(document.getElementById('main'));
+  var option = {
+      legend: {
+          orient: "vertical",
+          left: "left",
+          data: ["Apple", "Grapes", "Pineapples", "Oranges", "Bananas"]
+      },
+      series: [{
+          //图类型
+          type: "pie",
+          //是否启用图例 hover 时的联动高亮。
+          legendHoverLink: true,
+          // 是否开启 hover 在扇区上的放大动画效果。
+          hoverAnimation: true,
+          // 高亮扇区的偏移距离。
+          hoverOffset: 10,
+          //选中模式，表示是否支持多个选中，默认关闭，支持布尔值和字符串
+          //false,true,single,multiple
+          selectedMode: true,
+          //选中扇区偏移量
+          selectedOffset: 10,
+          //饼图的扇区是否是顺时针排布。
+          clockwise: true,
+          //其实展示饼图角度
+          startAngle: 90,
+          //最小扇区角度
+          minAngle: 3,
+          //是否展示成南丁格尔图，通过半径区分数据大小
+          //'radius'，'area'
+          // roseType: "radius",
+          //避免标签重叠策略
+          avoidLabelOverlap: false,
+          //在数据为0时不显示扇区
+          stillShowZeroSum:false,
+          //鼠标悬浮式的样式
+          //auto pointer move
+          cursor: "pointer",
+          //组件离容器左侧的距离。
+          left: "0%",
+          //组件离容器上侧的距离。
+          top: "0%",
+          //组件离容器右侧的距离。
+          right: "0%",
+          //组件离容器下侧的距离。
+          bottom: "0%",
+          //组件宽度
+          width:'auto',
+          //组件高度
+          height: 'auto',
+          //饼图的中心（圆心）坐标，数组的第一项是横坐标，第二项是纵坐标。
+          center: ["50%", "50%"],
+          //内外半径
+          radius: ["20%", "50%"],
+          //是否不响应和触发鼠标事件
+          silent: false     ,
+          //初始化动画效果
+          //默认false，scale,expansion
+          animationType: false,
+          // 更新数据时的动画效果，可选：
+          // 'transition' 通过改变起始和终止角度，从之前的数据过渡到新的数据。
+          // 'expansion' 数据将整体重新沿圆弧展开。
+          animationTypeUpdate: "expansion",
+          //是否开启动画
+          animation:true,
+          //初始化动画时长
+          animationDuration: 1000,
+          //初始化动画缓动效果linear，quadraticIn，quadraticOut，quadraticInOut，cubicIn，cubicOut，cubicInOut，quarticIn，quarticOut，quarticInOut，quinticIn，quinticOut，quinticInOut，sinusoidalIn，sinusoidalOut，sinusoidalInOut，exponentialIn，exponentialOut，exponentialInOut，circularIn，circularOut，circularInOut，elasticIn，elasticOut，elasticInOut，backIn，backOut，backInOut，bounceIn，bounceOut，bounceInOut
+          animationEasing: "quinticInOut",
+          //初始化动画延迟
+          animationDelay:0,
+          //更新动画时长
+          animationDurationUpdate: 1000,
+          //更新动画缓动效果linear，quadraticIn，quadraticOut，quadraticInOut，cubicIn，cubicOut，cubicInOut，quarticIn，quarticOut，quarticInOut，quinticIn，quinticOut，quinticInOut，sinusoidalIn，sinusoidalOut，sinusoidalInOut，exponentialIn，exponentialOut，exponentialInOut，circularIn，circularOut，circularInOut，elasticIn，elasticOut，elasticInOut，backIn，backOut，backInOut，bounceIn，bounceOut，bounceInOut
+          animationEasingUpdate: "quinticInOut",
+          //更新动画延迟
+          animationDelayUpdate:0,
+          // 文本标签
+          label: {
+              // 是否显示
+              show:true,
+              // 位置'outside' 饼图扇区外侧，通过视觉引导线连到相应的扇区。'inside'饼图扇区内部。'inner' 同 'inside'。'center'
+              position:'outside',
+              // 是否旋转：如果为 true，则为径向排布。如果为 number ，旋转指定角度，从 -90 度到 90 度。正值是逆时针。
+              rotate:false,
+              // 文本标签颜色
+              // color: "#000000",
+              // 文字风格'normal''italic''oblique'
+              fontStyle: "normal",
+              // 文字字体的粗细。'normal'bold''bolder''lighter'100 | 200 | 300 | 400|...
+              fontWeight:'normal',
+              // 文字的字体系列。还可以是 'serif' , 'monospace', 'Arial', 'Courier New', 'Microsoft YaHei', ...
+              fontFamily: "serif",
+              // 文本大小
+              fontSize: 12,
+              // 文字水平对齐方式'left''center''right'
+              align: "left",
+              // 文字垂直对齐方式'top''middle''bottom'
+              verticalAlign: "middle",
+              // 行高
+              lineHeight: 20,
+              // 文字块背景颜色
+              backgroundColor:'transparent',
+              // 文字块边框颜色
+              borderColor:'transparent',
+              //文字块边框宽度
+              borderWidth:0,
+              //文字块的圆角。
+              borderRadius:0,
+              //文字块的内边距
+              padding:0,
+              //文字块的背景阴影颜色
+              shadowColor:'transparent',
+              //文字块的背景阴影长度
+              shadowBlur:0,
+              //文字块的背景阴影 X 偏移
+              shadowOffsetX:0,
+              //文字块的背景阴影 Y 偏移
+              shadowOffsetY:0,
+              //文字块的宽度
+              width:'auto',
+              //文字块的高度
+              height:'auto',
+              //文字本身的描边颜色
+              textBorderColor:'transparent',
+              // 文字本身的描边宽度。
+              textBorderWidth:'0',
+              // 文字本身的阴影颜色。
+              textShadowColor:'transparent',
+              // 文字本身的阴影长度。
+              textShadowBlur:'0',
+              // 文字本身的阴影 X 偏移。
+              textShadowOffsetX:'0',
+              // 文字本身的阴影 Y 偏移。
+              textShadowOffsetY:'0',
+              // 标签的对齐方式'none'（默认值）：label line 的长度为固定值，分别为 labelLine.length 及 labelLine.length2。'labelLine'：label line 的末端对齐，其中最短的长度由 labelLine.length2 决定。'edge'：文字对齐，文字的边距由 label.margin 决定。
+              alignTo:'none',
+              // 文字边距
+              margin:'25%',
+              // 文字的出血线大小
+              bleedMargin:10,
+              // 文字与 label line 之间的距离
+              distanceToLabelLine:5,
+          },
+          data: [{
+              value: 335,
+              name: "Apple"
+          }, {
+              value: 310,
+              name: "Grapes"
+          }, {
+              value: 234,
+              name: "Pineapples"
+          }, {
+              value: 135,
+              name: "Oranges"
+          }, {
+              value: 1548,
+              name: "Bananas"
+          }]
+      }]
+  }
+  myChart.setOption(option);
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>computed</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{sum}}
+        <div v-html="sum='20 30'"></div>
+    </div>
+<script>
+    // 计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+    // 注意如果你为一个计算属性使用了箭头函数，则 this 不会指向这个组件的实例，不过你仍然可以将其实例作为函数的第一个参数来访问。
+    // 计算属性默认只有 getter，不过在需要时你也可以提供一个 setter：
+    var app = new Vue({
+        el:'#app',
+        data:{
+            a:10,
+            b:20
+        },
+        computed:{
+            sum:{
+                // getter
+                get: function () {
+                    return this.a + ' ' + this.b
+                },
+                // setter
+                set: function (newValue) {
+                    var names = newValue.split(' ')
+                    this.a = names[0]
+                    this.b = names[names.length - 1]
+                }
+            },
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>

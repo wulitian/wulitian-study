@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<ul id="ul">
+    <li>node</li>
+    <li>node</li>
+    <li>node</li>
+    <li>node</li>
+    <li>node</li>
+</ul>
+<script>
+    // 方法一
+    let ele = document.getElementsByTagName("li");
+    for (let i = 0; i < ele.length; i++) {
+        ele.item(i).parentNode.removeChild(ele.item(i))
+        i--
+    }
+
+    // 方法二
+    while (ele[0]) {
+        ele[0].parentNode.removeChild(ele[0]);
+    }
+</script>
+</body>
+</html>

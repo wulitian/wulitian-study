@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+
+    Function.prototype.myCall = function(context){
+        const ctx = context||window;
+        ctx.fn = this
+        let args = Array.from(arguments).slice(1);
+        const res = arguments.length>1?ctx.fn(...args):ctx.fn();
+        delete ctx.fn
+        return res;
+    }
+    function add(a,b){
+        console.log(this,a+b)
+    }
+    add.call(null,1,1)
+    add.myCall(null,1,1)
+
+
+</script>
+</body>
+</html>

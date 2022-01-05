@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="./js/prop-types.js"></script>
+<script type="text/javascript" src="./js/babel.min.js"></script>
+<script type="text/babel">
+    //props验证
+    class MyCom extends React.Component{
+        render(){
+            return (
+                <div>{this.props.name}----{this.props.sex}</div>
+            )
+        }
+    }
+    function MyCom2(props){
+        return <div>{props.name}----{props.sex}</div>
+    }
+    MyCom2.propTypes = {
+        name:PropTypes.string
+    }
+    let com = <MyCom2 name="张三"/>
+    ReactDOM.render(com, document.getElementById('root'))
+</script>
+</body>
+</html>

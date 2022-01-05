@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>三选开关</title>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+	<style>
+		.select-group{
+			display: inline-block;
+			width: 120px;
+			height: 40px;
+			font-size: 0;
+			overflow: hidden;
+			border-radius: 100px;
+			/*background: #FFFFFF;
+		    border: 1px solid rgb(223, 223, 223);
+	    	box-shadow: rgb(223, 223, 223) 0px 0px 0px 0px inset;*/
+    	    background: rgb(109, 158, 235);
+    		box-shadow: rgb(109, 158, 235) 0px 0px 0px 16px inset;
+    		padding: 4px;
+		}
+		.active{
+			color:#000!important;
+			background: #fff;
+		    border-radius: 100px;
+	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	        font-weight: 700;
+		}
+		.select{
+			color: #FFFFFF;
+		    border-radius: 100px;
+		    height: 40px;
+		    width: 40px;
+		    display: inline-block;
+		    cursor: pointer;
+		    font-size: 13px;
+		    line-height: 40px;
+		    text-align: center;
+		    vertical-align: middle;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="select-group">
+			<div class="select" onclick="select(this,1)">开</div>
+			<div class="select active" onclick="select(this,2)">无</div>
+			<div class="select" onclick="select(this,3)">关</div>
+		</div>
+	</body>
+	<script>
+		function select(e,index){
+			if(index==1){
+				alert("1如何处理");
+			}else if(index==2){
+				alert("2如何处理");
+			}else{
+				alert("3如何处理");
+			}
+			$(e).addClass("active").siblings("div").removeClass("active")
+		}
+	</script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>css3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+	</head>
+	<style>
+		/*最佳解决方案
+		 * 解决display之间的缝隙设置父元素display:table;兼容其他浏览器word-spacing:-1em;
+		 * */
+		.boxGroup{
+			margin-top: 200px;
+			position:relative;
+			word-spacing:-1em; /*兼容其他浏览器，题主还未验证*/
+			height: 100px;
+			perspective: none;
+			perspective-origin: center;
+			transform-style: preserve-3d;
+			transform: rotateX(30deg) rotateY(30deg);
+			-webkit-transform: rotateX(30deg) rotateY(30deg);
+			-moz-transform: rotateX(30deg) rotateY(30deg);
+			-moz-user-select:none; /* Firefox私有属性 */
+			/*不可选中*/
+			-webkit-user-select:none; /* WebKit内核私有属性 */
+			-ms-user-select:none; /* IE私有属性(IE10及以后) */
+			-khtml-user-select:none; /* KHTML内核私有属性 */
+			-o-user-select:none; /* Opera私有属性 */
+			user-select:none; /* CSS3属性 */
+
+		}
+		.box1,.box2,.box3,.box4,.box5,.box6{
+			text-align: center;
+			line-height: 100px;
+			color: #FFF1F0;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			opacity: .5;
+
+		}
+		.box1{
+			background: red;
+			transform: translateZ(200px);
+			-webkit-transform: translateZ(200px);
+			-moz-transform: translateZ(200px);
+		}
+		.box2{
+			background: green;
+			transform: translateZ(0);
+			-webkit-transform: translateZ(0);
+			-moz-transform: translateZ(0);
+		}
+		.box3{
+			background: yellow;
+			transform: translateX(-100px) translateZ(100px) rotateY(-90deg);
+			-webkit-transform: translateX(-100px) translateZ(100px) rotateY(-90deg);
+			-moz-transform: translateX(-100px) translateZ(100px) rotateY(-90deg);
+		}
+		.box4{
+			background: #005599;
+			transform: translateX(100px) translateZ(100px) rotateY(90deg);
+			-webkit-transform: translateX(100px) translateZ(100px) rotateY(90deg);
+			-moz-transform: translateX(100px) translateZ(100px) rotateY(90deg);
+		}
+		.box5{
+			background: #00FF00;
+			transform: translateY(-100px) translateZ(100px) rotateX(90deg);
+			-webkit-transform: translateY(-100px) translateZ(100px) rotateX(90deg);
+			-moz-transform: translateY(-100px) translateZ(100px) rotateX(90deg);
+		}
+		.box6{
+			background: #00A8E6;
+			transform: translateY(100px) translateZ(100px) rotateX(-90deg);
+			-webkit-transform: translateY(100px) translateZ(100px) rotateX(-90deg);
+			-moz-transform: translateY(100px) translateZ(100px) rotateX(-90deg);
+		}
+	</style>
+
+	<body style="padding: 100px;">
+
+		<div class="boxGroup" id="box">
+			<div class="box1">1</div>
+			<div class="box2">2</div>
+			<div class="box3">3</div>
+			<div class="box4">4</div>
+			<div class="box5">5</div>
+			<div class="box6">6</div>
+		</div>
+
+		<script>
+		</script>
+	</body>
+
+</html>

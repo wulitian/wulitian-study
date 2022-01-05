@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // 手写bind，bind自身存在闭包
+    Function.prototype.myBind = function(context){
+        const ctx = context||window;
+        ctx.fn = this;
+        let args = Array.from(arguments).slice(1);
+        return  function(){
+            let argsAll = args.concat(arguments)
+            return argsAll.length>0?ctx.fn(...argsAll):ctx.fn();
+        };
+    }
+    a = 10
+    const obj = {
+        a:1,
+        b:2
+    }
+    function add(a,b){
+        console.log(this,a+b)
+    }
+    add.bind(obj,1,1)()
+    add.myBind(obj,1,1)()
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$watch</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div>
+            {{text}}
+            {{aaa}}
+        </div>
+    </div>
+
+<script>
+    // 观察 Vue 实例上的一个表达式或者一个函数计算结果的变化。回调函数得到的参数为新值和旧值。表达式只接受简单的键路径。对于更复杂的表达式，用一个函数取代。
+    // 注意：在变更 (不是替换) 对象或数组时，旧值将与新值相同，因为它们的引用指向同一个对象/数组。Vue 不会保留变更之前值的副本。
+    // vm.$watch 返回一个取消观察函数，用来停止触发回调：
+    // var unwatch = vm.$watch('a', cb)
+    // 之后取消观察
+    // unwatch()
+    // 选项：deep为了发现对象内部值的变化，可以在选项参数中指定 deep: true。注意监听数组的变更不需要这么做。
+    // 选项：immediate在选项参数中指定 immediate: true 将立即以表达式的当前值触发回调：
+    // 如果你仍然希望在回调内部调用一个取消侦听的函数，你应该先检查其函数的可用性：
+    var vm = new Vue({
+        el:"#app",
+        data:{
+            text:"132  456",
+            aaa:"555"
+        }
+    });
+    var unwatch = vm.$watch('text',function(val){
+        console.log(val)
+        vm.$data.aaa=val;
+        // 之后取消观察
+        if (unwatch) {
+            unwatch()
+        }
+    })
+
+
+</script>
+</body>
+</html>

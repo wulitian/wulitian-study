@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<input type="radio" name="a"/>
+<input type="radio" name="a"/>
+<input type="radio" name="a"/>
+<input type="radio" name="a"/>
+<script>
+    var oInputs = document.getElementsByTagName('input');
+    for (let index = 0; index < oInputs.length; index++) {
+        (function (index) {
+            oInputs[index].onclick = function () {
+                alert(index + 1)
+            }
+        })(index)
+    }
+</script>
+</body>
+</html>

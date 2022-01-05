@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <script src="../js/echarts.min.js"></script>
+    <script src="../js/jquery-2.0.0.min.js"></script>
+</head>
+<body>
+<div id="main" style="width: 600px;height:400px;"></div>
+
+
+
+
+<script type="text/javascript">
+    var myChart = echarts.init(document.getElementById('main'));
+    var option = {
+        title: {
+            id:'001',//组件 ID。默认不指定。指定则可用于在 option 或者 API 中引用组件。
+            show: true,//是否显示标题组件。
+            text: '标题文本',//主标题文本，支持使用 \n 换行。
+            link:'http://www.baidu.com',//主标题文本超链接。
+            target:'blank',//指定窗口打开主标题超链接。可选：'self' 当前窗口打开'blank' 新窗口打开
+            subtext:'父标题文本',//副标题文本，支持使用 \n 换行。
+            sublink:'http://www.baidu.com',//副标题文本超链接。
+            subtarget:'blank',//指定窗口打开副标题超链接。可选：'self' 当前窗口打开'blank' 新窗口打开
+            textAlign:'auto',//整体（包括 text 和 subtext）的水平对齐。可选值：'auto'、'left'、'right'、'center'。
+            triggerEvent:false,//是否触发事件。
+            padding:[100, 100], //标题内边距，单位px，默认各方向内边距为5，接受数组分别设定上右下左边距。
+            itemGap:20,//主副标题之间的间距。
+            zlevel:20,//所有图形的 zlevel 值。用于 Canvas 分层，不同zlevel值的图形会放置在不同的 Canvas 中，Canvas 分层是一种常见的优化手段。我们可以把一些图形变化频繁（例如有动画）的组件设置成一个单独的zlevel。需要注意的是过多的 Canvas 会引起内存开销的增大，在手机端上需要谨慎使用以防崩溃。
+            z:20,//组件的所有图形的z值。控制图形的前后顺序。z值小的图形会被z值大的图形覆盖。z相比zlevel优先级更低，而且不会创建新的 Canvas。
+            left:10,//title 组件离容器左侧的距离。left 的值可以是像 20 这样的具体像素值，可以是像 '20%' 这样相对于容器高宽的百分比，也可以是 'left', 'center', 'right'。如果 left 的值为'left', 'center', 'right'，组件会根据相应的位置自动对齐。
+            right:10,//
+            top:10,//
+            bottom:10,//
+            backgroundColor:'#ff0000',//标题的边框颜色。支持的颜色格式同 backgroundColor。
+            borderWidth:20,//
+            borderColor:'#ff00ff',//
+            borderRadius:[5, 5, 0, 0],//
+            shadowColor:"#888888",//阴影颜色。
+            shadowBlur:10,//图形阴影的模糊大小。该属性配合 shadowColor,shadowOffsetX, shadowOffsetY 一起设置图形的阴影效果。
+            shadowOffsetX:10,//阴影水平方向上的偏移距离
+            shadowOffsetY:10,//阴影垂直方向上的偏移距离
+            textStyle:{//文本样式
+                color:'#333',//颜色
+                fontStyle:'normal',//文本字体风格
+                fontWeight:'normal',//主标题文字字体的粗细。
+                fontFamily:'sans-serif',//主标题文字的字体系列。
+                fontSize:18,//主标题文字的字体大小。
+                lineHeight:20,//行高。
+                width:20,//内容宽
+                height:20,//内容高
+                textBorderWidth:20,//文字本身的描边宽度。
+                textBorderColor:'transparent',//文字本身的描边颜色。
+                textShadowOffsetX:20,//文字本身的阴影 X 偏移。
+                textShadowOffsetY:20,//文字本身的阴影 Y 偏移。
+                textShadowBlur:20,//文字本身的阴影 X 偏移。
+                textShadowColor:"#ffff00",//文字本身的阴影颜色。
+            },
+            subtextStyle:{//文本样式
+                color:'#333',//颜色
+                fontStyle:'normal',//文本字体风格
+                fontWeight:'normal',//主标题文字字体的粗细。
+                fontFamily:'sans-serif',//主标题文字的字体系列。
+                fontSize:16,//主标题文字的字体大小。
+                lineHeight:20,//行高。
+                width:20,//内容宽
+                height:20,//内容高
+                textBorderWidth:20,//文字本身的描边宽度。
+                textBorderColor:'transparent',//文字本身的描边颜色。
+                textShadowOffsetX:20,//文字本身的阴影 X 偏移。
+                textShadowOffsetY:20,//文字本身的阴影 Y 偏移。
+                textShadowBlur:20,//文字本身的阴影 X 偏移。
+                textShadowColor:"#ffff00",//文字本身的阴影颜色。
+            },
+
+        },
+
+    };
+    myChart.setOption(option);
+</script>
+</body>
+</html>

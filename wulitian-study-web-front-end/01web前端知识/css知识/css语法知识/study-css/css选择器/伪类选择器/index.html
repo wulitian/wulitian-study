@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		a:link {
+			color: #03c;
+		}
+		a:visited {
+			color: #f00;
+		}
+		a:hover {
+			color: green;
+		}
+		a:active {
+			color: yellow;
+		}
+		p:lang(zh-cmn-Hans){
+			color: red;
+		}
+		p:lang(en){
+			color: blue;
+		}
+		li:not(:last-child) {
+			border-bottom: 1px solid #ddd;
+		}
+		html:root {
+			color: purple\0;
+		}
+		li:first-child{
+			background: #00a4ff;
+		}
+		li:last-child{
+			background: #00a4ff;
+		}
+		li:only-child{
+			background: #00a4ff;
+		}
+		ul.nth>li:nth-child(2n){
+			color: #00D672;
+		}
+		.nth-of-type p:nth-of-type(1){
+			background: #00D672;
+		}
+		.nth-of-type p:nth-last-of-type(1){
+			background: red;
+		}
+		.nth-of-type p:empty{
+			height: 30px;
+			background: yellow;
+		}
+		input:checked + span {
+			background: #f00;
+		}
+		input:checked + span:after {
+			content: " 我被选中了";
+		}
+		input[type="text"]:disabled {
+			border: 1px solid #ccc;
+			background: #eee;
+			color: #ccc;
+		}
+		.nav a{display:block;margin: 10px 0;}
+		.bd .panel{width:500px;margin-top:5px;border:1px solid #ddd;}
+		.bd h2{border-bottom:1px solid #ddd;}
+		.bd .panel:target{border-color:#f60;}
+		.bd .panel:target h2{border-color:#f60;}
+	</style>
+</head>
+<body>
+<ul>
+	<li><a href="http://www.baidu.com" target="_blank">外部链接</a></li>
+	<li><a href="http://www.baidu.com" target="_blank">内部链接</a></li>
+	<li><a href="http://www.baidu.com" target="_blank">外部链接</a></li>
+	<li><a href="http://www.baidu.com" target="_blank">内部链接</a></li>
+</ul>
+<ul>
+	<li>结构性伪类选择符 E:only-child</li>
+</ul>
+<ul class="nth">
+	<li>列表项一</li>
+	<li>列表项二</li>
+	<li>列表项三</li>
+	<li>列表项四</li>
+</ul>
+<p lang="zh-cmn-Hans">大段测试文字</p>
+<p lang="en">english</p>
+<div class="nth-of-type">
+	<div>123</div>
+	<p>123</p>
+	<div>123</div>
+	<p></p>
+	<p>123</p>
+	<div>123</div>
+	<div>123</div>
+</div>
+<fieldset>
+	<legend>选中下面的项试试</legend>
+	<ul>
+		<li><label><input type="radio" name="colour-group" value="0" /><span>蓝色</span></label></li>
+		<li><label><input type="radio" name="colour-group" value="1" /><span>红色</span></label></li>
+		<li><label><input type="radio" name="colour-group" value="2" /><span>黑色</span></label></li>
+	</ul>
+</fieldset>
+<fieldset>
+	<legend>E:enabled与E:disabled</legend>
+	<ul>
+		<li><input type="text" value="可用状态" /></li>
+		<li><input type="text" value="可用状态" /></li>
+		<li><input type="text" value="禁用状态" disabled="disabled" /></li>
+		<li><input type="text" value="禁用状态" disabled="disabled" /></li>
+	</ul>
+</fieldset>
+<div>
+	<a href="#panel1">前往区块1</a>
+	<a href="#panel2">前往区块2</a>
+	<a href="#panel3">前往区块3</a>
+	<a href="#panel4">前往区块4</a>
+	<a href="#panel5">前往区块5</a>
+</div>
+<div class="bd">
+	<div id="panel1" class="panel">
+		<h2>区块1</h2>
+		<div><p>区块1内容</p><p>区块1内容</p><p>区块1内容</p></div>
+	</div>
+	<div id="panel2" class="panel">
+		<h2>区块2</h2>
+		<div><p>区块2内容</p><p>区块2内容</p><p>区块2内容</p></div>
+	</div>
+	<div id="panel3" class="panel">
+		<h2>区块3</h2>
+		<div><p>区块3内容</p><p>区块3内容</p><p>区块3内容</p></div>
+	</div>
+	<div id="panel4" class="panel">
+		<h2>区块4</h2>
+		<div><p>区块4内容</p><p>区块4内容</p><p>区块4内容</p></div>
+	</div>
+	<div id="panel5" class="panel">
+		<h2>区块5</h2>
+		<div><p>区块5内容</p><p>区块5内容</p><p>区块5内容</p></div>
+	</div>
+</div>
+</body>
+</html>

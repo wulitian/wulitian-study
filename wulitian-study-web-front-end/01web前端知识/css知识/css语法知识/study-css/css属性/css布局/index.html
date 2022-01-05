@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		.none-box{background: #dedede;height: 200px;display: none;margin-top: 10px;}
+		.inline-box{background: #dedede;height: 200px;display: inline;margin-top: 10px;}
+		.block-box{margin-top: 10px;background: #dedede;height: 200px;display: block;}
+		.list-item-box{margin-top: 10px;background: #dedede;display: list-item;list-style-type: decimal-leading-zero;}
+		.table{display:table;border-collapse:collapse;border:1px solid #ccc;}
+		.table-caption{display:table-caption;margin:0;padding:0;font-size:16px;}
+		.table-column-group{display:table-column-group;}
+		.table-column{display:table-column;width:100px;}
+		.table-row-group{display:table-row-group;}
+		.table-row{display:table-row;}
+		.table-row-group .table-row:hover,.table-footer-group .table-row:hover{background:#f6f6f6;}
+		.table-cell{display:table-cell;padding:0 5px;border:1px solid #ccc;}
+		.table-header-group{display:table-header-group;background:#eee;font-weight:bold;}
+		.table-footer-group{display:table-footer-group;}
+		.flex-box{display:flex;background: blue;flex-wrap: wrap;flex-direction: row;height:100px;justify-content:center;align-items: center;align-content: space-around}
+		.flex-item-box{background: red;width: 100px;}
+		.box1,.box2,.box3,.box4,.box5,.box6,.box7,.box8,.box9{flex-grow:1}
+		.box1{order:2;flex-shrink:1;flex-basis:200px}
+	</style>
+</head>
+<body>
+<!--display:none | inline | block | list-item | inline-block | table | inline-table | table-caption | table-cell | table-row | table-row-group | table-column | table-column-group | table-footer-group | table-header-group | run-in | box | inline-box | flexbox | inline-flexbox | flex | inline-flex-->
+<!--none： 隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间-->
+<!--inline： 指定对象为内联元素。-->
+<!--block： 指定对象为块元素。-->
+<!--list-item： 指定对象为列表项目。-->
+<!--inline-block： 指定对象为内联块元素。（CSS2）-->
+<!--table： 指定对象作为块元素级的表格。类同于html标签<table>（CSS2）-->
+<!--inline-table： 指定对象作为内联元素级的表格。类同于html标签<table>（CSS2）-->
+<!--table-caption： 指定对象作为表格标题。类同于html标签<caption>（CSS2）-->
+<!--table-cell： 指定对象作为表格单元格。类同于html标签<td>（CSS2）-->
+<!--table-row： 指定对象作为表格行。类同于html标签<tr>（CSS2）-->
+<!--table-row-group： 指定对象作为表格行组。类同于html标签<tbody>（CSS2）-->
+<!--table-column： 指定对象作为表格列。类同于html标签<col>（CSS2）-->
+<!--table-column-group： 指定对象作为表格列组显示。类同于html标签<colgroup>（CSS2）-->
+<!--table-header-group： 指定对象作为表格标题组。类同于html标签<thead>（CSS2）-->
+<!--table-footer-group： 指定对象作为表格脚注组。类同于html标签<tfoot>（CSS2）-->
+<!--run-in： 根据上下文决定对象是内联对象还是块级对象。（CSS3）-->
+<!--box： 将对象作为弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）-->
+<!--inline-box： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）（CSS3）-->
+<!--flexbox： 将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）-->
+<!--inline-flexbox： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）（CSS3）-->
+<!--flex： 将对象作为弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）-->
+<!--inline-flex： 将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）（CSS3）-->
+
+<!--Flex的使用-->
+<!--任何容器都可以flex布局。Flex容器的所有子元素也自动成为容器的成员，成为Flex项目。Flex容器默认存在2根轴线（水平主轴和垂直交叉轴）,布局就是根据这2根轴来排列项目显示的。-->
+<!--块级元素：display:flex;-->
+<!--内联元素：display:inlne-flex;-->
+<!--使用了flex布局后，项目的float、clear、vertical-align都将失去效果。-->
+
+<!--Flex容器属性-->
+<!--flex-direction (元素排列方向)-->
+<!--row, row-reverse, column, column-reverse-->
+
+<!--flex-wrap (换行)-->
+<!--nowrap, wrap, wrap-reverse-->
+
+<!--flex-flow (以上两者的简写)-->
+<!--flex-direction || flex-wrap-->
+
+<!--justify-content (水平对齐方式)-->
+<!--flex-start, flex-end, center, space-between, space-around-->
+
+<!--align-items (垂直对齐方式)-->
+<!--stretch, flex-start, flex-end, center, baseline-->
+
+<!--align-content (多行垂直对齐方式)-->
+<!--stretch, flex-start, flex-end, center, space-between, space-around-->
+
+
+<!--Flex项目属性-->
+<!--order　　项目的排列顺序。数值越小，排列越靠前，默认为0。-->
+
+<!--flex-grow　　项目的放大比例，默认为0，即如果存在剩余空间，也不放大。-->
+
+<!--flex-shrink　　项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。-->
+
+<!--flex-basis　　在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。-->
+
+<!--flex　　是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。-->
+
+<!--align-self　　允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。-->
+
+<div class="none-box"></div>
+<div class="inline-box">块元素设置为display:inline变为元素元素（内联元素设置宽度不生效）</div>
+<span class="block-box">内联元素设置为display:block变为块元素（块级元素设置宽度生效）</span>
+<div class="list-item-box"><li>指定对象为列表项目</li><li>指定对象为列表项目</li><li>指定对象为列表项目</li></div>
+<div class="table">
+	<h2 class="table-caption">花名册：</h2>
+	<div class="table-column-group">
+		<div class="table-column"></div>
+		<div class="table-column"></div>
+		<div class="table-column"></div>
+	</div>
+	<div class="table-header-group">
+		<ul class="table-row">
+			<li class="table-cell">序号</li>
+			<li class="table-cell">姓名</li>
+			<li class="table-cell">年龄</li>
+		</ul>
+	</div>
+	<div class="table-footer-group">
+		<ul class="table-row">
+			<li class="table-cell">footer</li>
+			<li class="table-cell">footer</li>
+			<li class="table-cell">footer</li>
+		</ul>
+	</div>
+	<div class="table-row-group">
+		<ul class="table-row">
+			<li class="table-cell">1</li>
+			<li class="table-cell">John</li>
+			<li class="table-cell">19</li>
+		</ul>
+		<ul class="table-row">
+			<li class="table-cell">2</li>
+			<li class="table-cell">Mark</li>
+			<li class="table-cell">21</li>
+		</ul>
+		<ul class="table-row">
+			<li class="table-cell">3</li>
+			<li class="table-cell">Kate</li>
+			<li class="table-cell">26</li>
+		</ul>
+	</div>
+</div>
+<div class="flex-box">
+	<div class="flex-item-box box1">flex-box1</div>
+	<div class="flex-item-box box2">flex-box2</div>
+	<div class="flex-item-box box3">flex-box3</div>
+	<div class="flex-item-box box4">flex-box4</div>
+	<div class="flex-item-box box5">flex-box5</div>
+	<div class="flex-item-box box6">flex-box6</div>
+	<div class="flex-item-box box7">flex-box7</div>
+	<div class="flex-item-box box8">flex-box8</div>
+	<div class="flex-item-box box9">flex-box9</div>
+</div>
+
+
+
+
+</body>
+<script>
+
+</script>
+</html>

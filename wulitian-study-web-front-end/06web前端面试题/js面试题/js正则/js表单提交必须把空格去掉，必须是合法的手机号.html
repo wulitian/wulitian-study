@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<form action="" id="form1" method="get">
+    电话号码：<input type="text" value="输入电话号码" id="mobi" name=""/>
+    <input type="submit" name=""/>
+</form>
+<script>
+    // js表单提交必须把空格去掉，必须是合法的手机号
+    let form1 = document.getElementById('form1');
+    form1.onsubmit = function () {
+        let mobi = document.getElementById('mobi');
+        let reg = /^1\d{10}$/;
+        if (reg.test(mobi.value.replace(/ /g, ''))) {
+            console.log('ok');
+        } else {
+            console.log('error');
+            return false;
+        }
+    }
+
+</script>
+</body>
+</html>

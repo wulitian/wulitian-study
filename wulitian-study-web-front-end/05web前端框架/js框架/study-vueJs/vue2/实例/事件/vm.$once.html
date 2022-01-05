@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$once</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="$emit('test','123456')">vm.$on</button>
+    </div>
+
+<script>
+    // 监听一个自定义事件，但是只触发一次。一旦触发之后，监听器就会被移除。
+    var vm = new Vue({
+        el:"#app",
+        data:{
+        },
+    });
+    vm.$once('test', function (msg) {
+        alert(msg)
+    })
+    // vm.$emit('test', 'hi')
+
+</script>
+</body>
+</html>

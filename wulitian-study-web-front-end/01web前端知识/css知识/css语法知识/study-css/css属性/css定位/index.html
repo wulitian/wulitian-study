@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		.relative-box{
+			background: blue;
+			position: relative;
+			height: 200px;
+		}
+		.absolute-box{
+			background: green;
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			z-index: 10;
+		}
+		.absolute-box2{
+			background: yellow;
+			position: absolute;
+			width: 200px;
+			height: 200px;
+			z-index: 0;
+		}
+		.sticky-box{
+			background: red;
+			top: 100px;
+			position: sticky;
+			height: 200px;
+		}
+		.clip-box {
+			clip: rect(0 auto 100px 10px);
+		}
+	</style>
+</head>
+<body>
+
+<!--position定位-->
+<!--static： 对象遵循常规流。此时4个定位偏移属性不会被应用。-->
+<!--relative： 对象遵循常规流，并且参照自身在常规流中的位置通过top，right，bottom，left这4个定位偏移属性进行偏移时不会影响常规流中的任何元素。-->
+<!--absolute： 对象脱离常规流，此时偏移属性参照的是离自身最近的定位祖先元素，如果没有定位的祖先元素，则一直回溯到body元素。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。 fixed： 与absolute一致，但偏移定位是以窗口为参考。当出现滚动条时，对象不会随着滚动。-->
+<!--sticky： 对象在常态时遵循常规流。它就像是relative和fixed的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。该属性的表现是现实中你见到的吸附效果。（CSS3）-->
+<!--当position的值为非static时，其层叠级别通过z-index属性定义。-->
+<!--绝对定位的元素，在top，right，bottom，left属性未设置时，会紧随在其前面的兄弟元素之后，但在位置上不影响常规流中的任何元素。-->
+
+<!--z-index层叠级别-->
+<!--z-index用于确定元素在当前层叠上下文中的层叠级别，并确定该元素是否创建新的局部层叠上下文。-->
+<!--每个元素层叠顺序由所属的层叠上下文和元素本身的层叠级别决定（每个元素仅属于一个层叠上下文）。-->
+<!--同一个层叠上下文中，层叠级别大的显示在上面，反之显示在下面。-->
+<!--同一个层叠上下文中，层叠级别相同的两个元素，依据它们在HTML文档流中的顺序，写在后面的将会覆盖前面的。-->
+<!--不同层叠上下文中，元素的显示顺序依据祖先的层叠级别来决定，与自身的层叠级别无关。-->
+<!--当z-index未定义或者值为auto时，在IE6,7下会创建新的局部层叠上下文，而在高级浏览器中，按照规范不产生新的局部层叠上下文，如下例：-->
+
+<!--top left bottom right-->
+<!--为relative时，如果right和left都是auto，则它们的计算值是0；如果right和left其中一个为auto，则auto相当于另一个的负值，即left = -right；如果right和left的值都不为auto，则忽略right。-->
+<!--否则在其它情况下，当指定值为<length>时，计算值为指定值，当指定值为<percentage>时，计算值为计算后的绝对值。除去这些情况，都为auto-->
+<!--适用于：定位元素。即定义了position为非static的元素-->
+
+<!--clip 裁边-->
+<!--适用于：绝对定位元素-->
+<!--auto： 对象无剪切-->
+<!--rect(<number>|auto <number>|auto <number>|auto <number>|auto)：-->
+<!--依据上-右-下-左的顺序提供自对象左上角为(0,0)坐标计算的四个偏移数值，其中任一数值都可用auto替换，即此边不剪切。-->
+<!--上-左 方位的裁剪：从0开始剪裁直到设定值，即 上-左 方位的auto值等同于0；-->
+<!--右-下 方位的裁剪：从设定值开始剪裁直到最右边和最下边，即 右-下 方位的auto值为盒子的实际宽度和高度；-->
+
+<div class="relative-box">
+	<div class="absolute-box clip-box">
+	</div>
+	<div class="absolute-box2">
+	</div>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="sticky-box"></div>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+</body>
+</html>

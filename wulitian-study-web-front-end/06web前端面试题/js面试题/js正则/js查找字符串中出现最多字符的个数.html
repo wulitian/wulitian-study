@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // js查找字符串中出现最多字符的个数
+    let str = 'sdjksfssscfssdd';
+    let maxObj = { key: null, count: null };
+    let maxCou = 0;
+    while (str) {
+        let i = 0;
+        let reg = new RegExp(str[0], 'g');
+        let currStr = str[0];
+        str = str.replace(reg, function () {
+            i++;
+            return '';
+        })
+        if (i > maxCou) {
+            maxObj.key = currStr;
+            maxCou = maxObj.count = i;
+        }
+    }
+    console.log(maxObj.key + ':' + maxObj.count)
+
+
+    let str2 = 'sdjksfssscfssdd';
+    let obj = {};
+    let aNew = str2.split('');
+    for (let index = 0; index < aNew.length; index++) {
+        const val = aNew[index];
+        if (typeof obj[val] !== 'undefined') {
+            obj[val]++;
+        } else {
+            obj[val] = 1;
+        }
+    }
+    let maxObj = { key: null, count: null };
+    for (const key in obj) {
+        let curr = obj[key];
+        if (curr > maxObj.count) {
+            maxObj.count = curr;
+            maxObj.key = key;
+        }
+    }
+    console.log(maxObj.key + ':' + maxObj.count);
+</script>
+</body>
+</html>

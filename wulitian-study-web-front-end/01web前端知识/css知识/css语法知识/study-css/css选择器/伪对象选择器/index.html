@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		p:first-letter{
+			font-size: 40px;
+		}
+		p:first-line {color:#090;}
+		p:before{background:#fff;color:#000;content:"如果你的能看到这段文字，说明你的浏览器只支持E:before";font-size:14px;}
+		p::after{right:0;background:#fff;color:#000;content:"如果你的能看到这段文字，说明你的浏览器支持E:after和E::after";font-size:14px;}
+		input::-webkit-input-placeholder {
+			color: blue;
+		}
+		input:-ms-input-placeholder { // IE10+
+		color: blue;
+		}
+		input:-moz-placeholder { // Firefox4-18
+		color: blue;
+		}
+		input::-moz-placeholder { // Firefox19+
+		color: blue;
+		}
+		p::-moz-selection{background:#000;color:#f00;}
+		p::selection{background:#000;color:#f00;}
+	</style>
+</head>
+<body>
+	<h1>杂志常用的首字下沉效果</h1>
+	<p>今天，阳光明媚，晴空万里，非常适合户外活动，如踏青、远足之类的。长期坐在办公室的同学们要多注意运动。</p>
+	<input id="test" placeholder="Placeholder text!">
+</body>
+</html>

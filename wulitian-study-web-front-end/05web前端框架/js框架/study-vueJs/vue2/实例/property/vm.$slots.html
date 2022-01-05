@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$slots</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <blog-post>
+            <template v-slot:header>
+                <h1>About Me</h1>
+            </template>
+            <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
+            <template v-slot:footer>
+                <p>Copyright 2016 Evan You</p>
+            </template>
+            <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
+        </blog-post>
+    </div>
+
+<script>
+    // 用来访问被插槽分发的内容。每个具名插槽有其相应的 property (例如：v-slot:foo 中的内容将会在 vm.$slots.foo 中被找到)。default property 包括了所有没有被包含在具名插槽中的节点，或 v-slot:default 的内容。
+    // 请注意插槽不是响应性的。如果你需要一个组件可以在被传入的数据发生变化时重渲染，我们建议改变策略，依赖诸如 props 或 data 等响应性实例选项。
+    // 注意：v-slot:foo 在 2.6 以上的版本才支持。对于之前的版本，你可以使用废弃了的语法。
+    // 在使用渲染函数书写一个组件时，访问 vm.$slots 最有帮助。
+    Vue.component('blog-post', {
+        render: function (createElement) {
+            var header = this.$slots.header
+            var body   = this.$slots.default
+            var footer = this.$slots.footer
+            return createElement('div', [
+                createElement('header', header),
+                createElement('main', body),
+                createElement('footer', footer)
+            ])
+        }
+    })
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+        }
+    })
+</script>
+</body>
+</html>

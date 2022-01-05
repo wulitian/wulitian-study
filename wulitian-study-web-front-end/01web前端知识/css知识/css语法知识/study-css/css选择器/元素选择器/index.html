@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		/*1.通配选择器*/
+		/*通常不建议使用通配选择符，因为它会遍历并命中文档中所有的元素，出于性能考虑，需酌情使用*/
+		* {
+			color: #f00;
+		}
+		/*2.类型选择器*/
+		p{
+			font-weight: bold;
+		}
+		/*3.id选择器*/
+		#subtitle {
+			font-size: 20px;
+		}
+		/*4.类选择器*/
+		.subtitle {
+			font-size: 25px;
+		}
+	</style>
+</head>
+<body>
+
+<h1>标题</h1>
+<div>正文内容</div>
+<div id="subtitle">正文内容</div>
+<div class="subtitle">正文内容</div>
+
+</body>
+</html>

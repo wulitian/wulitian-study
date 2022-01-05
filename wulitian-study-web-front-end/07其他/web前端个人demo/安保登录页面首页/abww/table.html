@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>统计</title>
+		<script type="text/javascript" src="js/jquery-2.1.1.min.js" ></script>
+		<style>
+			td{
+				padding: 10px;
+				text-align: center;
+			}
+			td input{
+				width: 100%;
+			}
+		</style>
+		<script>
+			//斜线
+			function line(){
+		        var myCanvas = document.getElementById("myCanvas");
+		        var width = myCanvas.width;
+		        var height = myCanvas.height;
+		        var ctx = myCanvas.getContext("2d");
+		        ctx.strokeStyle="#000000";
+		        ctx.moveTo(0,0);
+		        ctx.lineTo(width,height);
+		        ctx.stroke();
+		        ctx.font="18px Georgia";
+		        ctx.fillText("项目",width/3*1.8,height/3);
+		        ctx.fillText("地区",width/9,height/5*4);
+		    }
+			
+			//对应下标的值
+			function valnum(e,num){
+				return $("[row="+$(e).parent("td").attr("row")+"][col="+num+"]").children("input").val()
+			}
+			
+			function keyup(e){
+				//过滤非数字
+				e.value=e.value.replace(/\D/g,'')
+				//判断是否出现第五列、第9列、第13列不超过前两列和
+				if((valnum(e,5)>
+				(valnum(e,3)==''?0:parseInt(valnum(e,3)))+
+				(valnum(e,4)==''?0:parseInt(valnum(e,4)))
+				)){
+					$("[row="+$(e).parent("td").attr("row")+"][col=5]").children("input").val(
+						(valnum(e,3)==''?0:parseInt(valnum(e,3)))+
+						(valnum(e,4)==''?0:parseInt(valnum(e,4)))
+					)
+				}
+				if((valnum(e,9)>
+				(valnum(e,7)==''?0:parseInt(valnum(e,7)))+
+				(valnum(e,8)==''?0:parseInt(valnum(e,8)))
+				)){
+					$("[row="+$(e).parent("td").attr("row")+"][col=9]").children("input").val(
+						(valnum(e,7)==''?0:parseInt(valnum(e,7)))+
+						(valnum(e,8)==''?0:parseInt(valnum(e,8)))
+					)
+				}
+				if((valnum(e,13)>
+				(valnum(e,11)==''?0:parseInt(valnum(e,11)))+
+				(valnum(e,12)==''?0:parseInt(valnum(e,12)))
+				)){
+					$("[row="+$(e).parent("td").attr("row")+"][col=13]").children("input").val(
+						(valnum(e,11)==''?0:parseInt(valnum(e,11)))+
+						(valnum(e,12)==''?0:parseInt(valnum(e,12)))
+					)
+				}
+				//小计相加
+				$("[row="+$(e).parent("td").attr("row")+"][col=2]").text(
+				(valnum(e,3)==''?0:parseInt(valnum(e,3)))+
+				(valnum(e,4)==''?0:parseInt(valnum(e,4)))
+				)
+				$("[row="+$(e).parent("td").attr("row")+"][col=6]").text(
+				(valnum(e,7)==''?0:parseInt(valnum(e,7)))+
+				(valnum(e,8)==''?0:parseInt(valnum(e,8)))
+				)
+				$("[row="+$(e).parent("td").attr("row")+"][col=10]").text(
+				(valnum(e,11)==''?0:parseInt(valnum(e,11)))+
+				(valnum(e,12)==''?0:parseInt(valnum(e,12)))
+				)
+				$("[row="+$(e).parent("td").attr("row")+"][col=14]").text(
+				(valnum(e,15)==''?0:parseInt(valnum(e,15)))+
+				(valnum(e,16)==''?0:parseInt(valnum(e,16)))
+				)
+				//合计相加
+				$("[row="+$(e).parent("td").attr("row")+"][col=1]").text(
+					(valnum(e,3)==''?0:parseInt(valnum(e,3)))+
+					(valnum(e,4)==''?0:parseInt(valnum(e,4)))+
+					(valnum(e,7)==''?0:parseInt(valnum(e,7)))+
+					(valnum(e,8)==''?0:parseInt(valnum(e,8)))+
+					(valnum(e,11)==''?0:parseInt(valnum(e,11)))+
+					(valnum(e,12)==''?0:parseInt(valnum(e,12)))+
+					(valnum(e,15)==''?0:parseInt(valnum(e,15)))+
+					(valnum(e,16)==''?0:parseInt(valnum(e,16)))+
+					(valnum(e,17)==''?0:parseInt(valnum(e,17)))+
+					(valnum(e,18)==''?0:parseInt(valnum(e,18)))
+				)
+			}
+		</script>
+	</head>
+	<body onload = "line()">
+		<table border="1" cellspacing="0" width="100%">
+			 	<tr>
+			 		<td style="width: 10%;min-width: 130px;min-height: 130px;position: relative;" rowspan="2" >
+			 			 <canvas style="width: 100%;height:100%;position: absolute;left: 0;top: 0;" id="myCanvas"></canvas>
+			 		</td>
+			 		<td style="width: 10%;" rowspan="2">合计</td>
+			 		<td style="width: 16%;" colspan="4">武汉来（返）平人员</td>
+			 		<td style="width: 16%;" colspan="4">湖北来（返）平人员</td>
+			 		<td style="width: 16%;" colspan="4">黑龙江来（返）平人员(自2月19日起）</td>
+			 		<td style="width: 10%;" colspan="3">其他疫区来（返）平人员</td>
+			 		<td style="width: 10%;" rowspan="2">国外来（返）平人员</td>
+			 		<td style="width: 10%;" rowspan="2">港澳台来（返）平人员</td>
+			 	</tr>
+			 	<tr>
+			 		<td>小计</td>
+			 		<td>武汉来平人员</td>
+			 		<td>四平籍从武汉返平人员</td>
+			 		<td>仍在观察期人数(当日向前推15天内)</td>
+			 		<td>小计</td>
+			 		<td>湖北其他地区来平人员</td>
+			 		<td>四平籍从湖北其他地区返平人员</td>
+			 		<td>仍在观察期人数(当日向前推15天内)</td>
+			 		<td>小计</td>
+			 		<td>黑龙江来平人员</td>
+			 		<td>四平籍从黑龙江返平人员</td>
+			 		<td>仍在观察期人数(当日向前推15天内)</td>
+			 		<td>小计</td>
+			 		<td>其他疫区来平人员</td>
+			 		<td>四平籍从其他疫区返平人员</td>
+			 	</tr>
+			 	<tr>
+			 		<td id="a-1-0">铁东</td>
+			 		<td id="a-1-1" row="0" col="1">0</td>
+			 		<td id="a-1-2" row="0" col="2">0</td>
+			 		<td id="a-1-3" row="0" col="3"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-4" row="0" col="4"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-5" row="0" col="5"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-6" row="0" col="6">0</td>
+			 		<td id="a-1-7" row="0" col="7"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-8" row="0" col="8"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-9" row="0" col="9"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-10" row="0" col="10">0</td>
+			 		<td id="a-1-11" row="0" col="11"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-12" row="0" col="12"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-13" row="0" col="13"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-14" row="0" col="14">0</td>
+			 		<td id="a-1-15" row="0" col="15"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-16" row="0" col="16"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-17" row="0" col="17"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 		<td id="a-1-18" row="0" col="18"><input type="text" placeholder="0" onkeyup="keyup(this)" onafterpaste="keyup(this)" /></td>
+			 	</tr>
+		</table>
+	
+	</body>
+</html>

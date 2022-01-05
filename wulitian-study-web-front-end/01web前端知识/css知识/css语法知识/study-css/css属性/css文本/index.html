@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		.capitalize span{text-transform:capitalize;}
+		.uppercase span{text-transform:uppercase;}
+		.lowercase span{text-transform:lowercase;}
+		.test p{width:200px;border:1px solid #000;background-color:#eee;}
+		.word-wrap-normal p{word-wrap:normal;}
+		.pre p{white-space:pre;}
+		.pre-wrap p{white-space:pre-wrap;}
+		.pre-line p{white-space:pre-line;}
+		.nowrap p{white-space:nowrap;}
+		 pre{background:#eee;-moz-tab-size:4;-o-tab-size:4;tab-size:4;}
+		.word-break-normal p{word-break:normal;}
+		.break-all p{word-break:break-all;}
+		.keep-all p{word-break:keep-all;}
+		.break-word p{word-break:break-word;}
+		.word-warp-normal p{word-wrap:normal;}
+		.break-word p{word-wrap:break-word;}
+		.left p{text-align:left;}
+		.center p{text-align:center;}
+		.right p{text-align:right;}
+		.justify p{width:200px;text-align:justify;}
+		.start p{text-align:start;}
+		.end p{text-align:end;}
+		.text-align-last-box{width: 200px;text-align-last: right;}
+		.word-spacing-box{word-spacing: 20px;}
+		.test ins { text-indent: 30px; }
+		.inline-block span { display: inline-block; text-indent: 30px;}
+		.block span { display: block;text-indent: 30px; }
+		.other ins { display: inline-block; background: #eee; text-indent: 30px;}
+	</style>
+</head>
+<body>
+<!--text-transform 文本转换-->
+	<!--none： 无转换-->
+	<!--capitalize： 将每个单词的第一个字母转换成大写-->
+	<!--uppercase： 将每个单词转换成大写-->
+	<!--lowercase： 将每个单词转换成小写-->
+	<!--full-width： 将所有字符转换成fullwidth形式。如果字符没有相应的fullwidth形式，将保留原样。这个值通常用于排版拉丁字符和数字等表意符号。（CSS3）-->
+<!--white-space 文本空格-->
+	<!--normal | pre | nowrap | pre-wrap | pre-line-->
+	<!--normal： 默认处理方式。会将序列的空格合并为一个，内部是否换行由换行规则决定。-->
+	<!--pre： 原封不动的保留你输入时的状态，空格、换行都会保留，并且当文字超出边界时不换行。等同 pre 元素效果-->
+	<!--nowrap： 与normal值一致，不同的是会强制所有文本在同一行内显示。 pre-wrap： 与pre值一致，不同的是文字超出边界时将自动换行。-->
+	<!--pre-line： 与normal值一致，但是会保留文本输入时的换行。-->
+<!--tab-size tab尺寸-->
+	<!--该属性决定了制表符(U+0009)的宽度，number代表空格(U+0020)的倍数(如：tab-size:4; 表示制表符宽度是4个空格的宽度)-->
+	<!--只有当white-space的属性值为：pre | pre-wrap时，该属性的定义才有效-->
+	<!--对应的脚本特性为：tabSize。-->
+<!--word-break：断行规则-->
+	<!--normal：默认的换行规则。依据各自语言的规则，允许在字间发生换行。-->
+	<!--keep-all：对于 CJK（中文，韩文，日文）文本不允许在字符内发生换行。Non-CJK 文本表现同normal-->
+	<!--break-all：对于 Non-CJK 文本允许在任意字符内发生换行。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字符断行。-->
+	<!--break-word：与break-all相同，不同的地方在于它要求一个没有断行破发点的词必须保持为一个整体单位。这与word-wrap的break-word值效果相同-->
+<!--word-wrap, overflow-wrap：打断文字-->
+	<!--normal： 允许内容顶开或溢出指定的容器边界。-->
+	<!--break-word： 内容将在边界内换行，如果需要，单词内部允许断行。它要求一个没有断行破发点的词必须保持为一个整体单位，如果当前行无法放下需要被打断的单词，为了保持完整性，会将整个单词放到下一行进行展示。这与word-break的break-word值效果相同-->
+<!--text-align：文本对齐方式-->
+	<!--left： 内容左对齐。-->
+	<!--center： 内容居中对齐。-->
+	<!--right： 内容右对齐。-->
+	<!--justify： 内容两端对齐，但对于强制打断的行（被打断的这一行）及最后一行（包括仅有一行文本的情况，因为它既是第一行也是最后一行）不做处理。（CSS3）-->
+	<!--start： 内容对齐开始边界。（CSS3）-->
+	<!--end： 内容对齐结束边界。（CSS3）-->
+	<!--match-parent： 这个值和inherit表现一致，只是该值继承的start或end关键字是针对父母的direction值并计算的，计算值可以是 left 和 right 。（CSS3）-->
+	<!--justify-all： 效果等同于justify，不同的是最后一行也会两端对齐。（CSS3）-->
+<!--text-align-last 文本最后一行对齐方式-->
+	<!--auto： 无特殊对齐方式。 -->
+	<!--left： 内容左对齐。-->
+	<!--center： 内容居中对齐。 -->
+	<!--right： 内容右对齐。 -->
+	<!--justify： 内容两端对齐。 -->
+	<!--start： 内容对齐开始边界。 -->
+	<!--end： 内容对齐结束边界。-->
+	<!--text-transform 文本转换-->
+<!--word-spacing 该属性可以将指定的额外间隙添加到每个字符之后，最后一个单词也会被添加。-->
+<!--vertical-align 定义行内元素在行框内的垂直对齐方式。-->
+	<!--baseline： 把当前盒的基线与父级盒的基线对齐。如果该盒没有基线，就将底部外边距的边界和父级的基线对齐-->
+	<!--sub： 把当前盒的基线降低到合适的位置作为父级盒的下标（该值不影响该元素文本的字体大小）-->
+	<!--super： 把当前盒的基线提升到合适的位置作为父级盒的上标（该值不影响该元素文本的字体大小）-->
+	<!--text-top： 把当前盒的top和父级的内容区的top对齐-->
+	<!--text-bottom： 把当前盒的bottom和父级的内容区的bottom对齐-->
+	<!--middle： 把当前盒的垂直中心和父级盒的基线加上父级的半x-height对齐-->
+	<!--top： 把当前盒的top与行盒的top对齐-->
+	<!--bottom： 把当前盒的bottom与行盒的bottom对齐-->
+	<!--<percentage>： 把当前盒提升（正值）或者降低（负值）这个距离，百分比相对line-height计算。当值为0%时等同于baseline。-->
+	<!--<length>： 把当前盒提升（正值）或者降低（负值）这个距离。当值为0时等同于baseline。（CSS2）-->
+
+<!--text-transform 文本转换-->
+<ul class="test">
+	<li>
+		<strong>将每个单词的首字母转换成大写</strong>
+		<div>原　文： <span>how do you do.</span></div>
+		<div class="capitalize">转换后： <span>how do you do.</span></div>
+	</li>
+	<li>
+		<strong>转换成大写</strong>
+		<div>原　文： <span>how do you do.</span></div>
+		<div class="uppercase">转换后： <span>how do you do.</span></div>
+	</li>
+	<li>
+		<strong>转换成小写</strong>
+		<div>原　文： <span>HOW ARE YOU.</span></div>
+		<div class="lowercase">转换后： <span>HOW ARE YOU.</span></div>
+	</li>
+</ul>
+
+<!--white-space 文本空格-->
+<ul class="test">
+	<li class="word-wrap-normal">
+		<strong>normal：</strong>
+		<p>轻轻地我走了
+			正如我轻轻地来</p>
+	</li>
+	<li class="pre">
+		<strong>pre：</strong>
+		<p>轻轻地我走了（这里接很多测试文字）
+			正如我轻轻地来</p>
+	</li>
+	<li class="pre-wrap">
+		<strong>pre-wrap：</strong>
+		<p>轻轻地    我走了（这里接很多测试文字）
+			正如我轻轻地来</p>
+	</li>
+	<li class="pre-line">
+		<strong>pre-line</strong>
+		<p>轻轻地    我走了（这里接很多测试文字）
+			正如我轻轻地来</p>
+	</li>
+	<li class="nowrap">
+		<strong>nowrap：</strong>
+		<p>轻轻地我走了
+			正如我轻轻地来</p>
+	</li>
+</ul>
+
+<!--tab-size tab尺寸-->
+<pre>
+	你站在桥上看风景,  看风景的人在楼上看你。 明月装饰了你的窗子， 你装饰了别人的梦。
+</pre>
+
+<!--word-break：断行规则-->
+<ul class="test">
+	<li class="word-break-normal">
+		<strong>normal：</strong>
+		<p>测试效果aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+	</li>
+	<li class="break-all">
+		<strong>break-all：</strong>
+		<p>测试效果aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+	</li>
+	<li class="keep-all">
+		<strong>keep-all：</strong>
+		<p>测试效果aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+	</li>
+	<li class="break-word">
+		<strong>break-word：</strong>
+		<p>测试效果aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+	</li>
+</ul>
+
+<!--word-wrap, overflow-wrap：打断文字-->
+<ul class="test">
+	<li class="word-warp-normal">
+		<strong>normal：</strong>
+		<p>aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+	</li>
+	<li class="break-word">
+		<strong>break-word：</strong>
+		<p>aaabbbcccdddeeefffggghhhiiijjjkkklllmmmnnn</p>
+	</li>
+	<li class="break-word">
+		<strong>break-word：</strong>
+		<p>中英混排的时候abcdefghijklmnopqrst</p>
+	</li>
+</ul>
+
+<!--text-align：文本对齐方式-->
+<ul class="test">
+	<li class="left">
+		<strong>left</strong>
+		<p>我是左对齐内容</p>
+	</li>
+	<li class="center">
+		<strong>center</strong>
+		<p>我是居中对齐内容</p>
+	</li>
+	<li class="right">
+		<strong>right</strong>
+		<p>我是右对齐内容</p>
+	</li>
+	<li class="justify">
+		<strong>justify</strong>
+		<p>我 是一段可以两端对齐的文字， 你 仔细看看， 我 的对齐方式都贴着 容器左右的边缘。</p>
+	</li>
+	<li class="start">
+		<strong>start</strong>
+		<p>start效果</p>
+	</li>
+	<li class="end">
+		<strong>end</strong>
+		<p>end效果</p>
+	</li>
+</ul>
+
+<!--text-align-last：文本对齐方式-->
+<p class="text-align-last-box">
+	一个块内文本内容可能会存在多个所谓的最后一行<br>
+	这些最后一行都是 text-align-last 的服务范围
+</p>
+
+<!--word-spacing 文字空格-->
+<p class="word-spacing-box">how are you!</p>
+
+<!--text-indent 首行缩进-->
+<ul class="test">
+	<li class="inline">
+		<strong>内联元素span</strong>
+		<p><span>看看我的左边有没有30px的缩进</span></p>
+	</li>
+	<li class="inline-block">
+		<strong>被设置为内联块级元素的span</strong>
+		<p><span>看看我的左边有没有30px的缩进</span></p>
+	</li>
+	<li class="block">
+		<strong>被设置为块级元素的span</strong>
+		<p><span>看看我的左边有没有30px的缩进</span></p>
+	</li>
+	<li class="other">
+		<strong>包含有内联块的块级元素</strong>
+		<p><span>看看我的左边有没有30px的缩进</span><ins>我是一个被插入的内联块元素</ins></p>
+	</li>
+</ul>
+
+<!--vertical-align 定义行内元素在行框内的垂直对齐方式。 -->
+<ul class="test">
+	<li class="baseline">
+		<strong>与基线对齐</strong>
+		<p>参考内容<a href="?">基线对齐</a></p>
+	</li>
+	<li class="sub">
+		<strong>与参考内容的下标对齐</strong>
+		<p>参考内容<a href="?">下标对齐</a></p>
+	</li>
+	<li class="super">
+		<strong>与参考内容的上标对齐</strong>
+		<p>参考内容<a href="?">上标对齐</a></p>
+	</li>
+	<li class="top">
+		<strong>对象的内容与对象顶端对齐</strong>
+		<p>参考内容<a href="?">要对齐的内容</a></p>
+	</li>
+	<li class="text-top">
+		<strong>对象的文本与对象顶端对齐</strong>
+		<p>参考内容<a href="?">要对齐的内容</a></p>
+	</li>
+	<li class="middle">
+		<strong>对象的内容与对象中部对齐</strong>
+		<p>参考内容<a href="?">要对齐的内容</a></p>
+	</li>
+	<li class="bottom">
+		<strong>对象的内容与对象底端对齐</strong>
+		<p>参考内容<a href="?">要对齐的内容</a></p>
+	</li>
+	<li class="text-bottom">
+		<strong>对象的文本与对象顶端对齐</strong>
+		<p>参考内容<a href="?">要对齐的内容</a></p>
+	</li>
+	<li class="length">
+		<strong>与基线算起的偏移量</strong>
+		<p>参考内容<a href="?">偏移量对齐</a></p>
+	</li>
+</ul>
+
+
+
+</body>
+</html>

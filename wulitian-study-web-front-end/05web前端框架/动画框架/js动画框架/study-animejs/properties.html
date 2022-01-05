@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./node_modules/_animejs@3.2.1@animejs/lib/anime.min.js"></script>
+    <style>
+        .box1,.box2,.box3,.box4,.box5,.box6,.box7{width: 40px;height: 40px;position: relative}
+        .box1{background: red;}
+        .box2{background: blue;}
+        .box3{background: green;}
+        .box4{background: yellow;}
+        .box5{background: pink;}
+        .box6{background: wheat;}
+        .box6{background: green;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <svg  style="width: 800px;height: 500px;" xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <polyline class="box7" points="64 68.64 8.574 100 63.446 67.68 64 4 64.554 67.68 119.426 100" style="fill:white;stroke:red;stroke-width:4" />
+        </svg>
+    </div>
+<script>
+    var vue = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods:{
+        }
+    })
+    // css属性属性都可以被动画化尽可能区分透明度和css的变换的优先级
+    anime({
+        targets: ['.box1', '.box2'],
+        left: '240px',
+        backgroundColor: '#ff0000',
+        borderRadius: ['0%', '50%'],
+        easing: 'easeInOutQuad',
+    });
+    // css变换属性
+    // 'translateX'	'px'
+    // 'translateY'	'px'
+    // 'translateZ'	'px'
+    // 'rotate'	'deg'
+    // 'rotateX'	'deg'
+    // 'rotateY'	'deg'
+    // 'rotateZ'	'deg'
+    // 'scale'	—
+    // 'scaleX'	—
+    // 'scaleY'	—
+    // 'scaleZ'	—
+    // 'skew'	'deg'
+    // 'skewX'	'deg'
+    // 'skewY'	'deg'
+    // 'perspective'	'px'
+    anime({
+        targets: ['.box3', '.box4'],
+        translateX: 250,
+        scale: 2,
+        rotate: '1turn'
+    });
+    //对象属性都可以动画
+    var objPropLogEl = document.querySelector('.box5');
+    var myObject = {
+        prop1: 0,
+        prop2: '0%'
+    }
+    anime({
+        targets: myObject,
+        prop1: 50,
+        prop2: '100%',
+        easing: 'linear',
+        round: 1,
+        update: function() {
+            objPropLogEl.innerHTML = JSON.stringify(myObject);
+        }
+    });
+    //任何包含至少一个数值dom都可以动画
+    anime({
+        targets: '.box6',
+        value: [0, 1000],
+        round: 1,
+        easing: 'easeInOutExpo'
+    });
+    //任何包含至少一个数值的svg都可已被动画
+    var path = anime.path('.box7');
+    anime({
+        targets: '.box7',
+        strokeDashoffset: [anime.setDashoffset, 0],
+        easing: 'easeInOutSine',
+        duration: 1500,
+        delay: function(el, i) { return i * 10000 },
+        direction: 'alternate',
+        loop: true
+    });
+</script>
+</body>
+</html>

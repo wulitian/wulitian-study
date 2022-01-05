@@ -1,0 +1,15 @@
+# js中设计模式（最佳实践）
+
+1. 开闭原则（Open Closed Principle，OCP）：对扩展开放，对修改关闭，增加功能扩展代码而非修改代码
+
+2. 里氏代换原则（Liskov Substitution Principle，LSP）：父类出现的地方子类能出现  
+
+3. 依赖倒转原则（Dependency Inversion Principle，DIP）：面向接口编程，依赖于抽象而不依赖于具体使用方只关注接口而不关注具体类的实现JS使用较少(弱类型 & 没有接口)
+
+4. 接口隔离原则（Interface Segregation Principle，ISP）：保持接口的单一独立，避免出现"胖接口"JS中没有接口(ts除外)，使用较少
+
+5. 单一职责原则（Single Responsibility Principle, SRP）：一个程序只干一件事，功能复杂就拆分
+
+6. 合成/聚合复用原则（Composite/Aggregate Reuse Principle，CARP）：尽量使用合成/聚合的方式，而不是使用继承。
+   
+7. 最少知识原则（Least Knowledge Principle，LKP）或者迪米特法则（Law of  Demeter，LOD）：一个软件实体应当尽可能少的与其他实体发生相互作用

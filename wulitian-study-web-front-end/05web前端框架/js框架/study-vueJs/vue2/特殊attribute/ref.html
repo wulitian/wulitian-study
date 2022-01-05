@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ref</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a-a ref="usernameInput"></a-a>
+        <button @click="aa">聚焦</button>
+    </div>
+
+<script>
+    Vue.component('a-a',{
+        props:[],
+        template:`
+            <input  type="text" />
+        `
+    })
+
+    var app = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods:{
+            aa(){
+
+                console.log(this.$refs.usernameInput)
+            }
+        },
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>wulitian-study</title>
+	<style>
+		.width-box{width: 200px;background: #e5e823;margin-top: 10px;padding: 10px}
+		.min-width-box{min-width: 100px;background: #e5e823;margin-top: 10px;padding: 10px}
+		.max-width-box{max-width:300px;background: #e5e823;margin-top: 10px;padding: 10px}
+
+		.height-box{height: 200px;background: #e5e823;margin-top: 10px;padding: 10px}
+		.min-height-box{min-height: 100px;background: #e5e823;margin-top: 10px;padding: 10px}
+		.max-height-box{max-height: 300px;background: #e5e823;margin-top: 10px;padding: 10px}
+
+		.width-line-box{width: 200px;background: #d1d1d1;margin-top: 10px;margin-left:10px;padding: 10px;line-height: 50px;}
+		.min-width-line-box{min-width: 100px;background: #d1d1d1;margin-top: 10px;margin-left:10px;padding: 10px;line-height: 50px;}
+		.max-width-line-box{max-width: 300px;background: #d1d1d1;margin-top: 10px;margin-left:10px;padding: 10px;line-height: 50px;}
+
+		.height-line-box{height: 200px;background: #d1d1d1;margin-top: 10px;margin-left:10px;padding: 10px;line-height: 50px;}
+		.min-height-line-box{min-height: 100px;background: #d1d1d1;margin-top: 10px;margin-left:10px;padding: 10px;line-height: 50px;}
+		.max-height-line-box{max-height: 300px;background: #d1d1d1;margin-top: 10px;margin-left:10px;padding: 10px;line-height: 50px;}
+	</style>
+</head>
+<body>
+<!--除非置换内联元素，table-row, table-row-group之外的所有元素都可以使用width height min-width min-height max-width max-height-->
+<!--margin 所有元素，除table | inline-table | table-caption外-->
+<!--margin-top,margin-bottom 在行内元素失效原因是行内元素只能在行内设置-->
+<!--margin-left,margin-right 可以-->
+<!--padding 所有元素，除table-row-group | table-header-group | table-footer-group | table-column-group | table-row外-->
+
+<div class="width-box">行内块width</div>
+<span class="width-line-box">内联width</span>
+
+<div class="min-width-box">行内块min-width</div>
+<span class="min-width-line-box">内联min-width</span>
+
+<div class="max-width-box">行内块max-width</div>
+<span class="max-width-line-box">内联max-width</span>
+
+<div class="height-box">行内块heigh</div>
+<span class="height-line-box">内联height</span>
+
+<div class="min-height-box">行内块min-height</div>
+<span class="min-height-line-box">内联min-height</span>
+
+<div class="max-height-box">行内块max-height</div>
+<span class="max-height-line-box">内联max-height</span>
+</body>
+</html>

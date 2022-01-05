@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			.bg{
+			    position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    background-size: cover;
+			    -webkit-transition: background 1s;
+			    -moz-transition: background 1s;
+			    -o-transition: background 1s;
+			    transition: background 1s;
+				background: url('img/loginbg.png')center center no-repeat #e5f1fe;
+			}
+			.loginGroup{
+			    width: 400px;
+			    background: #FFFFFF;
+			    height: 300px;
+			    position: absolute;
+			    top: 50%;
+			    margin-top: -150px;
+			    right: 50%;
+			    margin-right: -460px;
+			    box-shadow: 0px 0px 9px #94b6e8;
+			}
+			.loginTitle{
+			    text-align: center;
+			    height: 50px;
+			    line-height: 50px;
+			    font-size: 20px;
+			    color: #34a5e7;
+			    border-bottom: 1px solid #cfe6f3;
+			    box-shadow: 0px 1px 1px #b6e4ff;
+			}
+			.loginUsername,.loginPassword,.loginCheck{
+				box-sizing: border-box;
+				margin-top: 30px;
+				width: 100%;
+				height: 40px;
+				padding: 0 30px;
+			}
+			.loginUsername>input,.loginPassword>input{
+				box-sizing: border-box;
+				padding: 0 50px;
+				border: none 0;
+				width: 100%;
+				height: 100%;
+				color: #34A5E7;
+			}
+			.loginUsername>input{
+				background: url(img/username.png)center center no-repeat;
+				background-size: 100%;
+			}
+			.loginPassword>input{
+				background: url(img/password.png)center center no-repeat;
+				background-size: 100%;
+			}
+			.loginCheck>button{
+				margin: 0 auto;
+				border: none 0;
+				width: 100%;
+				height: 100%;
+				background: url(img/login.png)center center no-repeat;
+				background-size: 100%;
+				color: #FFFFFF;
+				cursor: pointer;
+			}
+			input,button{
+				outline: none;
+			}
+			
+		</style>
+	</head>
+	<body >
+		<div class="bg">
+			<div class="loginGroup">
+				<div class="loginTitle">用户登录</div>
+				<div class="loginUsername">
+					<input  type="text" />
+				</div>
+				<div class="loginPassword">
+					<input  type="text" />
+				</div>
+				<div class="loginCheck">
+					<button>登录</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

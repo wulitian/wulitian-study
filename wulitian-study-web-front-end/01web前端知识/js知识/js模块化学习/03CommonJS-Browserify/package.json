@@ -1,0 +1,14 @@
+{
+  "name": "commonjs-browserify",
+  "version": "1.0.0",
+  "description": "commonjs-browserify",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wulitian",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  }
+}

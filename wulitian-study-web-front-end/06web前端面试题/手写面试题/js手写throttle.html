@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    // 手写instance
+    // MyInstance()
+    function MyInstanceof(obj,Obj){
+        let objProto = obj.__proto__;
+        let ObjProto = Obj.prototype;
+        while (true){
+            if(objProto===null){
+                return false
+            }
+            if(objProto===ObjProto){
+                return true
+            }
+            objProto = objProto.__proto__
+        }
+
+    }
+    function person(){
+        this.name = 'wulitian'
+    };
+    let p = new person()
+    console.log(p instanceof person)
+    console.log(MyInstanceof(p,person))
+</script>
+</body>
+</html>

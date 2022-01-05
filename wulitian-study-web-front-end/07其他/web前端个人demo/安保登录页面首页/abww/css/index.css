@@ -1,0 +1,265 @@
+body{
+	padding: 0;
+	margin: 0;
+	background:#ffffff;
+	background-image: url(../img/bg.png);
+	background-attachment: fixed;
+	background-position: top center;
+	background-size: 100% 100%;
+}
+.contentleft{
+	line-height: 43px;
+    font-size: 14px;
+    margin-left: 10px;
+	float: left;
+}
+.contentright{
+	cursor: pointer;
+	line-height: 43px;
+    font-size: 14px;
+     margin-right: 10px;
+	float: right;
+}
+.contentright a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+.btnicon{
+    margin-top: 22px;
+	display: inline-block;
+	width: 50px;
+	height: 40px;
+	vertical-align: middle;
+	background-size:28px ;
+}
+.iconxxxg{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url(../img/xxxg.png)center center no-repeat;
+	vertical-align: middle;
+}
+.iconzx{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: url(../img/zx.png)center center no-repeat;
+	vertical-align: middle;
+}
+.topcontent{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    height: 50px;
+    background: rgba(37, 36, 35, 0.6);
+    color: #fff;
+}
+.topimg{
+    left: 300px;
+    right: 300px;
+    position: fixed;
+    top: 0;
+    text-align: center;
+}
+.topbt{
+    left: 140px;
+    right: 150px;
+    position: fixed;
+    top: 156px;
+    text-align: center;
+}
+.topimg>img{
+	width: 100%;
+}
+.bottomimg{
+	position: fixed;
+	bottom: 0;
+	width:100%;
+}
+.bottomjz{
+    z-index: 2;
+    position: fixed;
+    bottom: 28px;
+    width: 100%;
+}
+.box-center{
+    z-index: 10;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    opacity: 0.9;
+    margin-top: 250px;
+    width: 1200px;
+}
+.boxgroup{
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 250px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    filter: Alpha(opacity=10); /* IE */   
+	-moz-opacity:0.1;    /* FF 主要是为了兼容老版本的FF */
+	opacity:0.1;    /* FF */
+}
+.boxgroup:hover .icon{
+	width: 80px;
+}
+.boxgroup:hover .text-parent{
+	color: #ddd;
+	font-size: 20px;
+}
+.box{
+	width: 100%;
+	height: 250px;
+	display: inline-block;
+	cursor: pointer;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.btngroup{
+	position: relative;
+    width: 1000px;
+    height: 100px;
+    margin: 0 auto;
+    z-index: 10;
+    text-align: center;
+}
+.buttonkuang{
+	filter: Alpha(opacity=10); /* IE */   
+	-moz-opacity:0.1;    /* FF 主要是为了兼容老版本的FF */
+	opacity:0.1;    /* FF */
+    vertical-align: middle;
+    display: inline-block;
+    background: url(../img/buttonkuang.png)center center no-repeat;
+    background-size: 100%;
+    width: 90px;
+    height: 125px;
+    color:#fff;
+    cursor: pointer;
+}
+.buttonkuang+.buttonkuang{
+	margin-left: 10px;
+}
+.buttonkuang:hover>.btnicon{
+    background-size: 32px!important;
+}
+.buttonkuang:hover div{
+	font-size: 18px;
+}
+.img-parent{
+	position: absolute;
+	width: 100%;
+	bottom: 105px;
+	text-align: center;
+}
+.icon{
+    margin-top: 24px;
+	width: 75px;
+    position: relative;
+    z-index: 2;
+}
+.text-parent{
+	position: absolute;
+	width: 100%;
+	bottom: 70px;
+	color: #FFFFFF;
+}
+.boxshade{
+    position: absolute;
+    width: 100%;
+    top: 87px;
+    left: 85px;
+    color: #FFFFFF;
+    height: 60px;
+    background: rgba(18,65,130,0.1);
+    transform: rotate(30deg);
+    -ms-transform: rotate(30deg);
+    -webkit-transform: rotate(30deg);
+    box-shadow: 40px 0px 1px rgba(18,65,130,0.1);
+    
+    
+}
+
+/*登录*/
+.loginbox{
+    background: url(../img/loginboxbg.png)center center no-repeat;
+    background-size: 503px;
+    z-index: 10;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    opacity: 0.9;
+    margin-top: 250px;
+    width: 505px;
+    height: 256px;
+}
+.loginBt{
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+    top: 126px;
+    text-align: center;
+    font-weight: 700;
+    width: 50%;
+}
+
+.loginGroup{
+    margin-left: 50%;
+    top: 126px;
+    width: 50%;
+    height: 100%;
+}
+.loginTitle{
+	line-height: 46px;
+    color: #b70204;
+    font-size: 18px;
+}
+.loginUsername{
+	height: 50px;
+	line-height: 64px;
+}
+.loginPassword{
+	height: 64px;
+	line-height: 64px;
+}
+.loginUsername>input,.loginPassword>input{
+	height: 24px;
+    width: 212px;
+}
+.loginUsername>input{
+	background-image: url(../img/username.png);
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    border: 1px solid #e7e5e5;
+    padding-left: 30px;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+.loginPassword>input{
+	background-image: url(../img/password.png);
+    background-position: 5px center;
+    background-repeat: no-repeat;
+    border: 1px solid #e7e5e5;
+    padding-left: 30px;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+.loginCheck>button{
+    width: 216px;
+    height: 30px;
+    background: #b70204;
+    color: #FFFFFF;
+    border: none;
+    cursor: pointer;
+}
+.loginCheck>button:hover{
+	opacity: .8;
+}
+input,button{
+	outline: none;
+}
