@@ -12,15 +12,15 @@
    
 3. wulitian-study-web-back-end::为web后端技术体系学习与api的体验
    
-4. wulitian-study-web-design为::web设计技术体系学习与api的体验
+4. wulitian-study-web-design::为web设计技术体系学习与api的体验
    
 5. wulitian-study-web-front-end::为web前端技术体系学习与api的体验
    
-6. wulitian-study-web-operations::web运维技术体系学习与api的体验
+6. wulitian-study-web-operations::为web运维技术体系学习与api的体验
    
-7. wulitian-study-web-requisite-skills::各项其他技术体系学习与api的体验
+7. wulitian-study-web-requisite-skills::为各项其他技术体系学习与api的体验
    
-8. wulitian-study-web-test::web测试技术体系学习与api的体验
+8. wulitian-study-web-test::为web测试技术体系学习与api的体验
 
 欢迎加入可以留言笔者共同学习维护目录
 
