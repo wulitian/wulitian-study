@@ -1,11 +1,3 @@
-// set
-// add(element):向集合添加一个元素
-// delete(element)：删除集合里的某个元素
-// has(element):判断集合里是否有某个元素
-// clear(): 清空集合（移除集合里的所有元素）
-// size(): 返回集合所包含元素的数量
-// values():返回一个包含集合所有元素的数组
-
 function Set(){
     this.set = {}
 }

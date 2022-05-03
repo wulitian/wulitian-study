@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+    <meta charset="UTF-8">
+    <title>js中的防抖节流</title>
+</head>
+<body  style="height: 4000px;">
+<script>
+// 防抖(debounce)
+// 当持续触发事件时，在一定的时间段内，只有最后一次触发的事件才会执行。
+// function debounce(fn, wait) {
+//     var timeout = null; //定义一个定时器
+//     return function() {
+//         if(timeout !== null)
+//             clearTimeout(timeout); //清除这个定时器
+//         timeout = setTimeout(fn, wait);
+//     }
+// }
+// function handle(){
+//     console.log(new Date())
+// }
+// window.addEventListener('scroll', debounce(handle, 1000))
+
+
+// 节流(throttle)
+// 当持续触发事件时，已执行的事件在一定时间段内不会再次执行。实现节流有时间戳和定时器两种方式。
+var throttle = function (func, delay) {
+    var prev = Date.now();
+    return function () {
+        var now = Date.now();
+        if (now - prev >= delay) {
+            func();
+            prev = Date.now();
+        }
+    }
+}
+
+function handle() {
+    console.log('节流处理!');
+}
+window.addEventListener('scroll', throttle(handle, 1000));
+</script>
+</body>
+</html>
