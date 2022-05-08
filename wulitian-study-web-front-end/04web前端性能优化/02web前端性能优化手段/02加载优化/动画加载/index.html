@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wulitian-study</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background-color: red;
+    }
+    .box2 {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <div class="box2"></div>
+  <script>
+    const box = document.querySelector('.box')
+    const box2 = document.querySelector('.box2')
+
+    //会产生抖动并且需要设置刷新率
+    const id = setInterval(() => {
+      if (box.offsetLeft >= 200) {
+        box.style.left = '200px'
+        window.clearInterval(id)
+        return
+      }
+      box.style.left = `${box.offsetLeft + 1}px`
+    }, 1000 / 60)
+
+    //会把回调函数的时机交给系统，可以防止抖动，注意兼容性问题目前可以兼容到ie10
+    function run () {
+      if (box2.offsetLeft >= 200) {
+        box2.style.left = '200px'
+        return
+      }
+      box2.style.left = `${box2.offsetLeft + 1}px`
+      window.requestAnimationFrame(run)
+    }
+
+    window.requestAnimationFrame(run)
+  </script>
+</body>
+
+</html>

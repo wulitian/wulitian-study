@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 阻塞渲染 -->
+<!--   <link href="style.css" rel="stylesheet">-->
+
+<!-- 非阻塞的加载 CSS -->
+<!--   <link href="print.css" rel="stylesheet" media="print">-->
+
+<!-- 拆分媒体查询相关 CSS 资源：可变阻塞加载 -->
+<!--   <link href="other.css" rel="stylesheet" media="(min-width: 40em)">-->
+
+<!-- <link href="portrait.css" rel="stylesheet" media="orientation:portrait"> -->
+  <title>wulitian-study</title>
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', () => alert("DOM ready after defer!"));
+</script> -->
+<!--  按顺序执行-->
+<!--  <script defer src="index.js"></script>-->
+<!--  <script defer src="index2.js"></script>-->
+
+<!--  谁加载完就先执行-->
+<!--  <script async src="index.js"></script>-->
+<!--  <script async src="index2.js"></script>-->
+
+<!-- 利用空闲时间预加载指定的资源 -->
+<!-- <link rel="preload" href="index.js">
+<link rel="preload" href="index2.js"> -->
+
+<!-- 预加载将来可能要用到的资源(适合于加载非当前页面资源否则会造成加载两次资源) -->
+<!--  <link rel="prefetch" href="index.js">-->
+<!--  <link rel="prefetch" href="index2.js">-->
+
+</head>
+
+<body>
+  <p>渲染性能优化</p>
+  <div><img src="wulitian.png"></div>
+<!--  <script src="index.js"></script>-->
+<!--  <script src="index2.js"></script>-->
+</body>
+</html>

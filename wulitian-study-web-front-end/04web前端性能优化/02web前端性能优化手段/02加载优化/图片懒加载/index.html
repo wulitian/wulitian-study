@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div>
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+  <img src="xxx.png" width="200px" height="200px" data-src="logo.png">
+</div>
+<script>
+  let imgs = document.querySelectorAll('img');
+  function lozyLoad(){
+    let scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+    let winHeight= window.innerHeight;
+    for(let i=0; i < imgs.length; i++){
+      if(imgs[i].offsetTop < scrollTop + winHeight ){
+        imgs[i].src = imgs[i].getAttribute('data-src');
+      }
+    }
+  }
+  window.onscroll = function(){
+    lozyLoad()
+  };
+</script>
+</body>
+</html>

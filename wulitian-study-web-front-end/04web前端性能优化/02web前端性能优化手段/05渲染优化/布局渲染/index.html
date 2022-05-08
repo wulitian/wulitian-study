@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wulitian-study</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+
+<body>
+  <button onclick="change()">改变</button>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <script>
+    function change() {
+      const divs = document.querySelectorAll('.box')
+      divs[0].style.height = '200px'
+    }
+
+    // const list = document.getElementById('list')
+    // for (let i = 0; i < 10; i++) {
+    //   list.style.top = `${list.offsetTop + 10}px`
+    //   list.style.left = `${list.offsetLeft + 10}px`
+    // }
+
+    const list = document.getElementById('list')
+    let { offsetTop, offsetLeft } = list
+
+    for (let i = 0; i < 10; i++) {
+      offsetTop += 10
+      offsetLeft += 10
+    }
+
+    // 计算完成后统一赋值触发重排
+    list.style.left = offsetLeft
+    list.style.top = offsetTop
+  </script>
+</body>
+
+</html>
