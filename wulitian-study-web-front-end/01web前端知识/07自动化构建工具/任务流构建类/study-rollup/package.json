@@ -1,0 +1,27 @@
+{
+  "name": "wulitian-rollup",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "npx rollup -c ./config/rollup.config.prod.js",
+    "dev": "npx rollup -w -c ./config/rollup.config.dev.js",
+    "node": "npx rollup -w -c ./config/build.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@rollup/plugin-babel": "^5.3.1",
+    "rollup": "^2.70.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

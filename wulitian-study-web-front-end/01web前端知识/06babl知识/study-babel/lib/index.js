@@ -1,28 +1,14 @@
 "use strict";
 
-require("core-js/modules/es6.function.name.js");
+var _lodash = _interopRequireDefault(require("lodash"));
 
-require("core-js/modules/es6.object.define-property.js");
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function component() {
+  var element = document.createElement('div'); // lodash（目前通过一个 script 引入）对于执行这一行是必需的
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+  element.innerHTML = _lodash.default.join(['Hello', 'webpack'], ' ');
+  return element;
+}
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Person = /*#__PURE__*/function () {
-  function Person() {
-    _classCallCheck(this, Person);
-
-    this.name = "wulitian";
-  }
-
-  _createClass(Person, [{
-    key: "getName",
-    value: function getName() {
-      console.log(this.name);
-    }
-  }]);
-
-  return Person;
-}();
+document.body.append(component());
