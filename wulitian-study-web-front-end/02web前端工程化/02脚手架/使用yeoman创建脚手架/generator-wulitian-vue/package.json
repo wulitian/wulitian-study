@@ -1,0 +1,10 @@
+{
+  "name": "generator-zce-vue",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "wulitian",
+  "license": "MIT",
+  "dependencies": {
+    "yeoman-generator": "^4.0.1"
+  }
+}
