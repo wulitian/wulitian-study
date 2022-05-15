@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<script>
+    const deepCopy = obj => {
+        const target = Array.isArray(obj) ? [] : {}
+        for (const key in obj) {
+            const element = obj[key]
+            target[key] = typeof element === 'object' ? deepCopy(element) : element
+        }
+        return target
+    }
+    let arr = [1, 2, 3, 4]
+    console.log(deepCopy(arr))
+</script>
+</body>
+</html>
