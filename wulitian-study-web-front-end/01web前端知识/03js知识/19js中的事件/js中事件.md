@@ -36,7 +36,7 @@
 
 - js是单线程的语言，js最一开始执行的线程，是主线程，然后主线程执行完毕后，是微任务 microtask 的循环执行，微任务执行完毕后，在执行宏任务 macrotask；
 
-- 宏任务MacroTask（setTimeout ,setInterval,setImmediate ,I/O,UI rendering）
+- 宏任务script,MacroTask（setTimeout ,setInterval,setImmediate ,I/O,UI rendering）
 
 - 微任务MicroTask(promise.then,process.nextTick)
 

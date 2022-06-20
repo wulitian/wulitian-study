@@ -1,1 +1,0 @@
-{"version":3,"file":"app2.9da9a421c82876851afb.bundle.js","mappings":";;;;;;;;;;;;;AAAA;AACA;AACA;AACA;AACA;AACA","sources":["webpack:///./index2.js"],"sourcesContent":["function fun() {\r\n\r\n    console.log(\"11111\")\r\n\r\n}\r\n\r\nexport {\r\n    fun\r\n}"],"names":[],"sourceRoot":""}

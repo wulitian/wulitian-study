@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <style>
+        .pBox {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: #2E2C2C;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .flex{
+            display: flex;
+        }
+
+        .center1 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .center2 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -50px;
+        }
+
+        .center3 {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+
+        .center4 {
+            margin: auto;
+        }
+
+        .center5{
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="pBox">
+    <div class="box center1"></div>
+</div>
+<div class="pBox">
+    <div class="box center2"></div>
+</div>
+<div class="pBox">
+    <div class="box center3"></div>
+</div>
+<div class="pBox flex">
+    <div class="box center4"></div>
+</div>
+<div class="pBox flex center5">
+    <div class="box"></div>
+</div>
+</body>
+</html>

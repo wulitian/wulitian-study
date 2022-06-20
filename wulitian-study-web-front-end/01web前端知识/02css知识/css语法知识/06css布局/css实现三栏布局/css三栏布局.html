@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <style>
+        /*------------------------绝对定位与margin------------------------*/
+        /*body,html,.container{height: 100%;padding: 0;margin: 0;overflow: hidden;}*/
+        /*.left,.right{position: absolute;height:100%;top: 0;background: #ff69b4;}*/
+        /*.left{left: 0;width: 100px;height: 100%}*/
+        /*.right{right: 0;width: 200px;height: 100%}*/
+        /*.main{height:100%;margin: 0 200px 0 100px;background: #659;}*/
+        /*------------------------浮动布局------------------------*/
+        /*body,html{height: 100%;padding:0;margin: 0;}*/
+        /*.left{float:left;height:100%;width:100px;background:red;}*/
+        /*.main{height:100%;margin:0 200px 0 100px;background: #659;}*/
+        /*.right{float:right;height:100%;width:200px;background:red;}*/
+        /*------------------------flex布局------------------------*/
+        /*body,html{height: 100%;padding:0;margin: 0;}*/
+        /*.container{display: flex;}*/
+        /*.left{width:200px;background: red;}*/
+        /*.main{flex: 1;background: blue;}*/
+        /*.right{width:200px;background: red;}*/
+        /*------------------------table布局------------------------*/
+        /*body,html{height: 100%;padding:0;margin: 0;}*/
+        /*.container{display: table;width:100%;height: 100%}*/
+        /*.container>div{display: table-cell;}*/
+        /*.left{width: 100px;background: red;}*/
+        /*.main{background: blue;}*/
+        /*.right{width: 200px;background: red;}*/
+        /*------------------------Grid网格布局------------------------*/
+        /*body,html{height: 100%;padding:0;margin: 0;}*/
+        /*.container{display: grid;width: 100%;height: 100%;grid-template-rows: 100%;  !*设置行高*!grid-template-columns: 100px auto 200px;  !*设置列数属性*!}*/
+        /*.left{background: red;width: 100px}*/
+        /*.main{background: blue;}*/
+        /*.right{background:red;width: 200px}*/
+        /*------------------------圣杯布局------------------------*/
+        /* 两边定宽，中间自适用 */
+        /*body,html,.container{height: 100%;padding:0;margin: 0;}*/
+        /*.col{float: left;position:relative;}*/
+        /*.container{padding:0 200px 0 100px;}*/
+        /*.left{width: 100px;height:100%;margin-left: -100%;background: #ff69b4;left:-100px;}*/
+        /*.main{width:100%;height: 100%;background: #659;overflow: auto;}*/
+        /*.right{width:200px;height:100%;margin-left: -200px;background: #ff69b4;right:-200px;}*/
+        /*------------------------双飞翼布局------------------------*/
+        body,html,.container{height: 100%;padding:0;margin: 0;}
+        .col{float: left;}
+        .main{width:100%;height:100%;background: #659;}
+        .main_inner{margin:0 200px 0 100px;}
+        .left{width: 100px;height: 100%;margin-left: -100%;background: #ff69b4;}
+        .right{height:100%;width:200px;margin-left: -200px;background: #ff69b4;}
+    </style>
+</head>
+<body>
+    <!--其他-->
+<!--    <div class="container">-->
+<!--        <div class="left">left</div>-->
+<!--        <div class="main">main</div>-->
+<!--        <div class="right">right</div>-->
+<!--    </div>-->
+    <!--圣杯-->
+<!--    <div class="container">-->
+<!--        <div class="main col">main</div>-->
+<!--        <div class="left col">left</div>-->
+<!--        <div class="right col">right</div>-->
+<!--    </div>-->
+    <!--双飞翼-->
+    <div class="container">
+        <div class="main col">
+            <div class="main_inner">
+                main
+            </div>
+        </div>
+        <div class="left col">left</div>
+        <div class="right col">right</div>
+    </div>
+
+</body>
+</html>

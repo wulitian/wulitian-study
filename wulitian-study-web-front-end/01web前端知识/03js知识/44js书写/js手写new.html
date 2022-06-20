@@ -7,25 +7,27 @@
 <body>
 <script>
     // 创建一个空对象
-    // 获取构造连接原型
-    // 绑定当前的obj作为this
-    // 返回新对象或返回创建的对象
-    function Person(sex){
-        this.sex = sex
+    // 获取第一个参数作为构造，后面的参数作为构造函数的参数
+    // 获取构造函数的原型连接到当前创建的新对象上
+    // 将构造函数的this指向新创建的对象并传递参数
+    // 判断如果绑定创建新对象后返回值类型是object则直接返回绑定后的对象否则返回新创建的对象
+    function MyNew() {
+        const obj = {};
+        let arr = [...arguments];
+        let Constructor = arr.shift();
+        obj.__proto__ = Constructor.prototype;
+        let res = Constructor.apply(obj, arr);
+        return typeof res === 'object' ? res : obj;
     }
-    function myNew(fu){
-        const obj = {}
-        const args = [...arguments]
-        const params = args
-        const fn = args.shift()
-        obj.__proto__ = fn.prototype
-        let res = fn.apply(obj,params)
-        return typeof res === "object"?res:obj
+
+    function Person(name) {
+        this.name = name;
     }
-    let person = new Person(1);
-    const a = myNew(Person,1)
-    console.log(person)
-    console.log(a)
+
+    let p = new Person("wulitian");
+    let p2 = MyNew(Person, "wulitian");
+    console.log(p)
+    console.log(p2)
 </script>
 </body>
 </html>

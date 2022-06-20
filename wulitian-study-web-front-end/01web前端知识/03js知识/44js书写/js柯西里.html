@@ -6,24 +6,26 @@
 </head>
 <body>
 <script>
-    function add(){
-        // 第一次定义时，定义一个数组专门用来存储所有参数
-        const args = [...arguments];
-        // 内部声明一个函数，利用闭包特性手机所有参数
-        const fn = function(){
-            args.push(...arguments)
-            return fn
-        }
-        // 利用tostring隐式特性，当最后执行时隐式转换，并计算返回值
-        fn.toString = ()=>{
-            args.reduce((a,b)=>{
-                a+b
-            })
-        }
-        return fn
+    // 函数的柯里化
+    function add(x,y,z){
+        return x+y+z;
     }
-    console.log(add(1)(2))
-    console.log(add(11,22))
+    function klh(fn,arr=[]) {
+        let length = fn.length;
+        return (...arg)=>{
+            arr = [...arr,...arg];
+            let paramsLen = arr.length;
+            if(length===paramsLen){
+                return add(...arr);
+            }else{
+                return klh(fn,arr);
+            }
+        }
+    }
+    add(1,2,3)
+    const k = klh(add);
+    console.log(k(1)(2)(3))
+
 </script>
 </body>
 </html>
