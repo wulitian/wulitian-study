@@ -1,0 +1,5 @@
+# vue中的key  
+
+1. key是vnode的唯一标记通过key,我们的diff操作更精确，diff过程主要包括old与new各有两个头尾变量oldStartIndex,oldEndIndex,newStartIndex,newEndIndex
+2. 他们会新节点与旧结点两两对比，一共有四种方式 如果4种都有没匹配，如果设置了key就用key进行比较，遍历会往中间靠一旦startIdx>endIdx表明old与new至少已经遍历完成一次，就会结束比较
+3. 不使用key会原地比较导致可能会导致数据不准确

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hash 模式</title>
+</head>
+<body>
+<div>
+    <a href="#">首页</a>
+    <a href="#/news">新闻页</a>
+    <div id="content"></div>
+</div>
+<script type="text/javascript">
+    // 添加路由规则
+    Router.prototype.route = function(path, cb){
+        // 存储path对应的回调函数
+        this.routes[path] = cb || function(){};
+    }
+    // 路由刷新
+    Router.prototype.refresh = function(){
+        // 获取当前url的hash值
+        this.currentUrl = location.hash.slice(1) || '/'; // slice(1)从第二个开始截取到最后一位，第0个舍弃，舍弃了#
+        console.log(this, this.currentUrl);
+        // 执行当前路由回调函数
+        console.log(this.routes)
+        console.log(this.routes[this.currentUrl])
+        this.routes[this.currentUrl] && this.routes[this.currentUrl]();
+    }
+    // 窗口监视
+    Router.prototype.init = function(){
+        // 窗口监视hash变化事件，从而自动触发该路由规则
+        window.addEventListener('load', this.refresh.bind(this));
+        window.addEventListener('hashchange',this.refresh.bind(this));
+    }
+    function Router() {
+        // 路由目录
+        this.routes = {};
+        // 当前url地址
+        this.currentUrl = '';
+        this.init();
+    }
+
+    var router = new Router();
+    router.route('/', function () {
+        var div = document.querySelector('#content');
+        div.innerHTML = '<h2>这是首页</h2>';
+    })
+    router.route('/news', function () {
+        var div = document.querySelector('#content');
+        div.innerHTML = '<h2>这是新闻页</h2>';
+    })
+</script>
+</body>
+</html>
