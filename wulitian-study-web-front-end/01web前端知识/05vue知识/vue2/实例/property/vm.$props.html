@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$props</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a-a :text="text"></a-a>
+    </div>
+
+<script>
+    // 当前组件接收到的 props 对象。Vue 实例代理了对其 props 对象 property 的访问。
+    Vue.component('a-a',{
+        props:['text'],
+        template:`
+        <div>{{text}}</div>
+        `
+    })
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            text:'aaa',
+        }
+    })
+    console.log(vm.$props)
+</script>
+</body>
+</html>

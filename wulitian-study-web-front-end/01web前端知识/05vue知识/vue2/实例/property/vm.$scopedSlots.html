@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$scopedSlots</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <blog-post>
+        <template v-slot:header>
+            <h1>About Me</h1>
+        </template>
+        <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
+        <template v-slot:footer>
+            <p>Copyright 2016 Evan You</p>
+        </template>
+        <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
+    </blog-post>
+</div>
+
+<script>
+    // 用来访问作用域插槽。对于包括 默认 slot 在内的每一个插槽，该对象都包含一个返回相应 VNode 的函数。
+    // vm.$scopedSlots 在使用渲染函数开发一个组件时特别有用。
+    // 注意：从 2.6.0 开始，这个 property 有两个变化：
+    // 作用域插槽函数现在保证返回一个 VNode 数组，除非在返回值无效的情况下返回 undefined。
+    // 所有的 $slots 现在都会作为函数暴露在 $scopedSlots 中。如果你在使用渲染函数，不论当前插槽是否带有作用域，我们都推荐始终通过 $scopedSlots 访问它们。这不仅仅使得在未来添加作用域变得简单，也可以让你最终轻松迁移到所有插槽都是函数的 Vue 3。
+    Vue.component('blog-post', {
+        render: function (createElement) {
+            var header = this.$slots.header
+            var body   = this.$slots.default
+            var footer = this.$slots.footer
+            return createElement('div', [
+                createElement('header', header),
+                createElement('main', body),
+                createElement('footer', footer)
+            ])
+        }
+    })
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+        }
+    })
+    console.log(vm.$scopedSlots)
+
+</script>
+</body>
+</html>

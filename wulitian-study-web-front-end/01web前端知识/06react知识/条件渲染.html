@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="js/prop-types.js"></script>
+<script type="text/javascript" src="js/babel.min.js"></script>
+<script type="text/babel">
+    // 条件渲染
+    class MyCom extends React.Component{
+        constructor(props){
+            super(props)
+            this.state = {
+                bool:true
+            }
+            this.myRef = React.createRef();
+        };
+        fun(){
+            this.setState({
+                bool:!this.state.bool
+            })
+        }
+        render(){
+            let text = "";
+            if(this.state.bool){
+                text = "雾里天"
+            }else{
+                text = "wulitian"
+            }
+            return (
+                <div>
+                    <span>{text}</span>
+                    <button onClick={this.fun.bind(this)}>切换</button>
+                    <p>{this.state.bool?'雾里天':'wulitian'}</p>
+                </div>
+            )
+        }
+    }
+    let com = <MyCom/>
+    ReactDOM.render(com, document.getElementById('root'))
+</script>
+</body>
+</html>

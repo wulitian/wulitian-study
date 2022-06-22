@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="js/babel.min.js"></script>
+<script type="text/babel">
+    //多行标签需要有父元素,并且用括号包裹
+    const vDom = (<div>
+                    <div>wulitian</div>
+                 </div>)
+    ReactDOM.render(vDom, document.getElementById('root'))
+</script>
+</body>
+</html>

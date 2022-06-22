@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vm.$children</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a-a :text="text"></a-a>
+    </div>
+
+<script>
+    // 当前实例的直接子组件。需要注意 $children 并不保证顺序，也不是响应式的。如果你发现自己正在尝试使用 $children 来进行数据绑定，考虑使用一个数组配合 v-for 来生成子组件，并且使用 Array 作为真正的来源。
+    Vue.component('a-a',{
+        props:['text'],
+        template:`
+        <div>{{text}}</div>
+        `
+    })
+
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            text:'aaa',
+        }
+    })
+    console.log(vm.$children)
+</script>
+</body>
+</html>

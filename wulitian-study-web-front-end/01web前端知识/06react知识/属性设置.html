@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+    <style>
+        .box{
+            border: 1px solid #dddddd;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="js/babel.min.js"></script>
+<script type="text/babel">
+    // 属性设置
+    let url = 'https://www.baidu.com';
+    let href = <a href={url}>百度</a>;
+    let bg = {background:'#ff0000',zIndex:10};
+
+    const element = (
+        <div className="box">
+            <div style={bg}>{href}</div>
+        </div>
+    );
+    ReactDOM.render(element, document.getElementById('root'));
+</script>
+</body>
+</html>
