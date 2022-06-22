@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>model</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div>
+        <div id="app">
+            <div id="input_test_demo">
+                <span style="color:red">{{value}}</span>
+                <input_test v-model="value" ></input_test>
+            </div>
+        </div>
+    </div>
+<script>
+    //允许一个自定义组件在使用 v-model 时定制 prop 和 event。默认情况下，
+    // 一个组件上的 v-model 会把 value 用作 prop 且把 input 用作 event，
+    // 但是一些输入类型比如单选框和复选框按钮可能想使用 value prop 来达到不同的目的。
+    // 使用 model 选项可以回避这些情况产生的冲突。
+    Vue.component("input_test",{
+        model:{
+            prop:'value',
+            event:'input-value'
+        },
+        template : `
+               <input type="text" v-bind:value="value" v-on:input="$emit('input-value', $event.target.value)"/>
+            `
+    })
+
+    new Vue({
+        el: "#input_test_demo",
+        data: {
+            value: "请输入:"
+        }
+    })
+
+</script>
+</body>
+</html>

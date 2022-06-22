@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>wulitian-study</title>
+</head>
+<body>
+<div id="root"></div>
+<script type="text/javascript" src="./node_modules/react/umd/react.development.js"></script>
+<script type="text/javascript" src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<script type="text/javascript" src="js/babel.min.js"></script>
+<script type="text/babel">
+    //jsx中插入表达式用{}
+    let a = 10;
+    let b = 'wulitian'
+    function age() {
+        return 20;
+    }
+    const vDom = (<div>
+                    <h1>{b}</h1>
+                    <h2>{a+1}</h2>
+                    <h3>{age()}</h3>
+                 </div>)
+    ReactDOM.render(vDom, document.getElementById('root'))
+</script>
+</body>
+</html>

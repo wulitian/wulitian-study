@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>optionMergeStrategies</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    </div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg:'hello vue',
+        }
+    })
+    //自定义合并策略的选项。
+    // 合并策略选项分别接收在父实例和子实例上定义的该选项的值作为第一个和第二个参数，Vue 实例上下文被作为第三个参数传入。
+    Vue.config.optionMergeStrategies._my_option = function (parent, child, vm) {
+        return child + 1
+    }
+    const Profile = Vue.extend({
+        _my_option: 1
+    })
+    // Profile.options._my_option = 2
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "wulitian-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "build": "webpack --config webpack.config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^5.1.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.3.1",
+    "less-loader": "^8.0.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.25.0",
+    "webpack-cli": "^4.5.0"
+  }
+}
