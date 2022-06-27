@@ -1,6 +1,4 @@
-# 面试官：说说你对vue的mixin的理解，有什么应用场景？ 
-
-![](https://static.vue-js.com/8a739c90-3b7f-11eb-85f6-6fac77c0c9b3.png)
+# vue的mixin的理解 
 
 ## 一、mixin是什么
 
@@ -374,11 +372,3 @@ strats.filters = function mergeAssets(
 - 合并型策略是`data`, 通过`set`方法进行合并和重新赋值
 - 队列型策略有生命周期函数和`watch`，原理是将函数存入一个数组，然后正序遍历依次执行
 - 叠加型有`component`、`directives`、`filters`，通过原型链进行层层的叠加
-
-
-## 参考文献
-
-- https://zhuanlan.zhihu.com/p/31018570
-- https://juejin.cn/post/6844904015495446536#heading-1
-- https://juejin.cn/post/6844903846775357453
-- https://vue3js.cn/docs/zh

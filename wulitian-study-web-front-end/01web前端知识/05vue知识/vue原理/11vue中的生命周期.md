@@ -1,14 +1,12 @@
-#  面试官：请描述下你对vue生命周期的理解？在created和mounted这两个生命周期中请求数据有什么区别呢？
+# vue生命周期
 
-![](https://static.vue-js.com/3a119e10-3aca-11eb-85f6-6fac77c0c9b3.png)
+## 1。生命周期是什么  
 
-## 一、生命周期是什么  
+在`Vue`中实例从创建到销毁的过程就是生命周期，即指从创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程。
 
-生命周期`（Life Cycle）`的概念应用很广泛，特别是在政治、经济、环境、技术、社会等诸多领域经常出现，其基本涵义可以通俗地理解为“从摇篮到坟墓”`（Cradle-to-Grave）`的整个过程在`Vue`中实例从创建到销毁的过程就是生命周期，即指从创建、初始化数据、编译模板、挂载Dom→渲染、更新→渲染、卸载等一系列过程我们可以把组件比喻成工厂里面的一条流水线，每个工人（生命周期）站在各自的岗位，当任务流转到工人身边的时候，工人就开始工作PS：在`Vue`生命周期钩子会自动绑定 `this` 上下文到实例中，因此你可以访问数据，对 `property` 和方法进行运算这意味着**你不能使用箭头函数来定义一个生命周期方法** \(例如 `created: () => this.fetchTodos()`\)
+## 2、生命周期有哪些
 
-## 二、生命周期有哪些
-
-Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新前后,销毁前销毁后，以及一些特殊场景的生命周期
+Vue生命周期总共可以分为8个阶段：创建前后, 载入前后, 更新前后, 销毁前销毁后，以及一些特殊场景的生命周期
 
 | 生命周期 | 描述 |
 | :-- | :-- |
@@ -24,13 +22,13 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 | deactivated | keep-alive 缓存的组件停用时调用 |
 | errorCaptured | 捕获一个来自子孙组件的错误时被调用 |
 
-## 三、生命周期整体流程
+## 3、生命周期整体流程
 
 `Vue`生命周期流程图
 
  ![](https://static.vue-js.com/44114780-3aca-11eb-85f6-6fac77c0c9b3.png)
 
-#### 具体分析
+## 4、具体分析
 
 **beforeCreate -> created**
 
@@ -63,7 +61,7 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 
 **beforeUpdate**
 
-- 更新的数据必须是被渲染在模板上的（`el`、`template`、`rende`r之一）
+- 更新的数据必须是被渲染在模板上的（`el`、`template`、`render`之一）
 - 此时`view`层还未更新
 - 若在`beforeUpdate`中再次修改数据，不会再次触发更新方法
 
@@ -81,11 +79,7 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 - 完全销毁一个实例。可清理它与其它实例的连接，解绑它的全部指令及事件监听器
 - 并不能清除DOM，仅仅销毁实例
 
-  
-
 **使用场景分析**
-
-  
 
 | 生命周期 | 描述 |
 | :-- | :-- |
@@ -98,24 +92,6 @@ Vue生命周期总共可以分为8个阶段：创建前后, 载入前后,更新�
 | beforeDestroy | 销毁前，可用于一些定时器或订阅的取消 |
 | destroyed | 组件已销毁，作用同上 |
 
-## 四、题外话：数据请求在created和mouted的区别
+## 5、数据请求在created和mouted的区别
 
 `created`是在组件实例一旦创建完成的时候立刻调用，这时候页面`dom`节点并未生成`mounted`是在页面`dom`节点渲染完毕之后就立刻执行的触发时机上`created`是比`mounted`要更早的两者相同点：都能拿到实例对象的属性和方法讨论这个问题本质就是触发的时机，放在`mounted`请求有可能导致页面闪动（页面`dom`结构已经生成），但如果在页面加载前完成则不会出现此情况建议：放在`create`生命周期当中
-
-## 参考文献
-
-- https://juejin.cn/post/6844903811094413320
-- https://baike.baidu.com/
-- http://cn.vuejs.org/
-
-  
-
-面试官VUE系列总进度：4／33
-
-[面试官：说说你对vue的理解\?](http://mp.weixin.qq.com/s?__biz=MzU1OTgxNDQ1Nw==&mid=2247484101&idx=1&sn=83b0983f0fca7d7c556e4cb0bff8c9b8&chksm=fc10c093cb674985ef3bd2966f66fc28c5eb70b0037e4be1af4bf54fb6fa9571985abd31d52f&scene=21#wechat_redirect)  
-
-[面试官：说说你对SPA（单页应用）的理解\?](http://mp.weixin.qq.com/s?__biz=MzU1OTgxNDQ1Nw==&mid=2247484119&idx=1&sn=d171b28a00d42549d279498944a98519&chksm=fc10c081cb6749976814aaeda6a6433db418223cec57edda7e15b9e5a0ca69ad549655639c61&scene=21#wechat_redirect)
-
-[面试官：说说你对双向绑定的理解\?](http://mp.weixin.qq.com/s?__biz=MzU1OTgxNDQ1Nw==&mid=2247484167&idx=1&sn=7b00b4333ab2722f25f12586b70667ca&chksm=fc10c151cb6748476008dab2f4e6c6264f5d19678305955c85cec1b619e56e8f7457b7357fb9&scene=21#wechat_redirect)  
-
-![](https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png)
