@@ -1,8 +1,5 @@
 # 面试官：Vue实例挂载的过程
 
-![](https://static.vue-js.com/63194810-3a09-11eb-85f6-6fac77c0c9b3.png)
-
-
 ## 一、思考
 
 我们都听过知其然知其所以然这句话
@@ -532,11 +529,3 @@ Vue.prototype._update = function (vnode: VNode, hydrating?: boolean) {
 - 定义`updateComponent`更新函数
 - 执行`render`生成虚拟`DOM`
 - `_update`将虚拟`DOM`生成真实`DOM`结构，并且渲染到页面中
-
-
-
-## 参考文献
-
-- https://www.cnblogs.com/gerry2019/p/12001661.html
-- https://github.com/vuejs/vue/tree/dev/src/core/instance 
-- https://vue3js.cn

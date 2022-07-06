@@ -1,9 +1,5 @@
 # 面试官：Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？
 
- ![](https://static.vue-js.com/57aa5c80-5f7f-11eb-ab90-d9ae814b240d.png)
-
-
-
 ## 一、Object.defineProperty
 
 定义：`Object.defineProperty()` 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象
@@ -295,6 +291,3 @@ Vue.delete(obj),'bar')
 ```
 
 `Proxy` 不兼容IE，也没有 `polyfill`, `defineProperty` 能支持到IE9
-
-### 参考文献
-- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty

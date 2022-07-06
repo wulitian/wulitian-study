@@ -1,6 +1,4 @@
-# 面试官：什么是虚拟DOM？如何实现一个虚拟DOM？说说你的思路
-
- ![](https://static.vue-js.com/770b9670-442c-11eb-85f6-6fac77c0c9b3.png)
+# 什么是虚拟DOM？如何实现一个虚拟DOM？说说你的思路
 
 ## 一、什么是虚拟DOM
 
@@ -394,8 +392,3 @@ export function createComponent (
 ### 小结
 
 `createElement` 创建 `VNode` 的过程，每个 `VNode` 有 `children`，`children` 每个元素也是一个`VNode`，这样就形成了一个虚拟树结构，用于描述真实的`DOM`树结构
-
-## 参考文献
-
-- https://ustbhuangyi.github.io/vue-analysis/v2/data-driven/create-element.html#children-%E7%9A%84%E8%A7%84%E8%8C%83%E5%8C%96
-- https://juejin.cn/post/6876711874050818061

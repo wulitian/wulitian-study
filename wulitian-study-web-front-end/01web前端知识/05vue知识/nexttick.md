@@ -1,6 +1,4 @@
-# 面试官：Vue中的$nextTick有什么作用？
-
-![](https://static.vue-js.com/76484d30-3aba-11eb-85f6-6fac77c0c9b3.png)
+# Vue中的$nextTick有什么作用？
 
 ## 一、NextTick是什么
 
@@ -210,7 +208,3 @@ function flushCallbacks () {
 1. 把回调函数放入callbacks等待执行
 2. 将执行函数放到微任务或者宏任务中
 3. 事件循环到了微任务或者宏任务，执行函数依次执行callbacks中的回调
-
-## 参考文献
-
-- https://juejin.cn/post/6844904147804749832

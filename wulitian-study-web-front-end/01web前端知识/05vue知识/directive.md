@@ -1,6 +1,4 @@
-# 面试官：你有写过自定义指令吗？自定义指令的应用场景有哪些？
-
-  ![](https://static.vue-js.com/bd85a970-4345-11eb-85f6-6fac77c0c9b3.png)
+# 你有写过自定义指令吗？自定义指令的应用场景有哪些？
 
 ## 一、什么是指令
 
@@ -301,10 +299,3 @@ export default vCopy;
 ```
 
 关于自定义组件还有很多应用场景，如：拖拽指令、页面水印、权限校验等等应用场景
-
-
-## 参考文献
-
-- https://vue3js.cn/docs/zh
-- https://juejin.cn/post/6844904197448531975#heading-5
-- https://www.cnblogs.com/chenwenhao/p/11924161.html#_label2

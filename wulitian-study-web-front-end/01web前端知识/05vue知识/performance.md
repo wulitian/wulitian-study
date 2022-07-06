@@ -1,8 +1,4 @@
-# 面试官：Vue3.0性能提升主要是通过哪几方面体现的？
-
- ![](https://static.vue-js.com/2aac1020-5ed0-11eb-ab90-d9ae814b240d.png)
-
-
+# Vue3.0性能提升主要是通过哪几方面体现的？
 
 ## 一、编译阶段
 
@@ -223,9 +219,3 @@ export default defineComponent({
 - 可以监听删除属性
 
 关于这两个 API 具体的不同，我们下篇文章会进行一个更加详细的介绍
-
-
-
-## 参考文献
-
-- https://juejin.cn/post/6903171037211557895

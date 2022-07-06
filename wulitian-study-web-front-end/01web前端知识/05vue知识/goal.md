@@ -1,6 +1,4 @@
-# 面试官：Vue3.0的设计目标是什么？做了哪些优化
-
-![](https://static.vue-js.com/b93b49c0-5c58-11eb-85f6-6fac77c0c9b3.png)
+# Vue3.0的设计目标是什么？做了哪些优化
 
 ## 一、设计目标
 
@@ -230,10 +228,3 @@ export default {
 ```
 
 可以看到，整个数据来源清晰了，即使去编写更多的` hook `函数，也不会出现命名冲突的问题
-
-
-
-## 参考文献
-
-- https://juejin.cn/post/6850418112878575629#heading-5
-- https://vue3js.cn/docs/zh

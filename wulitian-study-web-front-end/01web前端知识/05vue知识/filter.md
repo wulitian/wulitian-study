@@ -1,6 +1,4 @@
-# 面试官：Vue中的过滤器了解吗？过滤器的应用场景有哪些？
-
- ![](https://static.vue-js.com/fe68eea0-440f-11eb-ab90-d9ae814b240d.png)
+# Vue中的过滤器了解吗？过滤器的应用场景有哪些？
 
 ## 一、是什么
 过滤器（`filter`）是输送介质管道上不可缺少的一种装置
@@ -223,11 +221,3 @@ function warpFilter(exp,filter){
 - 在编译阶段通过`parseFilters`将过滤器编译成函数调用（串联过滤器则是一个嵌套的函数调用，前一个过滤器执行的结果是后一个过滤器函数的参数）
 - 编译后通过调用`resolveFilter`函数找到对应过滤器并返回结果
 - 执行结果作为参数传递给`toString`函数，而`toString`执行后，其结果会保存在`Vnode`的`text`属性中，渲染到视图
-
-
-
-## 参考文献
-
-- https://cn.vuejs.org/v2/guide/filters.html#ad
-- https://blog.csdn.net/weixin_42724176/article/details/105546684
-- https://vue3js.cn

@@ -1,6 +1,4 @@
-# 面试官：有使用过vue吗？说说你对vue的理解
-
-![](https://static.vue-js.com/02ac1620-3ac6-11eb-85f6-6fac77c0c9b3.png)
+# 有使用过vue吗？说说你对vue的理解
 
 ## 一、从历史说起
 
@@ -25,16 +23,16 @@ Web是World Wide Web的简称，中文译为万维网我们可以将它规划成
 
 ASP，JSP大家应该都不会太陌生，最早出现于 2005 年左右，先后出现了微软的 ASP 和 Java Server Pages \[JSP\] 等技术,取代了 CGI ，增强了 WEB 与服务端的交互的安全性，类似于下面这样，其实就是Java + HTML
 
-`<%@ page language="java" contentType="text/html; charset=utf-8"  
-    pageEncoding="utf-8"%>  
-<!DOCTYPE html>  
+`<%@ page language="java" contentType="text/html; charset=utf-8"  
+    pageEncoding="utf-8"%>  
+<!DOCTYPE html>  
 <html>  
 <head>  
-  <meta charset="utf-8">  
-  <title>JSP demo</title>  
+  <meta charset="utf-8">  
+  <title>JSP demo</title>  
 </head>  
 <body>  
-  <img src="http://localhost:8080/web05_session/1.jpg" width=200 height=100 />  
+  <img src="http://localhost:8080/web05_session/1.jpg" width=200 height=100 />  
 </body>  
 </html>  
 `
@@ -132,11 +130,3 @@ Vue.js（/vjuː/，或简称为Vue）是一个用于创建用户界面的开源J
 - 组件化通信的不同。`react`中我们通过使用回调函数来进行通信的，而`Vue`中子组件向父组件传递消息有两种方式：事件和回调函数
 - diff算法不同。`react`主要使用diff队列保存需要更新哪些DOM，得到patch树，再统一操作批量更新DOM。`Vue` 使用双向指针，边对比，边更新DOM
 
-## 参考文献
-
-- https://segmentfault.com/a/1190000016269636
-- https://zh.wikipedia.org/zh-cn/Vue.js
-- https://zhuanlan.zhihu.com/p/20197803
-- https://zhuanlan.zhihu.com/p/38296857
-
- ![](https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png)

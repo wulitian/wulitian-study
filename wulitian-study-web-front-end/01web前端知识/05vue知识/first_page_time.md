@@ -1,7 +1,4 @@
-# 面试官：SPA首屏加载速度慢的怎么解决？
-
-![image.png](https://static.vue-js.com/24617c00-3acc-11eb-ab90-d9ae814b240d.png)
-
+# SPA首屏加载速度慢的怎么解决？、
 
 ## 一、什么是首屏加载
 
@@ -189,12 +186,3 @@ SSR（Server side ），也就是服务端渲染，组件或页面通过服务�
 
 
 大家可以根据自己项目的情况选择各种方式进行首屏渲染的优化
-
-
-
-## 参考文献
-
-- https://zhuanlan.zhihu.com/p/88639980?utm_source=wechat_session
-- https://www.chengrang.com/how-browsers-work.html
-- https://juejin.cn/post/6844904185264095246
-- https://vue3js.cn/docs/zh

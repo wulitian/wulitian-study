@@ -1,6 +1,4 @@
-# 面试官：vue要做权限管理该怎么做？如果控制到按钮级别的权限怎么做？
-
-![](https://static.vue-js.com/397e1fa0-4dad-11eb-ab90-d9ae814b240d.png)
+# vue要做权限管理该怎么做？如果控制到按钮级别的权限怎么做？
 
 ## 一、是什么
 
@@ -424,11 +422,3 @@ export {has}
 关于权限如何选择哪种合适的方案，可以根据自己项目的方案项目，如考虑路由与菜单是否分离
 
 权限需要前后端结合，前端尽可能的去控制，更多的需要后台判断
-
-
-
-## 参考文献
-
-- https://mp.weixin.qq.com/s/b-D2eH1mLwL_FkaZwjueSw
-- https://segmentfault.com/a/1190000020887109
-- https://juejin.cn/post/6844903648057622536#heading-6

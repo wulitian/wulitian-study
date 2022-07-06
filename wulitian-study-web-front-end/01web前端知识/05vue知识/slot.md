@@ -1,6 +1,4 @@
-# 面试官：说说你对slot的理解？slot使用场景有哪些？
-
- ![](https://static.vue-js.com/141ca660-3dbc-11eb-85f6-6fac77c0c9b3.png)
+# 说说你对slot的理解？slot使用场景有哪些？
 
 ## 一、slot是什么
 
@@ -283,11 +281,3 @@ vm.$scopedSlots = normalizeScopedSlots(
 ```
 
 作用域插槽中父组件能够得到子组件的值是因为在`renderSlot`的时候执行会传入`props`，也就是上述`_t`第三个参数，父组件则能够得到子组件传递过来的值
-
-
-## 参考文献
-
-- https://juejin.cn/post/6844903817746628615#heading-4
-- https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots
-- https://vue3js.cn/docs/zh
-- https://segmentfault.com/a/1190000019492734?utm_source=tag-newest

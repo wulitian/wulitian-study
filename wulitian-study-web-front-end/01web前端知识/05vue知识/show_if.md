@@ -121,10 +121,3 @@ export const transformIf = createStructuralDirectiveTransform(
 如果需要非常频繁地切换，则使用 v-show 较好
 
 如果在运行时条件很少改变，则使用 v-if 较好
-
-
-## 参考文献
-
-- https://www.jianshu.com/p/7af8554d8f08
-- https://juejin.cn/post/6897948855904501768
-- https://vue3js/docs/zh

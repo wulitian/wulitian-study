@@ -1,6 +1,4 @@
-# 面试官：你是怎么处理vue项目中的错误的？
-
- ![](https://static.vue-js.com/3cafe4f0-4fd9-11eb-ab90-d9ae814b240d.png)
+# 你是怎么处理vue项目中的错误的？
 
 ## 一、错误类型
 
@@ -269,13 +267,3 @@ function logError (err, vm, info) {
 - `globalHandleError `调用全局的 `errorHandler` 方法，再通过`logError`判断环境输出错误信息
 - `invokeWithErrorHandling`更好的处理异步错误信息
 - `logError`判断环境，选择不同的抛错方式。非生产环境下，调用`warn`方法处理错误
-
-
-
-
-
-## 参考文献
-
-- https://juejin.cn/post/6844904096936230925
-
-- https://segmentfault.com/a/1190000018606181

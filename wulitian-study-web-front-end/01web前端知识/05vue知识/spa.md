@@ -1,10 +1,10 @@
-# 面试官：你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢
-
-![](https://static.vue-js.com/cf6aa320-3ac6-11eb-85f6-6fac77c0c9b3.png)
+# 你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢
 
 ## 一、什么是SPA
 
-SPA（single-page application），翻译过来就是单页应用`SPA`是一种网络应用程序或网站的模型，它通过动态重写当前页面来与用户交互，这种方法避免了页面之间切换打断用户体验在单页应用中，所有必要的代码（`HTML`、`JavaScript`和`CSS`）都通过单个页面的加载而检索，或者根据需要（通常是为响应用户操作）动态装载适当的资源并添加到页面页面在任何时间点都不会重新加载，也不会将控制转移到其他页面举个例子来讲就是一个杯子，早上装的牛奶，中午装的是开水，晚上装的是茶，我们发现，变的始终是杯子里的内容，而杯子始终是那个杯子结构如下图
+SPA（single-page application），翻译过来就是单页应用`SPA`是一种网络应用程序或网站的模型，它通过动态重写当前页面来与用户交互，这种方法避免了页面之间切换打断用户体验在单页应用中，、
+所有必要的代码（`HTML`、`JavaScript`和`CSS`）都通过单个页面的加载而检索，或者根据需要（通常是为响应用户操作）动态装载适当的资源并添加到页面页面在任何时间点都不会重新加载，
+也不会将控制转移到其他页面举个例子来讲就是一个杯子，早上装的牛奶，中午装的是开水，晚上装的是茶，我们发现，变的始终是杯子里的内容，而杯子始终是那个杯子结构如下图
 
  ![](https://static.vue-js.com/df14a5a0-3ac6-11eb-85f6-6fac77c0c9b3.png)
 
@@ -59,33 +59,33 @@ SPA（single-page application），翻译过来就是单页应用`SPA`是一种�
 核心通过监听`url`中的`hash`来进行路由跳转
 
 ```js
-// 定义 Router  
-class Router {  
-    constructor () {  
-        this.routes = {}; // 存放路由path及callback  
-        this.currentUrl = '';  
-          
-        // 监听路由change调用相对应的路由回调  
-        window.addEventListener('load', this.refresh, false);  
-        window.addEventListener('hashchange', this.refresh, false);  
-    }  
-      
-    route(path, callback){  
-        this.routes[path] = callback;  
-    }  
-      
-    push(path) {  
-        this.routes[path] && this.routes[path]()  
-    }  
+// 定义 Router  
+class Router {  
+    constructor () {  
+        this.routes = {}; // 存放路由path及callback  
+        this.currentUrl = '';  
+          
+        // 监听路由change调用相对应的路由回调  
+        window.addEventListener('load', this.refresh, false);  
+        window.addEventListener('hashchange', this.refresh, false);  
+    }  
+      
+    route(path, callback){  
+        this.routes[path] = callback;  
+    }  
+      
+    push(path) {  
+        this.routes[path] && this.routes[path]()  
+    }  
 }  
   
-// 使用 router  
-window.miniRouter = new Router();  
-miniRouter.route('/', () => console.log('page1'))  
-miniRouter.route('/page2', () => console.log('page2'))  
+// 使用 router  
+window.miniRouter = new Router();  
+miniRouter.route('/', () => console.log('page1'))  
+miniRouter.route('/page2', () => console.log('page2'))  
   
-miniRouter.push('/') // page1  
-miniRouter.push('/page2') // page2  
+miniRouter.push('/') // page1  
+miniRouter.push('/page2') // page2  
 ```
 
 ##### history模式
@@ -97,43 +97,43 @@ miniRouter.push('/page2') // page2
  -    `history.popState` 当 `history` 发生变化时触发
 
 ```js
-// 定义 Router  
-class Router {  
-    constructor () {  
-        this.routes = {};  
-        this.listerPopState()  
-    }  
-      
-    init(path) {  
-        history.replaceState({path: path}, null, path);  
-        this.routes[path] && this.routes[path]();  
-    }  
-      
-    route(path, callback){  
-        this.routes[path] = callback;  
-    }  
-      
-    push(path) {  
-        history.pushState({path: path}, null, path);  
-        this.routes[path] && this.routes[path]();  
-    }  
-      
-    listerPopState () {  
-        window.addEventListener('popstate' , e => {  
-            const path = e.state && e.state.path;  
-            this.routers[path] && this.routers[path]()  
-        })  
-    }  
+// 定义 Router  
+class Router {  
+    constructor () {  
+        this.routes = {};  
+        this.listerPopState()  
+    }  
+      
+    init(path) {  
+        history.replaceState({path: path}, null, path);  
+        this.routes[path] && this.routes[path]();  
+    }  
+      
+    route(path, callback){  
+        this.routes[path] = callback;  
+    }  
+      
+    push(path) {  
+        history.pushState({path: path}, null, path);  
+        this.routes[path] && this.routes[path]();  
+    }  
+      
+    listerPopState () {  
+        window.addEventListener('popstate' , e => {  
+            const path = e.state && e.state.path;  
+            this.routers[path] && this.routers[path]()  
+        })  
+    }  
 }  
   
-// 使用 Router  
+// 使用 Router  
   
-window.miniRouter = new Router();  
-miniRouter.route('/', ()=> console.log('page1'))  
-miniRouter.route('/page2', ()=> console.log('page2'))  
+window.miniRouter = new Router();  
+miniRouter.route('/', ()=> console.log('page1'))  
+miniRouter.route('/page2', ()=> console.log('page2'))  
   
-// 跳转  
-miniRouter.push('/page2')  // page2  
+// 跳转  
+miniRouter.push('/page2')  // page2  
 ```
 
 ### 四、题外话：如何给SPA做SEO
@@ -154,10 +154,3 @@ miniRouter.push('/page2')  // page2
 
  ![](https://static.vue-js.com/25be6630-3ac7-11eb-ab90-d9ae814b240d.png)
 
-### 参考文献
-
-- https://segmentfault.com/a/1190000019623624
-- https://juejin.cn/post/6844903512107663368
-- https://www.cnblogs.com/constantince/p/5586851.html
-
- ![](https://static.vue-js.com/821b87b0-3ac6-11eb-ab90-d9ae814b240d.png)

@@ -1,6 +1,4 @@
-# 面试官：说说Vue 3.0中Treeshaking特性？举例说明一下？
-
- ![](https://static.vue-js.com/5e8bf1d0-6097-11eb-ab90-d9ae814b240d.png)
+# 说说Vue 3.0中Treeshaking特性？举例说明一下？
 
 ## 一、是什么
 

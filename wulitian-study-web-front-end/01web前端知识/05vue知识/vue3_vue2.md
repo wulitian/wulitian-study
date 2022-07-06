@@ -1,6 +1,4 @@
-# 面试官：vue3有了解过吗？能说说跟vue2的区别吗？
-
- ![](https://static.vue-js.com/774b6950-5087-11eb-85f6-6fac77c0c9b3.png)
+# vue3有了解过吗？能说说跟vue2的区别吗？
 
 ## 一、Vue3介绍
 
@@ -266,9 +264,3 @@ export default {
 - 内联模板 `attribute`
 - `$destroy` 实例方法。用户不应再手动管理单个` Vue` 组件的生命周期。
 
-
-
-## 参考文献
-
-- https://vue3js.cn/docs/zh/guide/migration/introduction.html#%E6%A8%A1%E6%9D%BF%E6%8C%87%E4%BB%A4
-- https://composition-api.vuejs.org/zh/#api-%E4%BB%8B%E7%BB%8D
