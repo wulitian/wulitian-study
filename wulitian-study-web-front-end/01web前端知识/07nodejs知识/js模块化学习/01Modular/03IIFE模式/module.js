@@ -1,6 +1,6 @@
 // IIFE模式（闭包）
 (function(window){
-    var msg = 'modele';
+    let msg = 'model';
     function foo(){
         console.log('foo()',msg);
     }
