@@ -6,23 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <input type="text" v-model="msg" />
-        {{msg}}
-        <button @click="state=!state">销毁</button>
-        <c-c v-if="state"></c-c>
-        <!-- 基本 -->
-        <keep-alive>
-            <component :is="currentTabComponent"></component>
-        </keep-alive>
-        <button @click="currentTabComponent='b-b'">keep-alive切换组件</button>
-    </div>
+<div id="app">
+    <input type="text" v-model="msg"/>
+    {{msg}}
+    <button @click="state=!state">销毁</button>
+    <c-c v-if="state"></c-c>
+    <!-- 基本 -->
+    <keep-alive>
+        <component :is="currentTabComponent"></component>
+    </keep-alive>
+    <button @click="currentTabComponent='b-b'">keep-alive切换组件</button>
+</div>
 <script>
     Vue.component('a-a', {
-        created(){
+        created() {
             a;
         },
-        deactivated(){
+        deactivated() {
             console.log('deactivated')
             // 被 keep-alive 缓存的组件停用时调用。
             // 该钩子在服务器端渲染期间不被调用。
@@ -34,7 +34,7 @@
   `
     })
     Vue.component('b-b', {
-        activated(){
+        activated() {
             console.log('activated')
             //被 keep-alive 缓存的组件激活时调用。
             // 该钩子在服务器端渲染期间不被调用。
@@ -46,13 +46,13 @@
   `
     })
     Vue.component('c-c', {
-        beforeDestroy(){
+        beforeDestroy() {
             console.log('beforeDestpry')
             //  当执行beforeDestroy钩子函数的时候Vue实例就已经从运行阶段，进入到了销毁阶段；
             //  当执行beforeDestroy的时候，是实例身上所有的data和所有的methods，以及过滤器，指令......都
             //  处于可用状态，此时还没有真正的执行销毁的过程
         },
-        destroyed(){
+        destroyed() {
             console.log('destoryed')
             //  当执行到destroyed函数的时候，组件已经被完全销毁了，此时，组件中所有的数据，方法，指令，过滤器......
             //  都已经不可用了
@@ -66,69 +66,69 @@
     var app = new Vue({
         el: '#app',
         data: {
-            currentTabComponent:'a-a',
-            state:true,
-            msg:'hello vue',
+            currentTabComponent: 'a-a',
+            state: true,
+            msg: 'hello vue',
         },
-        methods:{
-            destroy(){
+        methods: {
+            destroy() {
                 this.$destroy();
             }
         },
-        beforeCreate(){
+        beforeCreate() {
             console.log('beforeCreate')
             //  这是我们遇到的第一个生命周期函数，表示实例被完全创建出来之前，会执行他
             //  注意：在beforeCreate生命周期函数执行的时候，data和methods中的数据还没有被初始化
         },
-        created(){
+        created() {
             console.log('created')
             //  这是遇到的第二个生命周期函数
             //  在created中，data和methods都已经被初始化好了
             //  如果要调用methods中的方法，或者操作data中的数据，最早只能在created中操作
         },
-        beforeMount(){
+        beforeMount() {
             console.log('beforeMount')
             //  这是遇到的第三个生命周期函数，表示模板已经在内存中编译完成，但是尚未把模板渲染到页面中去
             //  在beforeMount执行的时候，页面中的元素，还没有被真正替换过来，只是之前写的一些模板字符串
         },
-        mounted(){
+        mounted() {
             console.log('mounted')
             //  这是遇到的第四个生命周期函数，表示内存中的模板，已经真实的挂载在页面中，用户已经可以看到渲染好的页面了
             //  mounted是实例创建期间德 最后一个生命周期函数，当执行完mounted就表示实例已经被完全创建好了
             // ，此时如果没有其他操作的话，这个实例就在我们的内存当中
         },
         //  接下来是运行中的两个事件
-        beforeUpdate(){
+        beforeUpdate() {
             console.log('beforeUpdate')
             //  这时候表示我们的界面还没有被更新【数据被更新了吗？数据肯定被更新了】
             //  得出结论：当执行beforeUpdate的时候，页面中的显示数据还是旧的，此时data数据是最新的，页面尚未和最新的数据保持同步
         },
-        updated(){
+        updated() {
             console.log('update')
             // updated 事件执行的时候，页面和data数据已经保持同步了，都是最新的
         },
-        activated(){
+        activated() {
             console.log('activated')
             //被 keep-alive 缓存的组件激活时调用。
             // 该钩子在服务器端渲染期间不被调用。
         },
-        deactivated(){
+        deactivated() {
             console.log('deactivated')
             // 被 keep-alive 缓存的组件停用时调用。
             // 该钩子在服务器端渲染期间不被调用。
         },
-        beforeDestroy(){
+        beforeDestroy() {
             console.log('beforeDestpry')
             //  当执行beforeDestroy钩子函数的时候Vue实例就已经从运行阶段，进入到了销毁阶段；
             //  当执行beforeDestroy的时候，是实例身上所有的data和所有的methods，以及过滤器，指令......都
             //  处于可用状态，此时还没有真正的执行销毁的过程
         },
-        destroyed(){
+        destroyed() {
             console.log('destoryed')
             //  当执行到destroyed函数的时候，组件已经被完全销毁了，此时，组件中所有的数据，方法，指令，过滤器......
             //  都已经不可用了
         },
-        errorCaptured(){
+        errorCaptured() {
             alert('进入错误捕获生命周期')
             console.log('errorCaptured')
             // 当捕获一个来自子孙组件的错误时被调用。此钩子会收到三个参数：错误对象、发生错误的组件实例以及一个包含错误来源信息的字符串。

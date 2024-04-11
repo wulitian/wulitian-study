@@ -6,16 +6,16 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div v-show="msg">hello word!</div>
-    </div>
+<div id="app">
+    <div v-show="msg">hello word!</div>
+</div>
 
 <script>
     // 根据表达式之真假值，切换元素的 display CSS property。当条件变化时该指令触发过渡效果。
     var app = new Vue({
         el: '#app',
         data: {
-            msg:true
+            msg: true
         }
     })
 </script>

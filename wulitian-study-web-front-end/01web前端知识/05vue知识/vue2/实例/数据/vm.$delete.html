@@ -6,28 +6,28 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-    </div>
+<div id="app">
+</div>
 
 <script>
     // 这是全局 Vue.delete 的别名。
     // 删除对象的 property。如果对象是响应式的，确保删除能触发更新视图。这个方法主要用于避开 Vue 不能检测到 property 被删除的限制，但是你应该很少会使用它。
     var vm = new Vue({
-        el:"#app",
-        data:{
-            list:[
+        el: "#app",
+        data: {
+            list: [
                 {
-                    name:'雾里天',
-                    sex:'男'
+                    name: '雾里天',
+                    sex: '男'
                 },
                 {
-                    name:'雾里天2',
-                    sex:'男'
+                    name: '雾里天2',
+                    sex: '男'
                 }
             ]
         }
     });
-    vm.$delete( vm.list, 0 );
+    vm.$delete(vm.list, 0);
 
 </script>
 </body>

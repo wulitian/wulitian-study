@@ -6,35 +6,35 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <mycom1>
-            <!--默认插槽-->
-            <template v-slot>
-                <div>默认插槽</div>
-            </template>
-            <!--具名插槽-->
-            <template #header>
-                <div>具名插槽</div>
-            </template>
-            <!--作用域插槽-->
-            <template #footer="prop">
-                <div>
-                    {{prop.testProps2}}
-                </div>
-            </template>
-        </mycom1>
-    </div>
+<div id="app">
+    <mycom1>
+        <!--默认插槽-->
+        <template v-slot>
+            <div>默认插槽</div>
+        </template>
+        <!--具名插槽-->
+        <template #header>
+            <div>具名插槽</div>
+        </template>
+        <!--作用域插槽-->
+        <template #footer="prop">
+            <div>
+                {{prop.testProps2}}
+            </div>
+        </template>
+    </mycom1>
+</div>
 
 <script>
     // 只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。
     var app = new Vue({
-        components:{
-            mycom1:{
+        components: {
+            mycom1: {
                 data: function () {
                     return {
-                        user:{
-                            name:'张三',
-                            sex:'男'
+                        user: {
+                            name: '张三',
+                            sex: '男'
                         }
                     }
                 },
@@ -62,7 +62,7 @@
         },
         el: '#app',
         data: {
-            title:10
+            title: 10
         },
     })
 </script>

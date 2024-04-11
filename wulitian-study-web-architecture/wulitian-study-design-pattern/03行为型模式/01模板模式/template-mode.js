@@ -1,4 +1,9 @@
 !(function () {
+    // 不管泡茶还是咖啡都会有四个步骤，总结出来如下。我们抽象一个父类表示泡一杯饮料的过程。
+    // 煮沸水，相同点
+    // 沸水+原料(不同点，咖啡，茶叶)
+    // 将饮料倒入杯子，相同点
+    // 加调料(不同点：糖与牛奶，柠檬)
     const Beverage = function(){};
     Beverage.prototype.boilWater = function(){
         console.log( '把水煮沸' );
@@ -46,4 +51,5 @@
     }
     let tea = new Tea();
     tea.init();
+
 })()

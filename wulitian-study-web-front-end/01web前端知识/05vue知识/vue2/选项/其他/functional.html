@@ -6,11 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div>
-        <div id="app">
-            <test :test="test"></test>
-        </div>
+<div>
+    <div id="app">
+        <test :test="test"></test>
     </div>
+</div>
 <script>
     // 类型：boolean
     // 使组件无状态 (没有 data) 和无实例 (没有 this 上下文)。他们用一个简单的 render 函数返回虚拟节点使它们渲染的代价更小。
@@ -37,7 +37,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-            test:{name:12},
+            test: {name: 12},
         },
     })
 

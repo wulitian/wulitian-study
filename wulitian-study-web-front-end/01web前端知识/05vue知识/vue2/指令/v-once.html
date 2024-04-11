@@ -6,22 +6,22 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <ul>
-            <li v-for="i in list" v-once>{{i}}</li>
-        </ul>
-        <button @click="update">修改</button>
-    </div>
+<div id="app">
+    <ul>
+        <li v-for="i in list" v-once>{{i}}</li>
+    </ul>
+    <button @click="update">修改</button>
+</div>
 
 <script>
     // 只渲染元素和组件一次。随后的重新渲染，元素/组件及其所有的子节点将被视为静态内容并跳过。这可以用于优化更新性能。
     var app = new Vue({
         el: '#app',
         data: {
-            list:10
+            list: 10
         },
-        methods:{
-            update(){
+        methods: {
+            update() {
                 ++this.list;
             }
         }

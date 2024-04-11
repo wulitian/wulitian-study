@@ -6,14 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        {{msg}}
-    </div>
+<div id="app">
+    {{msg}}
+</div>
 <script>
-    var app = new Vue({
+    const app = new Vue({
         el: '#app',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         }
     })
     //配置是否允许 vue-devtools 检查代码。开发版本默认为 true，生产版本默认为 false。生产版本设为 true 可以启用检查。

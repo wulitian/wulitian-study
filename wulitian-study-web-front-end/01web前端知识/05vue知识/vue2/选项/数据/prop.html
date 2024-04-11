@@ -6,15 +6,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <props-demo-simple :size="12" ></props-demo-simple>
-        <props-demo-advanced :height="10" :age="0"></props-demo-advanced>
-    </div>
+<div id="app">
+    <props-demo-simple :size="12"></props-demo-simple>
+    <props-demo-advanced :height="10" :age="0"></props-demo-advanced>
+</div>
 <script>
     Vue.component('props-demo-simple', {
         props: ['size'],
-        template:`
-        <div :style="{fontSize:size+'px'}" >123123</div>
+        template: `
+          <div :style="{fontSize:size+'px'}">123123</div>
         `
     })
     // 对象语法，提供验证
@@ -33,13 +33,13 @@
             }
         },
         template: `
-        <div>{{height}}</div>
+          <div>{{ height }}</div>
         `
     })
     var app = new Vue({
         el: '#app',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         }
     })
     // props 可以是数组或对象，用于接收来自父组件的数据。

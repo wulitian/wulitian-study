@@ -6,18 +6,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <blog-post>
-            <template v-slot:header>
-                <h1>About Me</h1>
-            </template>
-            <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
-            <template v-slot:footer>
-                <p>Copyright 2016 Evan You</p>
-            </template>
-            <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
-        </blog-post>
-    </div>
+<div id="app">
+    <blog-post>
+        <template v-slot:header>
+            <h1>About Me</h1>
+        </template>
+        <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named
+            slot.</p>
+        <template v-slot:footer>
+            <p>Copyright 2016 Evan You</p>
+        </template>
+        <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
+    </blog-post>
+</div>
 
 <script>
     // 用来访问被插槽分发的内容。每个具名插槽有其相应的 property (例如：v-slot:foo 中的内容将会在 vm.$slots.foo 中被找到)。default property 包括了所有没有被包含在具名插槽中的节点，或 v-slot:default 的内容。
@@ -27,7 +28,7 @@
     Vue.component('blog-post', {
         render: function (createElement) {
             var header = this.$slots.header
-            var body   = this.$slots.default
+            var body = this.$slots.default
             var footer = this.$slots.footer
             return createElement('div', [
                 createElement('header', header),
@@ -39,7 +40,9 @@
 
     var vm = new Vue({
         el: '#app',
-        data: {
+        data: {},
+        mounted() {
+            console.log(this)
         }
     })
 </script>

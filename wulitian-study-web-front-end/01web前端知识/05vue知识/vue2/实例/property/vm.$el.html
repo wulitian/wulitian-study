@@ -6,23 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <a-a :text="text"></a-a>
-    </div>
+<div id="app">
+    <a-a :text="text"></a-a>
+</div>
 
 <script>
     // Vue 实例使用的根 DOM 元素。
-    Vue.component('a-a',{
-        props:['text'],
-        template:`
-        <div>{{text}}</div>
+    Vue.component('a-a', {
+        props: ['text'],
+        template: `
+          <div>{{ text }}</div>
         `
     })
 
     var vm = new Vue({
         el: '#app',
         data: {
-            text:'aaa',
+            text: 'aaa',
         }
     })
     console.log(vm.$el)

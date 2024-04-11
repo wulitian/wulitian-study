@@ -6,21 +6,21 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>{{msg}}</div>
-        <a-a>
-            <div>我是插槽</div>
-        </a-a>
-        <script type="text/x-template" id="a-a">
-            <div>123123</div>
-            <slot>123</slot>
-        </script>
-    </div>
+<div id="app">
+    <div>{{msg}}</div>
+    <a-a>
+        <div>我是插槽</div>
+    </a-a>
+    <script type="text/x-template" id="a-a">
+        <div>123123</div>
+        <slot>123</slot>
+    </script>
+</div>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         }
     })
     // 一个字符串模板作为 Vue 实例的标识使用。模板将会替换挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。

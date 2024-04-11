@@ -6,14 +6,19 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>{{msg}}</div>
-    </div>
+<div id="app">
+</div>
 <script>
     var app = new Vue({
         el: '#app',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
+        },
+        render(createElement) {
+            return createElement(
+                'h' + this.level,   // 标签名称
+                this.$slots.default // 子节点数组
+            )
         }
     })
 

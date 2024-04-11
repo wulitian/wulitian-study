@@ -11,7 +11,6 @@
             <childcom :name="name" :age="age" :sex="sex"></childcom>
         </div>
     </div>
-
 <script>
 
     // 包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。
@@ -22,8 +21,8 @@
     //   inheritAttrs: false,
     //父作用域调用子组件   子组件内部有模板    那么父组件传递的属性  会覆盖子组件标签上的属性   这就是继承
     var vm = new Vue({
-        components:{
-            'childcom':{
+        components: {
+            'childcom': {
                 props:['name'],
                 template:`<div>
         <div>我是子组件  {{name}}</div>
@@ -33,6 +32,9 @@
                     'grandcom':{
                         template:`<div>我是孙子组件{{$attrs.age}}</div>`,
                     }
+                },
+                created() {
+                    console.log(this.$attrs)
                 }
             }
         },

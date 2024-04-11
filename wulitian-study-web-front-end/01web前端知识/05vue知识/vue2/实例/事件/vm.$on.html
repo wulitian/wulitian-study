@@ -6,23 +6,21 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <button @click="$emit('test','123456')">按钮</button>
-        <button @click="remove1">移除全部监听器</button>
-        <button @click="remove2">移除事件1的全部监听器</button>
-
-    </div>
+<div id="app">
+    <button @click="$emit('test','123456')">按钮</button>
+    <button @click="remove1">移除全部监听器</button>
+    <button @click="remove2">移除事件1的全部监听器</button>
+</div>
 
 <script>
     // 监听当前实例上的自定义事件。事件可以由 vm.$emit 触发。回调函数会接收所有传入事件触发函数的额外参数。
     var vm = new Vue({
-        el:"#app",
-        data:{
-        },
+        el: "#app",
+        data: {},
         mounted() {
 
         },
-        methods:{
+        methods: {
             remove1() {
                 this.$off();
             },

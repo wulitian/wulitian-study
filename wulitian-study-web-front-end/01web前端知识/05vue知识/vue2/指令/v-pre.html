@@ -6,11 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div v-pre>{{ msg }}</div>
-    </div>
+<div id="app">
+    <div v-pre>{{ msg }}</div>
+</div>
 <script>
-    //跳过这个元素和它的子元素的编译过程。可以用来显示原始 Mustache 标签。跳过大量没有指令的节点会加快编译。
+    // 跳过这个元素和它的子元素的编译过程。可以用来显示原始 Mustache 标签。跳过大量没有指令的节点会加快编译。
     var app = new Vue({
         el: '#app',
         data: {

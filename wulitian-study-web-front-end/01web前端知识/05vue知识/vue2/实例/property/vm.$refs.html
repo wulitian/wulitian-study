@@ -6,25 +6,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <blog-post>
-            <template v-slot:header>
-                <h1>About Me</h1>
-            </template>
-            <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named slot.</p>
-            <template v-slot:footer>
-                <p>Copyright 2016 Evan You</p>
-            </template>
-            <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
-        </blog-post>
-    </div>
+<div id="app">
+    <blog-post ref="blog">
+        <template v-slot:header>
+            <h1>About Me</h1>
+        </template>
+        <p>Here's some page content, which will be included in vm.$slots.default, because it's not inside a named
+            slot.</p>
+        <template v-slot:footer>
+            <p>Copyright 2016 Evan You</p>
+        </template>
+        <p>If I have some content down here, it will also be included in vm.$slots.default.</p>.
+    </blog-post>
+</div>
 
 <script>
     // 一个对象，持有注册过 ref attribute 的所有 DOM 元素和组件实例。
     Vue.component('blog-post', {
         render: function (createElement) {
             var header = this.$slots.header
-            var body   = this.$slots.default
+            var body = this.$slots.default
             var footer = this.$slots.footer
             return createElement('div', [
                 createElement('header', header),
@@ -36,8 +37,7 @@
 
     var vm = new Vue({
         el: '#app',
-        data: {
-        }
+        data: {}
     })
     console.log(vm.$refs)
 </script>

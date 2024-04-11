@@ -6,9 +6,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div v-html="msg"></div>
-    </div>
+<div id="app">
+    <div v-html="msg"></div>
+</div>
 <script>
     // 更新元素的 innerHTML。注意：内容按普通 HTML 插入 - 不会作为 Vue 模板进行编译。
     // 如果试图使用 v-html 组合模板，可以重新考虑是否通过使用组件来替代。
@@ -20,7 +20,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-            msg:'<div>hello word!</div>'
+            msg: '<div>hello word!</div>'
         }
     })
 </script>

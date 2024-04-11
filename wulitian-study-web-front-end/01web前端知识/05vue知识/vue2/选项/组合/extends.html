@@ -6,35 +6,35 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-        <div id="app">
-            <div>{{msg}}</div>
-        </div>
+<div id="app">
+    <div>{{msg}}</div>
+</div>
 <script>
 
     const extend = {
-        created () {
+        created() {
             console.log('extends created')
         }
     }
     const mixin1 = {
-        created () {
+        created() {
             console.log('mixin1 created')
         }
     }
     const mixin2 = {
-        created () {
+        created() {
             console.log('mixin2 created')
         }
     }
     var app = new Vue({
-        el:'#app',
+        el: '#app',
         extends: extend,
         mixins: [mixin1, mixin2],
         name: 'app',
-        data:{
-            msg:'12321'
+        data: {
+            msg: '12321'
         },
-        created () {
+        created() {
             console.log('created')
         }
     })

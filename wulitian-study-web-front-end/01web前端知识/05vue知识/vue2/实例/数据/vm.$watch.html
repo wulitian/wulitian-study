@@ -6,12 +6,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>
-            {{text}}
-            {{aaa}}
-        </div>
+<div id="app">
+    <div>
+        {{text}}
+        {{aaa}}
     </div>
+</div>
 
 <script>
     // 观察 Vue 实例上的一个表达式或者一个函数计算结果的变化。回调函数得到的参数为新值和旧值。表达式只接受简单的键路径。对于更复杂的表达式，用一个函数取代。
@@ -24,15 +24,15 @@
     // 选项：immediate在选项参数中指定 immediate: true 将立即以表达式的当前值触发回调：
     // 如果你仍然希望在回调内部调用一个取消侦听的函数，你应该先检查其函数的可用性：
     var vm = new Vue({
-        el:"#app",
-        data:{
-            text:"132  456",
-            aaa:"555"
+        el: "#app",
+        data: {
+            text: "132  456",
+            aaa: "555"
         }
     });
-    var unwatch = vm.$watch('text',function(val){
+    var unwatch = vm.$watch('text', function (val) {
         console.log(val)
-        vm.$data.aaa=val;
+        vm.$data.aaa = val;
         // 之后取消观察
         if (unwatch) {
             unwatch()

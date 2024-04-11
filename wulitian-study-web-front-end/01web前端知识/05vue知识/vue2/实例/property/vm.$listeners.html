@@ -6,33 +6,46 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>
-            <childcom @click.native="handlerClick" :name="name" :age="age" :sex="sex"></childcom>
-            <childcom @click="handlerClick"  :name="name" :age="age" :sex="sex"></childcom>
-        </div>
+<div id="app">
+    <div>
+        <childcom @haha="haha"></childcom>
     </div>
+</div>
 
 <script>
 
     // 包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器。它可以通过 v-on="$listeners" 传入内部组件——在创建更高层次的组件时非常有用。
     var vm = new Vue({
-        components:{
-            'childcom':{
-                props:['name'],
-                template:`<div>
-                <div  v-on="$listeners">我是子组件  {{name}}</div>
-              </div>`,}
+        components: {
+            'childcom': {
+                props: ['name'],
+                template: `
+                  <div>
+                  <div v-on="$listeners">我是子组件  {{ name }}</div>
+                  </div>`,
+                components: {
+                    'childcom2': {
+                        props: ['name'],
+                        template: `
+                          <div>
+                          <div>我是孙子组件  {{ name }}</div>
+                          </div>`,
+                    }
+                },
+                created() {
+                    this.$emit("haha", '123')
+                }
+            },
         },
         el: '#app',
         data: {
-            'name':'张三',
-            'age':'30',
-            'sex':'男'
+            'name': '张三',
+            'age': '30',
+            'sex': '男'
         },
-        methods:{
-            handlerClick(){
-                alert(123)
+        methods: {
+            haha(val) {
+                alert(val)
             }
         }
     })

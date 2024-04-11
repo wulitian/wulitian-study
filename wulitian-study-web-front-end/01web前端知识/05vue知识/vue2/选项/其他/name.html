@@ -6,11 +6,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div>
-        <div id="app">
-            <div>{{msg}}</div>
-        </div>
+<div>
+    <div id="app">
+        <div>{{msg}}</div>
     </div>
+</div>
 <script>
     // 类型：string
     // 限制：只有作为组件选项时起作用。
@@ -18,9 +18,9 @@
     // 指定 name 选项的另一个好处是便于调试。有名字的组件有更友好的警告信息。另外，当在有 vue-devtools，未命名组件将显示成 <AnonymousComponent>，这很没有语义。通过提供 name 选项，可以获得更有语义信息的组件树。
     var app = new Vue({
         el: '#app',
-        name:'index',
+        name: 'index',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         },
     })
 

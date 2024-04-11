@@ -6,21 +6,21 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div>
-        <div id="app1">{{msg}}</div>
-        <div id="app2">{{msg}}</div>
-    </div>
+<div>
+    <div id="app1">{{msg}}</div>
+    <div id="app2">{{msg}}</div>
+</div>
 <script>
     var app = new Vue({
         el: document.getElementById("app1"),
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         }
     })
     var app = new Vue({
         el: '#app2',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         }
     })
     // 类型：string | Element

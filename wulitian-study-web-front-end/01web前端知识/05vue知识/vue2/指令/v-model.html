@@ -6,20 +6,20 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>
-            <input type="text" v-model="name"/>
-            <textarea v-model="name"></textarea>
-            <select v-model="name">
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
-            <input type="text" v-model.lazy="name"/>
-            <input type="text" v-model.trim="name"/>
-            <input type="text" v-model.number="name"/>
-            {{name}}
-        </div>
+<div id="app">
+    <div>
+        <input type="text" v-model="name"/>
+        <textarea v-model="name"></textarea>
+        <select v-model="name">
+            <option value="1">1</option>
+            <option value="2">2</option>
+        </select>
+        <input type="text" v-model.lazy="name"/>
+        <input type="text" v-model.trim="name"/>
+        <input type="text" v-model.number="name"/>
+        {{name}}
     </div>
+</div>
 
 <script>
     // <input><select><textarea> components中使用
@@ -40,7 +40,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-            name:'2'
+            name: '2'
         }
     })
 </script>

@@ -6,14 +6,14 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        {{msg}}
-    </div>
+<div id="app">
+    {{msg}}
+</div>
 <script>
-    var app = new Vue({
+    const app = new Vue({
         el: '#app',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         }
     })
     //自定义合并策略的选项。
@@ -24,6 +24,7 @@
     const Profile = Vue.extend({
         _my_option: 1
     })
+    console.log(Profile.options._my_option);
     // Profile.options._my_option = 2
 </script>
 </body>

@@ -6,26 +6,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <a-a :text="text"></a-a>
-    </div>
+<div id="app">
+    <a-a :text="text"></a-a>
+</div>
 
 <script>
     // 父实例，如果当前实例有的话。
-    Vue.component('a-a',{
-        created(){
+    Vue.component('a-a', {
+        created() {
             console.log(this.$parent)
         },
-        props:['text'],
-        template:`
-        <div>{{text}}</div>
+        props: ['text'],
+        template: `
+          <div>{{ text }}</div>
         `
     })
 
     var vm = new Vue({
         el: '#app',
         data: {
-            text:'aaa',
+            text: 'aaa',
         }
     })
 </script>

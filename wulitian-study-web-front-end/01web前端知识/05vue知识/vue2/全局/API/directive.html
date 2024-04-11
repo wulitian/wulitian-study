@@ -10,7 +10,7 @@
         <input v-if="state" type="text" v-handel:foo.a.b="message" v-model = "text"/>
         <button @click="state = !state">触发unbind</button>
         <button @click="message = '123'">修改绑定的值</button>
-        <button  type="text" v-pin:[direction]="200">自定义指令之动态参数</button>
+        <button  type="text" v-pin:[direction]="100">自定义指令之动态参数</button>
     </div>
 <script>
 // 自定义指令
@@ -127,7 +127,9 @@
             },
             pin: {
                 bind: function (el, binding, vnode) {
-                    console.log(binding.arg)
+                    console.log(el)
+                    console.log(binding)
+                    console.log(vnode)
                     el.style.position = 'fixed'
                     var s = (binding.arg == 'left' ? 'left' : 'top')
                     el.style[s] = binding.value + 'px'

@@ -6,19 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-        <div id="app">
-            <div>{{msg}}</div>
-        </div>
+<div id="app">
+    <div>{{msg}}</div>
+</div>
 <script>
 
     var mixin = {
-        created: function () { console.log(1) }
+        created: function () {
+            console.log(1)
+        }
     }
     var vm = new Vue({
-        el:'#app',
-        created: function () { console.log(2) },
-        data:{
-            msg:'雾里天'
+        el: '#app',
+        created: function () {
+            console.log(2)
+        },
+        data: {
+            msg: '雾里天'
         },
         mixins: [mixin]
     })

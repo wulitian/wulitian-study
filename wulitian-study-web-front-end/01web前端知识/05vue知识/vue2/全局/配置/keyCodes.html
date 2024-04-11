@@ -6,17 +6,23 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
-    <div id="app">
-        <div>
-            {{msg}}
-        </div>
+<div id="app">
+    <div>
+        {{msg}}
+        <input type="text" @keyup.media-play-pause="fun">
     </div>
+</div>
 <script>
-    var app = new Vue({
+    const app = new Vue({
         el: '#app',
         data: {
-            msg:'hello vue',
+            msg: 'hello vue',
         },
+        methods: {
+            fun() {
+                alert(123)
+            }
+        }
     })
     // 给 v-on 自定义键位别名。
     Vue.config.keyCodes = {
@@ -25,7 +31,7 @@
         // camelCase 不可用
         mediaPlayPause: 179,
         // 取而代之的是 kebab-case 且用双引号括起来
-        "media-play-pause": 179,
+        "media-play-pause": 86,//键盘中的v键
         up: [38, 87]
     }
 </script>
